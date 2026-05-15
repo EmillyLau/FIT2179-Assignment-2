@@ -1,0 +1,644 @@
+state,meteorological_station ,year,max_temperature_celcius,rainfall_mm,rainy_days
+Johor,Senai,2000,32.3,2388.3,205.0
+Johor,Kluang,2000,32.0,2198.3,200.0
+Kedah,Alor Setar,2000,32.5,2009.0,185.0
+Kedah,Pulau Langkawi,2000,32.0,2299.2,173.0
+Kelantan,Kota Bharu,2000,31.6,3659.5,161.0
+Kelantan,Kuala Krai,2000,32.3,2364.9,193.0
+Melaka,Melaka,2000,32.0,2156.7,170.0
+Pahang,Kuantan,2000,31.9,2867.4,197.0
+Pahang,Cameron Highlands,2000,22.7,3172.0,241.0
+Perak,Ipoh,2000,32.9,2990.3,193.0
+Perak,Sitiawan,2000,32.4,1618.0,185.0
+Perlis,Chuping  ,2000,32.8,1947.0,197.0
+Penang,Bayan Lepas,2000,31.5,2653.2,190.0
+Penang,Butterworth,2000,31.9,2506.2,184.0
+Sabah,Kota Kinabalu,2000,31.8,2973.4,231.0
+Sabah,Kudat,2000,31.3,2027.3,187.0
+Sabah,Sandakan,2000,31.2,3261.2,218.0
+Sabah,Tawau,2000,31.3,2036.6,210.0
+Sarawak,Kuching,2000,31.7,4299.4,254.0
+Sarawak,Miri ,2000,31.2,2998.2,190.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2000,32.0,2166.3,186.0
+Selangor,Subang,2000,32.8,2811.5,206.0
+Terengganu,Kuala Terengganu,2000,31.7,3187.0,171.0
+Labuan,Labuan,2000,31.0,3678.1,216.0
+Johor,Senai,2001,32.1,2531.9,215.0
+Johor,Kluang,2001,32.0,1809.9,191.0
+Kedah,Alor Setar,2001,32.7,1673.4,180.0
+Kedah,Pulau Langkawi,2001,32.3,2432.5,179.0
+Kelantan,Kota Bharu,2001,31.5,2556.7,166.0
+Kelantan,Kuala Krai,2001,32.6,2563.0,190.0
+Melaka,Melaka,2001,31.9,2220.1,190.0
+Pahang,Kuantan,2001,31.9,3739.4,208.0
+Pahang,Cameron Highlands,2001,23.0,2631.7,234.0
+Perak,Ipoh,2001,32.9,2422.7,202.0
+Perak,Sitiawan,2001,32.5,1497.4,189.0
+Perlis,Chuping  ,2001,32.8,1789.4,185.0
+Penang,Bayan Lepas,2001,31.6,2334.7,189.0
+Penang,Butterworth,2001,32.1,2237.9,195.0
+Sabah,Kota Kinabalu,2001,31.7,3155.9,221.0
+Sabah,Kudat,2001,31.4,3123.9,199.0
+Sabah,Sandakan,2001,31.5,3563.7,197.0
+Sabah,Tawau,2001,31.2,1755.9,189.0
+Sarawak,Kuching,2001,31.8,3786.0,251.0
+Sarawak,Miri ,2001,31.2,2989.1,203.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2001,32.3,2210.9,214.0
+Selangor,Subang,2001,32.8,2651.5,212.0
+Terengganu,Kuala Terengganu,2001,31.9,2580.4,166.0
+Labuan,Labuan,2001,31.1,3652.6,222.0
+Johor,Senai,2002,31.7,2616.2,186.0
+Johor,Kluang,2002,32.7,1860.0,175.0
+Kedah,Alor Setar,2002,33.1,2193.6,162.0
+Kedah,Pulau Langkawi,2002,32.9,2135.6,168.0
+Kelantan,Kota Bharu,2002,31.8,2230.9,149.0
+Kelantan,Kuala Krai,2002,32.9,1542.8,176.0
+Melaka,Melaka,2002,32.8,2082.3,158.0
+Pahang,Kuantan,2002,32.4,2536.8,173.0
+Pahang,Cameron Highlands,2002,23.3,2816.6,203.0
+Perak,Ipoh,2002,33.7,1987.8,168.0
+Perak,Sitiawan,2002,32.9,1653.2,146.0
+Perlis,Chuping  ,2002,33.1,1902.6,156.0
+Penang,Bayan Lepas,2002,32.4,1876.2,155.0
+Penang,Butterworth,2002,32.8,1844.8,158.0
+Sabah,Kota Kinabalu,2002,32.4,1967.2,154.0
+Sabah,Kudat,2002,31.8,1318.5,150.0
+Sabah,Sandakan,2002,31.9,2172.9,188.0
+Sabah,Tawau,2002,31.5,1473.9,141.0
+Sarawak,Kuching,2002,31.6,4710.7,241.0
+Sarawak,Miri ,2002,31.6,2507.4,180.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2002,32.8,1815.5,153.0
+Selangor,Subang,2002,33.5,2694.5,193.0
+Terengganu,Kuala Terengganu,2002,31.3,2329.1,145.0
+Labuan,Labuan,2002,31.7,3061.2,165.0
+Johor,Senai,2003,31.7,2340.5,202.0
+Johor,Kluang,2003,32.3,2065.7,192.0
+Kedah,Alor Setar,2003,32.7,2241.8,162.0
+Kedah,Pulau Langkawi,2003,32.4,3166.7,149.0
+Kelantan,Kota Bharu,2003,31.5,2341.1,184.0
+Kelantan,Kuala Krai,2003,32.2,2728.6,195.0
+Melaka,Melaka,2003,32.2,1824.2,176.0
+Pahang,Kuantan,2003,31.9,3799.6,211.0
+Pahang,Cameron Highlands,2003,22.6,2975.8,239.0
+Perak,Ipoh,2003,32.3,3463.3,229.0
+Perak,Sitiawan,2003,32.3,2065.4,191.0
+Perlis,Chuping  ,2003,32.7,1837.3,164.0
+Penang,Bayan Lepas,2003,31.9,2887.5,177.0
+Penang,Butterworth,2003,32.3,2637.4,185.0
+Sabah,Kota Kinabalu,2003,32.2,2329.1,163.0
+Sabah,Kudat,2003,31.7,2359.7,172.0
+Sabah,Sandakan,2003,31.6,2975.9,201.0
+Sabah,Tawau,2003,30.9,1952.2,164.0
+Sarawak,Kuching,2003,31.7,5246.3,257.0
+Sarawak,Miri ,2003,31.4,2655.2,194.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2003,32.3,2657.1,195.0
+Selangor,Subang,2003,33.2,2843.1,219.0
+Terengganu,Kuala Terengganu,2003,30.8,3341.7,179.0
+Labuan,Labuan,2003,31.6,3207.2,178.0
+Johor,Senai,2004,32.0,2758.5,183.0
+Johor,Kluang,2004,32.4,2233.9,171.0
+Kedah,Alor Setar,2004,33.1,2418.0,151.0
+Kedah,Pulau Langkawi,2004,32.6,1822.7,164.0
+Kelantan,Kota Bharu,2004,31.7,1928.6,150.0
+Kelantan,Kuala Krai,2004,32.5,2752.1,174.0
+Melaka,Melaka,2004,32.5,1615.5,149.0
+Pahang,Kuantan,2004,31.9,3315.0,178.0
+Pahang,Cameron Highlands,2004,23.0,2411.6,216.0
+Perak,Ipoh,2004,33.0,2743.6,185.0
+Perak,Sitiawan,2004,32.6,1676.2,171.0
+Perlis,Chuping  ,2004,33.1,1721.8,155.0
+Penang,Bayan Lepas,2004,32.0,2051.7,177.0
+Penang,Butterworth,2004,32.7,2153.3,167.0
+Sabah,Kota Kinabalu,2004,32.2,1897.4,171.0
+Sabah,Kudat,2004,31.7,2115.3,156.0
+Sabah,Sandakan,2004,31.8,3532.8,181.0
+Sabah,Tawau,2004,31.1,1749.5,154.0
+Sarawak,Kuching,2004,31.6,4861.8,238.0
+Sarawak,Miri ,2004,31.1,2647.6,184.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2004,32.4,1706.1,163.0
+Selangor,Subang,2004,33.0,2775.6,185.0
+Terengganu,Kuala Terengganu,2004,31.0,2194.4,157.0
+Labuan,Labuan,2004,31.4,2407.9,176.0
+Johor,Senai,2005,31.7,2450.0,194.0
+Johor,Kluang,2005,32.8,2017.6,164.0
+Kedah,Alor Setar,2005,33.1,-,-
+Kedah,Pulau Langkawi,2005,31.9,2697.6,174.0
+Kelantan,Kota Bharu,2005,31.1,2612.4,171.0
+Kelantan,Kuala Krai,2005,32.5,2717.6,178.0
+Melaka,Melaka,2005,32.5,1875.5,162.0
+Pahang,Kuantan,2005,32.0,2713.0,175.0
+Pahang,Cameron Highlands,2005,22.9,2883.4,215.0
+Perak,Ipoh,2005,33.6,2063.6,183.0
+Perak,Sitiawan,2005,32.6,1986.4,149.0
+Perlis,Chuping  ,2005,32.9,2155.3,162.0
+Penang,Bayan Lepas,2005,31.8,2071.6,169.0
+Penang,Butterworth,2005,32.3,1983.0,167.0
+Sabah,Kota Kinabalu,2005,32.3,4003.0,170.0
+Sabah,Kudat,2005,31.8,1770.9,156.0
+Sabah,Sandakan,2005,31.5,2460.9,180.0
+Sabah,Tawau,2005,31.2,2086.4,164.0
+Sarawak,Kuching,2005,31.5,3867.8,246.0
+Sarawak,Miri ,2005,31.1,2782.6,174.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2005,32.9,1450.9,145.0
+Selangor,Subang,2005,32.9,2292.4,182.0
+Terengganu,Kuala Terengganu,2005,30.9,2825.0,164.0
+Labuan,Labuan,2005,31.5,3761.1,183.0
+Johor,Senai,2006,31.5,3075.9,195.0
+Johor,Kluang,2006,32.7,2861.5,202.0
+Kedah,Alor Setar,2006,32.8,2028.4,169.0
+Kedah,Pulau Langkawi,2006,31.8,2960.6,183.0
+Kelantan,Kota Bharu,2006,31.1,2288.8,169.0
+Kelantan,Kuala Krai,2006,32.1,2497.6,186.0
+Melaka,Melaka,2006,32.1,2178.1,177.0
+Pahang,Kuantan,2006,31.9,2977.8,181.0
+Pahang,Cameron Highlands,2006,22.5,2777.1,249.0
+Perak,Ipoh,2006,33.0,3278.3,209.0
+Perak,Sitiawan,2006,32.0,2000.2,175.0
+Perlis,Chuping  ,2006,32.7,2164.8,156.0
+Penang,Bayan Lepas,2006,31.7,2057.0,180.0
+Penang,Butterworth,2006,32.0,2362.2,176.0
+Sabah,Kota Kinabalu,2006,32.2,3349.7,196.0
+Sabah,Kudat,2006,31.7,2820.3,188.0
+Sabah,Sandakan,2006,31.4,5686.6,213.0
+Sabah,Tawau,2006,31.0,2631.5,182.0
+Sarawak,Kuching,2006,31.7,3847.6,227.0
+Sarawak,Miri ,2006,31.1,2971.3,202.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2006,32.0,1982.8,189.0
+Selangor,Subang,2006,32.3,3455.0,225.0
+Terengganu,Kuala Terengganu,2006,31.1,2047.0,160.0
+Labuan,Labuan,2006,31.6,3151.8,218.0
+Johor,Senai,2007,31.1,3402.2,210.0
+Johor,Kluang,2007,32.5,2698.8,187.0
+Kedah,Alor Setar,2007,32.4,2146.8,181.0
+Kedah,Pulau Langkawi,2007,31.4,2643.8,172.0
+Kelantan,Kota Bharu,2007,31.0,2066.8,177.0
+Kelantan,Kuala Krai,2007,32.0,3044.6,199.0
+Melaka,Melaka,2007,31.9,2078.6,200.0
+Pahang,Kuantan,2007,31.9,3473.6,192.0
+Pahang,Cameron Highlands,2007,22.4,2972.3,238.0
+Perak,Ipoh,2007,32.7,2913.1,189.0
+Perak,Sitiawan,2007,32.0,1408.6,163.0
+Perlis,Chuping  ,2007,32.5,2128.6,172.0
+Penang,Bayan Lepas,2007,31.4,2326.0,179.0
+Penang,Butterworth,2007,31.7,2005.6,175.0
+Sabah,Kota Kinabalu,2007,32.0,2916.7,199.0
+Sabah,Kudat,2007,31.6,3067.9,176.0
+Sabah,Sandakan,2007,31.2,3515.6,186.0
+Sabah,Tawau,2007,31.1,2310.2,185.0
+Sarawak,Kuching,2007,31.4,4768.8,263.0
+Sarawak,Miri ,2007,30.8,3266.6,228.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2007,31.4,2137.8,182.0
+Selangor,Subang,2007,32.3,2871.8,203.0
+Terengganu,Kuala Terengganu,2007,31.0,2129.0,173.0
+Labuan,Labuan,2007,31.5,3277.1,222.0
+Johor,Senai,2008,30.9,3146.0,207.0
+Johor,Kluang,2008,32.3,2782.4,198.0
+Kedah,Alor Setar,2008,32.5,2274.0,178.0
+Kedah,Pulau Langkawi,2008,31.3,2343.3,176.0
+Kelantan,Kota Bharu,2008,30.9,3566.2,172.0
+Kelantan,Kuala Krai,2008,31.6,3132.3,205.0
+Melaka,Melaka,2008,31.8,2194.4,164.0
+Pahang,Kuantan,2008,32.0,3337.5,183.0
+Pahang,Cameron Highlands,2008,22.2,3951.6,260.0
+Perak,Ipoh,2008,32.6,3534.6,226.0
+Perak,Sitiawan,2008,31.6,2224.5,171.0
+Perlis,Chuping  ,2008,32.1,1772.4,176.0
+Penang,Bayan Lepas,2008,31.3,2569.8,184.0
+Penang,Butterworth,2008,31.5,2133.6,177.0
+Sabah,Kota Kinabalu,2008,31.8,3291.2,221.0
+Sabah,Kudat,2008,31.3,2962.5,209.0
+Sabah,Sandakan,2008,31.0,3823.0,215.0
+Sabah,Tawau,2008,30.9,2185.4,183.0
+Sarawak,Kuching,2008,31.2,4307.7,248.0
+Sarawak,Miri ,2008,30.4,2980.2,212.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2008,31.3,2092.6,167.0
+Selangor,Subang,2008,32.1,3278.6,203.0
+Terengganu,Kuala Terengganu,2008,30.7,3609.6,165.0
+Labuan,Labuan,2008,30.8,3823.4,207.0
+Johor,Senai,2009,31.6,1919.9,173.0
+Johor,Kluang,2009,31.8,1907.9,161.0
+Kedah,Alor Setar,2009,32.8,2573.6,173.0
+Kedah,Pulau Langkawi,2009,31.8,2716.0,167.0
+Kelantan,Kota Bharu,2009,31.0,3034.6,176.0
+Kelantan,Kuala Krai,2009,32.0,3306.5,182.0
+Melaka,Melaka,2009,31.8,1878.0,163.0
+Pahang,Kuantan,2009,31.9,3707.0,191.0
+Pahang,Cameron Highlands,2009,22.1,3051.2,242.0
+Perak,Ipoh,2009,32.9,3110.3,217.0
+Perak,Sitiawan,2009,32.1,2072.0,176.0
+Perlis,Chuping  ,2009,32.5,2107.1,165.0
+Penang,Bayan Lepas,2009,31.6,2944.0,187.0
+Penang,Butterworth,2009,31.3,2669.8,190.0
+Sabah,Kota Kinabalu,2009,32.2,2747.6,175.0
+Sabah,Kudat,2009,31.3,2848.2,186.0
+Sabah,Sandakan,2009,31.5,3964.6,209.0
+Sabah,Tawau,2009,31.3,1999.4,197.0
+Sarawak,Kuching,2009,31.9,4729.6,238.0
+Sarawak,Miri ,2009,30.9,3252.2,191.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2009,31.8,2099.2,168.0
+Selangor,Subang,2009,32.8,2857.4,200.0
+Terengganu,Kuala Terengganu,2009,30.9,3593.6,178.0
+Labuan,Labuan,2009,31.2,2927.4,190.0
+Johor,Senai,2010,32.0,2576.2,207.0
+Johor,Kluang,2010,32.0,1852.7,198.0
+Kedah,Alor Setar,2010,33.5,-,-
+Kedah,Pulau Langkawi,2010,32.2,2398.2,180.0
+Kelantan,Kota Bharu,2010,31.2,2854.4,181.0
+Kelantan,Kuala Krai,2010,32.8,2356.6,166.0
+Melaka,Melaka,2010,32.1,1992.8,177.0
+Pahang,Kuantan,2010,32.3,2319.0,182.0
+Pahang,Cameron Highlands,2010,22.7,2451.0,234.0
+Perak,Ipoh,2010,32.9,3189.1,217.0
+Perak,Sitiawan,2010,32.7,1517.6,181.0
+Perlis,Chuping  ,2010,33.3,2201.9,175.0
+Penang,Bayan Lepas,2010,32.1,2092.0,177.0
+Penang,Butterworth,2010,32.2,2015.8,170.0
+Sabah,Kota Kinabalu,2010,32.4,3394.6,200.0
+Sabah,Kudat,2010,31.4,1830.6,165.0
+Sabah,Sandakan,2010,31.7,2178.4,167.0
+Sabah,Tawau,2010,31.9,1674.6,160.0
+Sarawak,Kuching,2010,31.6,4564.2,261.0
+Sarawak,Miri ,2010,30.9,3086.9,206.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2010,32.0,2264.8,192.0
+Selangor,Subang,2010,33.8,3105.0,215.0
+Terengganu,Kuala Terengganu,2010,31.5,2363.2,170.0
+Labuan,Labuan,2010,31.3,4628.6,218.0
+Johor,Senai,2011,31.7,2702.6,202.0
+Johor,Kluang,2011,31.2,3027.6,198.0
+Kedah,Alor Setar,2011,32.5,1968.2,165.0
+Kedah,Pulau Langkawi,2011,31.8,2577.0,176.0
+Kelantan,Kota Bharu,2011,30.8,3459.8,180.0
+Kelantan,Kuala Krai,2011,31.5,3266.2,210.0
+Melaka,Melaka,2011,31.6,1845.2,170.0
+Pahang,Kuantan,2011,31.6,3242.6,188.0
+Pahang,Cameron Highlands,2011,22.0,3310.1,249.0
+Perak,Ipoh,2011,32.4,2582.3,191.0
+Perak,Sitiawan,2011,31.9,2471.1,171.0
+Perlis,Chuping  ,2011,32.5,2162.0,164.0
+Penang,Bayan Lepas,2011,31.4,2297.8,177.0
+Penang,Butterworth,2011,31.8,2525.6,170.0
+Sabah,Kota Kinabalu,2011,32.1,2782.2,216.0
+Sabah,Kudat,2011,30.6,4221.1,233.0
+Sabah,Sandakan,2011,31.1,5403.4,239.0
+Sabah,Tawau,2011,31.3,2239.0,201.0
+Sarawak,Kuching,2011,31.7,4616.4,244.0
+Sarawak,Miri ,2011,30.9,3246.0,200.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2011,31.7,1632.4,178.0
+Selangor,Subang,2011,33.3,2668.4,205.0
+Terengganu,Kuala Terengganu,2011,30.9,3645.4,189.0
+Labuan,Labuan,2011,30.9,3410.8,218.0
+Johor,Senai,2012,31.8,2810.0,197.0
+Johor,Kluang,2012,32.1,1890.0,183.0
+Kedah,Alor Setar,2012,32.4,2850.0,188.0
+Kedah,Pulau Langkawi,2012,31.7,2310.4,201.0
+Kelantan,Kota Bharu,2012,31.0,3139.0,171.0
+Kelantan,Kuala Krai,2012,32.5,2454.8,193.0
+Melaka,Melaka,2012,31.7,1883.2,177.0
+Pahang,Kuantan,2012,31.7,3283.8,205.0
+Pahang,Cameron Highlands,2012,22.5,2861.4,239.0
+Perak,Ipoh,2012,32.8,2778.6,196.0
+Perak,Sitiawan,2012,32.0,1833.8,181.0
+Perlis,Chuping  ,2012,32.7,2065.6,178.0
+Penang,Bayan Lepas,2012,31.5,2294.6,191.0
+Penang,Butterworth,2012,31.7,2250.8,181.0
+Sabah,Kota Kinabalu,2012,32.4,2543.4,195.0
+Sabah,Kudat,2012,31.1,2666.5,212.0
+Sabah,Sandakan,2012,31.6,3792.4,217.0
+Sabah,Tawau,2012,31.4,2421.2,199.0
+Sarawak,Kuching,2012,32.4,3835.8,247.0
+Sarawak,Miri ,2012,31.2,2696.8,203.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2012,31.9,2271.4,186.0
+Selangor,Subang,2012,33.4,3100.5,191.0
+Terengganu,Kuala Terengganu,2012,31.3,3094.4,197.0
+Labuan,Labuan,2012,31.7,3323.4,191.0
+Johor,Senai,2013,32.2,2880.9,210.0
+Johor,Kluang,2013,32.2,1996.4,175.0
+Kedah,Alor Setar,2013,32.5,1815.5,161.0
+Kedah,Pulau Langkawi,2013,31.9,2630.2,170.0
+Kelantan,Kota Bharu,2013,31.0,2234.8,159.0
+Kelantan,Kuala Krai,2013,32.4,3134.0,186.0
+Melaka,Melaka,2013,32.0,1389.8,162.0
+Pahang,Kuantan,2013,31.9,3492.2,177.0
+Pahang,Cameron Highlands,2013,22.5,2770.8,243.0
+Perak,Ipoh,2013,32.8,2687.8,184.0
+Perak,Sitiawan,2013,32.2,1951.6,177.0
+Perlis,Chuping  ,2013,32.7,1714.2,156.0
+Penang,Bayan Lepas,2013,31.9,2328.2,186.0
+Penang,Butterworth,2013,31.5,2735.0,162.0
+Sabah,Kota Kinabalu,2013,32.4,3112.7,200.0
+Sabah,Kudat,2013,31.0,1958.0,194.0
+Sabah,Sandakan,2013,31.8,2854.2,202.0
+Sabah,Tawau,2013,31.5,2306.5,196.0
+Sarawak,Kuching,2013,32.2,4125.2,258.0
+Sarawak,Miri ,2013,31.4,3125.6,198.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2013,32.2,1623.5,160.0
+Selangor,Subang,2013,33.0,2872.0,196.0
+Terengganu,Kuala Terengganu,2013,31.1,2908.0,180.0
+Labuan,Labuan,2013,31.2,3114.2,209.0
+Johor,Senai,2014,32.2,2616.8,183.0
+Johor,Kluang,2014,32.3,2245.8,160.0
+Kedah,Alor Setar,2014,32.9,2102.6,167.0
+Kedah,Pulau Langkawi,2014,32.1,2173.4,182.0
+Kelantan,Kota Bharu,2014,31.2,2998.9,138.0
+Kelantan,Kuala Krai,2014,32.4,3117.8,157.0
+Melaka,Melaka,2014,32.2,1840.0,148.0
+Pahang,Kuantan,2014,32.3,3776.0,149.0
+Pahang,Cameron Highlands,2014,22.5,2894.6,229.0
+Perak,Ipoh,2014,33.0,2501.2,193.0
+Perak,Sitiawan,2014,32.3,1663.0,154.0
+Perlis,Chuping  ,2014,33.3,1880.9,154.0
+Penang,Bayan Lepas,2014,32.0,1876.9,169.0
+Penang,Butterworth,2014,31.8,2265.2,159.0
+Sabah,Kota Kinabalu,2014,32.5,3102.7,167.0
+Sabah,Kudat,2014,31.1,2438.1,171.0
+Sabah,Sandakan,2014,31.5,3221.4,186.0
+Sabah,Tawau,2014,31.8,1677.1,154.0
+Sarawak,Kuching,2014,32.2,3692.9,221.0
+Sarawak,Miri ,2014,31.1,2372.2,171.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2014,32.3,2212.2,156.0
+Selangor,Subang,2014,33.2,2567.8,188.0
+Terengganu,Kuala Terengganu,2014,31.5,2870.6,137.0
+Labuan,Labuan,2014,31.1,3054.8,193.0
+Johor,Senai,2015,32.4,2474.2,178.0
+Johor,Kluang,2015,32.7,1928.8,155.0
+Johor,Batu Pahat,2015,32.4,1865.4,159.0
+Johor,Mersing,2015,32.2,2047.4,141.0
+Kedah,Alor Setar,2015,33.2,2153.4,176.0
+Kedah,Pulau Langkawi,2015,32.2,2464.8,172.0
+Kelantan,Kota Bharu,2015,31.6,2065.3,154.0
+Kelantan,Kuala Krai,2015,33.0,2212.1,160.0
+Kelantan,Gong Kedak,2015,-,-,-
+Melaka,Melaka,2015,32.4,2324.3,150.0
+Pahang,Kuantan,2015,32.4,1947.4,152.0
+Pahang,Cameron Highlands,2015,22.7,2688.6,213.0
+Pahang,"Batu Embun, Jerantut",2015,33.6,1811.6,142.0
+Pahang,Muadzam Shah,2015,32.9,1968.9,148.0
+Pahang,Temerloh,2015,33.8,1193.2,137.0
+Perak,Ipoh,2015,33.1,2950.6,192.0
+Perak,Sitiawan,2015,32.4,1553.3,149.0
+Perak,"Lubok Merbau, Kuala Kangsar",2015,33.4,2357.6,188.0
+Perlis,Chuping  ,2015,33.3,2123.8,157.0
+Penang,Bayan Lepas,2015,31.6,3067.5,193.0
+Penang,Butterworth,2015,31.8,2420.8,181.0
+Sabah,Kota Kinabalu,2015,32.8,2031.4,151.0
+Sabah,Kudat,2015,31.3,1973.6,152.0
+Sabah,Sandakan,2015,32.1,2176.1,146.0
+Sabah,Tawau,2015,32.0,1378.6,134.0
+Sabah,Ranau,2015,-,-,-
+Sarawak,Kuching,2015,32.0,4545.5,223.0
+Sarawak,Miri ,2015,31.6,2634.8,194.0
+Sarawak,Bintulu,2015,31.8,3459.0,214.0
+Sarawak,Sibu,2015,32.3,3704.7,218.0
+Sarawak,Sri Aman,2015,32.7,2793.9,203.0
+Sarawak,Mulu,2015,-,-,-
+Sarawak,Limbang,2015,-,-,-
+Sarawak,Kapit,2015,-,-,-
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2015,32.4,2021.8,164.0
+Selangor,Subang,2015,33.3,3355.3,218.0
+Selangor,Petaling Jaya,2015,33.3,3757.4,218.0
+Terengganu,Kuala Terengganu,2015,31.6,1860.4,141.0
+Terengganu,Kerteh,2015,-,-,-
+Labuan,Labuan,2015,31.5,2840.4,177.0
+Johor,Senai,2016,32.9,1926.6,194.0
+Johor,Kluang,2016,32.7,1633.8,173.0
+Johor,Batu Pahat,2016,32.7,1848.6,179.0
+Johor,Mersing,2016,33.1,1589.0,148.0
+Kedah,Alor Setar,2016,33.3,1904.4,149.0
+Kedah,Pulau Langkawi,2016,32.5,1832.2,150.0
+Kelantan,Kota Bharu,2016,31.9,2652.8,151.0
+Kelantan,Kuala Krai,2016,33.5,2288.4,170.0
+Kelantan,Gong Kedak,2016,-,-,-
+Melaka,Melaka,2016,32.7,2207.2,171.0
+Pahang,Kuantan,2016,32.6,2211.8,186.0
+Pahang,Cameron Highlands,2016,23.1,2266.9,224.0
+Pahang,"Batu Embun, Jerantut",2016,34.2,2028.8,169.0
+Pahang,Muadzam Shah,2016,33.2,1787.3,154.0
+Pahang,Temerloh,2016,34.1,1397.8,151.0
+Perak,Ipoh,2016,33.9,1954.5,180.0
+Perak,Sitiawan,2016,32.9,1569.6,152.0
+Perak,"Lubok Merbau, Kuala Kangsar",2016,33.9,1853.6,173.0
+Perlis,Chuping  ,2016,33.7,1563.3,140.0
+Penang,Bayan Lepas,2016,32.0,2172.0,159.0
+Penang,Butterworth,2016,32.1,2560.0,178.0
+Sabah,Kota Kinabalu,2016,33.2,2087.0,157.0
+Sabah,Kudat,2016,31.6,2107.4,145.0
+Sabah,Sandakan,2016,32.2,2875.1,178.0
+Sabah,Tawau,2016,31.8,1868.1,174.0
+Sabah,Ranau,2016,-,-,-
+Sarawak,Kuching,2016,32.5,5423.0,265.0
+Sarawak,Miri ,2016,31.7,2073.0,169.0
+Sarawak,Bintulu,2016,31.9,3214.6,221.0
+Sarawak,Sibu,2016,32.6,5014.8,240.0
+Sarawak,Sri Aman,2016,32.9,3112.8,240.0
+Sarawak,Mulu,2016,-,-,-
+Sarawak,Limbang,2016,-,-,-
+Sarawak,Kapit,2016,-,-,-
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2016,32.5,1731.6,164.0
+Selangor,Subang,2016,33.7,2635.8,189.0
+Selangor,Petaling Jaya,2016,33.6,3420.4,190.0
+Terengganu,Kuala Terengganu,2016,31.9,2946.4,171.0
+Terengganu,Kerteh,2016,-,-,-
+Labuan,Labuan,2016,31.9,3117.5,174.0
+Johor,Senai,2017,32.1,2926.7,221.0
+Johor,Kluang,2017,31.8,2277.6,198.0
+Johor,Batu Pahat,2017,31.9,2118.2,204.0
+Johor,Mersing,2017,32.1,2190.0,168.0
+Kedah,Alor Setar,2017,32.2,2763.2,188.0
+Kedah,Pulau Langkawi,2017,31.4,2884.8,190.0
+Kelantan,Kota Bharu,2017,30.9,3380.0,173.0
+Kelantan,Kuala Krai,2017,32.5,3457.4,207.0
+Kelantan,Gong Kedak,2017,-,-,-
+Melaka,Melaka,2017,31.7,2336.9,203.0
+Pahang,Kuantan,2017,31.9,2957.4,202.0
+Pahang,Cameron Highlands,2017,22.6,3023.4,278.0
+Pahang,"Batu Embun, Jerantut",2017,32.9,2225.2,157.0
+Pahang,Muadzam Shah,2017,32.5,2847.9,178.0
+Pahang,Temerloh,2017,32.9,2915.0,194.0
+Perak,Ipoh,2017,32.7,3299.9,222.0
+Perak,Sitiawan,2017,31.9,1957.4,176.0
+Perak,"Lubok Merbau, Kuala Kangsar",2017,32.9,1955.4,189.0
+Perlis,Chuping  ,2017,32.5,2313.4,173.0
+Penang,Bayan Lepas,2017,31.9,2725.2,183.0
+Penang,Butterworth,2017,32.1,2540.8,171.0
+Sabah,Kota Kinabalu,2017,32.1,3144.7,205.0
+Sabah,Kudat,2017,30.7,3467.2,204.0
+Sabah,Sandakan,2017,30.7,4177.6,221.0
+Sabah,Tawau,2017,31.5,2187.6,198.0
+Sabah,Ranau,2017,-,-,-
+Sarawak,Kuching,2017,32.3,3823.2,252.0
+Sarawak,Miri ,2017,31.3,3139.6,199.0
+Sarawak,Bintulu,2017,31.7,3810.6,235.0
+Sarawak,Sibu,2017,32.3,4751.0,247.0
+Sarawak,Sri Aman,2017,32.7,3660.6,247.0
+Sarawak,Mulu,2017,-,-,-
+Sarawak,Limbang,2017,-,-,-
+Sarawak,Kapit,2017,-,-,-
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2017,32.0,2269.6,201.0
+Selangor,Subang,2017,32.7,2632.8,206.0
+Selangor,Petaling Jaya,2017,32.8,2536.6,208.0
+Terengganu,Kuala Terengganu,2017,31.4,3074.4,176.0
+Terengganu,Kerteh,2017,-,-,-
+Labuan,Labuan,2017,31.0,4938.9,211.0
+Johor,Senai,2018,32.1,2034.2,192.0
+Johor,Kluang,2018,31.9,2090.5,178.0
+Johor,Batu Pahat,2018,31.9,2253.2,186.0
+Johor,Mersing,2018,31.6,2688.2,176.0
+Kedah,Alor Setar,2018,32.9,2080.8,176.0
+Kedah,Pulau Langkawi,2018,32.0,2323.6,168.0
+Kelantan,Kota Bharu,2018,31.2,2887.0,157.0
+Kelantan,Kuala Krai,2018,33.0,2297.2,171.0
+Kelantan,Gong Kedak,2018,-,-,-
+Melaka,Melaka,2018,31.8,2249.4,186.0
+Pahang,Kuantan,2018,32.1,2743.9,173.0
+Pahang,Cameron Highlands,2018,22.6,2613.5,255.0
+Pahang,"Batu Embun, Jerantut",2018,33.0,2546.3,190.0
+Pahang,Muadzam Shah,2018,32.6,2327.5,152.0
+Pahang,Temerloh,2018,33.4,1801.6,171.0
+Perak,Ipoh,2018,32.7,3132.5,225.0
+Perak,Sitiawan,2018,32.4,1937.5,180.0
+Perak,"Lubok Merbau, Kuala Kangsar",2018,33.1,2176.0,204.0
+Perlis,Chuping  ,2018,33.4,1839.6,171.0
+Penang,Bayan Lepas,2018,32.2,2478.0,189.0
+Penang,Butterworth,2018,31.9,2271.4,190.0
+Sabah,Kota Kinabalu,2018,32.9,2326.8,189.0
+Sabah,Kudat,2018,31.2,2328.3,170.0
+Sabah,Sandakan,2018,31.8,3114.4,203.0
+Sabah,Tawau,2018,31.8,2279.4,189.0
+Sabah,Ranau,2018,-,-,-
+Sarawak,Kuching,2018,32.3,3864.6,249.0
+Sarawak,Miri ,2018,31.4,3382.6,194.0
+Sarawak,Bintulu,2018,31.7,4581.8,235.0
+Sarawak,Sibu,2018,32.4,3648.8,229.0
+Sarawak,Sri Aman,2018,32.7,4114.8,219.0
+Sarawak,Mulu,2018,-,-,-
+Sarawak,Limbang,2018,-,-,-
+Sarawak,Kapit,2018,-,-,-
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2018,32.4,2564.6,199.0
+Selangor,Subang,2018,32.8,3535.4,221.0
+Selangor,Petaling Jaya,2018,33.0,3851.5,223.0
+Terengganu,Kuala Terengganu,2018,31.5,2646.0,171.0
+Terengganu,Kerteh,2018,-,-,-
+Labuan,Labuan,2018,31.1,3033.2,207.0
+Johor,Senai,2019,32.7,2333.0,161.0
+Johor,Kluang,2019,32.3,2130.2,167.0
+Johor,Batu Pahat,2019,32.5,1980.1,144.0
+Johor,Mersing,2019,32.5,2254.8,160.0
+Kedah,Alor Setar,2019,33.3,2181.6,160.0
+Kedah,Pulau Langkawi,2019,32.5,2412.3,155.0
+Kelantan,Kota Bharu,2019,31.9,1803.2,149.0
+Kelantan,Kuala Krai,2019,33.0,2313.6,180.0
+Kelantan,Gong Kedak,2019,32.0,1157.4,164.0
+Melaka,Melaka,2019,32.5,1616.8,129.0
+Pahang,Kuantan,2019,32.5,1970.4,155.0
+Pahang,Cameron Highlands,2019,22.6,2032.7,224.0
+Pahang,"Batu Embun, Jerantut",2019,33.5,1401.0,163.0
+Pahang,Muadzam Shah,2019,33.0,1843.8,156.0
+Pahang,Temerloh,2019,33.9,1440.2,139.0
+Perak,Ipoh,2019,33.4,2806.4,197.0
+Perak,Sitiawan,2019,33.1,1920.0,161.0
+Perak,"Lubok Merbau, Kuala Kangsar",2019,33.6,1525.1,177.0
+Perlis,Chuping  ,2019,33.4,1553.8,151.0
+Penang,Bayan Lepas,2019,32.7,1740.2,153.0
+Penang,Butterworth,2019,32.4,2158.9,158.0
+Sabah,Kota Kinabalu,2019,32.8,2535.2,152.0
+Sabah,Kudat,2019,31.2,1977.5,141.0
+Sabah,Sandakan,2019,31.7,2912.7,163.0
+Sabah,Tawau,2019,32.1,1590.4,148.0
+Sabah,Ranau,2019,30.3,870.6,203.0
+Sabah,Keningau,2019,32.6,612.0,167.0
+Sarawak,Kuching,2019,32.5,3307.5,235.0
+Sarawak,Miri ,2019,31.7,2288.6,160.0
+Sarawak,Bintulu,2019,32.0,3316.6,197.0
+Sarawak,Sibu,2019,32.6,3012.8,213.0
+Sarawak,Sri Aman,2019,33.2,2812.2,195.0
+Sarawak,Mulu,2019,33.5,1556.2,241.0
+Sarawak,Limbang,2019,33.3,1121.0,188.0
+Sarawak,Kapit,2019,33.4,1104.0,220.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2019,32.9,1875.7,154.0
+Selangor,Subang,2019,33.6,3138.6,200.0
+Selangor,Petaling Jaya,2019,33.5,3673.2,214.0
+Terengganu,Kuala Terengganu,2019,31.9,2059.0,148.0
+Terengganu,Kerteh,2019,31.4,1148.0,75.0
+Labuan,Labuan,2019,31.7,3433.6,180.0
+Johor,Senai,2020,32.4,2778.0,208.0
+Johor,Kluang,2020,31.9,2574.8,196.0
+Johor,Batu Pahat,2020,32.4,2089.6,197.0
+Johor,Mersing,2020,31.6,2392.8,177.0
+Kedah,Alor Setar,2020,33.0,2408.4,195.0
+Kedah,Pulau Langkawi,2020,32.5,2731.6,189.0
+Kelantan,Kota Bharu,2020,31.6,2984.8,165.0
+Kelantan,Kuala Krai,2020,32.9,2776.4,190.0
+Kelantan,Gong Kedak,2020,31.5,3808.0,175.0
+Melaka,Melaka,2020,32.3,1712.2,160.0
+Pahang,Kuantan,2020,32.3,2409.2,180.0
+Pahang,Cameron Highlands,2020,22.7,2875.0,257.0
+Pahang,"Batu Embun, Jerantut",2020,33.0,1997.0,188.0
+Pahang,Muadzam Shah,2020,32.4,1995.0,171.0
+Pahang,Temerloh,2020,33.4,2034.4,172.0
+Perak,Ipoh,2020,33.0,3269.4,210.0
+Perak,Sitiawan,2020,32.6,2115.0,186.0
+Perak,"Lubok Merbau, Kuala Kangsar",2020,33.3,2053.1,213.0
+Perlis,Chuping  ,2020,33.2,2195.0,172.0
+Penang,Bayan Lepas,2020,32.2,1831.2,167.0
+Penang,Butterworth,2020,32.1,2160.8,187.0
+Sabah,Kota Kinabalu,2020,32.2,3456.6,208.0
+Sabah,Kudat,2020,31.0,2238.4,165.0
+Sabah,Sandakan,2020,31.4,2380.3,168.0
+Sabah,Tawau,2020,31.8,1947.8,185.0
+Sabah,Ranau,2020,30.1,2521.4,227.0
+Sabah,Keningau,2020,32.0,1691.8,189.0
+Sarawak,Kuching,2020,32.0,4079.6,258.0
+Sarawak,Miri ,2020,31.6,3344.2,209.0
+Sarawak,Bintulu,2020,31.8,4248.0,242.0
+Sarawak,Sibu,2020,32.3,3275.4,258.0
+Sarawak,Sri Aman,2020,32.4,3343.2,242.0
+Sarawak,Mulu,2020,32.9,5320.8,263.0
+Sarawak,Limbang,2020,32.9,3328.0,226.0
+Sarawak,Kapit,2020,32.9,4751.6,292.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2020,32.5,2364.6,179.0
+Selangor,Subang,2020,33.5,3236.0,206.0
+Selangor,Petaling Jaya,2020,33.3,3817.0,212.0
+Terengganu,Kuala Terengganu,2020,31.5,2946.6,171.0
+Terengganu,Kerteh,2020,31.3,3531.0,184.0
+Labuan,Labuan,2020,31.4,4301.3,203.0
+Johor,Senai,2021,32.1,2872.6,202.0
+Johor,Kluang,2021,31.7,2682.1,185.0
+Johor,Batu Pahat,2021,32.1,2668.4,193.0
+Johor,Mersing,2021,31.4,2317.7,172.0
+Kedah,Alor Setar,2021,32.5,2272.0,168.0
+Kedah,Pulau Langkawi,2021,32.0,2.819.6,178.0
+Kelantan,Kota Bharu,2021,31.2,2527.6,168.0
+Kelantan,Kuala Krai,2021,32.4,Def.,Def.
+Kelantan,Gong Kedak,2021,31.3,3065.8,203.0
+Melaka,Melaka,2021,31.7,2506.0,175.0
+Pahang,Kuantan,2021,31.9,Def.,Def.
+Pahang,Cameron Highlands,2021,22.3,3263.6,243.0
+Pahang,"Batu Embun, Jerantut",2021,32.6,2669.4,173.0
+Pahang,Muadzam Shah,2021,32.2,2466.6,175.0
+Pahang,Temerloh,2021,33.2,2167.9,170.0
+Perak,Ipoh,2021,32.8,2965.4,213.0
+Perak,Sitiawan,2021,32.7,2057.0,167.0
+Perak,"Lubok Merbau, Kuala Kangsar",2021,32.8,1988.2,174.0
+Perlis,Chuping  ,2021,32.8,2081.0,168.0
+Penang,Bayan Lepas,2021,32.0,2232.8,168.0
+Penang,Butterworth,2021,31.8,1982.2,177.0
+Sabah,Kota Kinabalu,2021,31.8,3584.8,201.0
+Sabah,Kudat,2021,30.7,2802.8,201.0
+Sabah,Sandakan,2021,31.2,3394.0,212.0
+Sabah,Tawau,2021,31.5,1974.4,192.0
+Sabah,Ranau,2021,30.0,2926.0,242.0
+Sabah,Keningau,2021,31.6,1589.2,192.0
+Sarawak,Kuching,2021,32.0,4436.6,236.0
+Sarawak,Miri ,2021,31.3,2877.6,211.0
+Sarawak,Bintulu,2021,31.9,4021.2,227.0
+Sarawak,Sibu,2021,32.4,3251.4,235.0
+Sarawak,Sri Aman,2021,32.3,3518.0,222.0
+Sarawak,Mulu,2021,32.9,5365.8,264.0
+Sarawak,Limbang,2021,32.5,4118.6,230.0
+Sarawak,Kapit,2021,32.8,4346.2,252.0
+Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2021,32.3,2059.4,165.0
+Selangor,Subang,2021,33.1,3564.8,188.0
+Selangor,Petaling Jaya,2021,33.1,Def.,Def.
+Terengganu,Kuala Terengganu,2021,31.3,2285.2,172.0
+Terengganu,Kerteh,2021,31.0,2751.6,197.0
+Labuan,Labuan,2021,30.9,4127.5,225.0
