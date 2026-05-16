@@ -121,7 +121,6 @@ Terengganu,Kuala Terengganu,2004,31.0,2194.4,157.0
 Labuan,Labuan,2004,31.4,2407.9,176.0
 Johor,Senai,2005,31.7,2450.0,194.0
 Johor,Kluang,2005,32.8,2017.6,164.0
-Kedah,Alor Setar,2005,33.1,-,-
 Kedah,Pulau Langkawi,2005,31.9,2697.6,174.0
 Kelantan,Kota Bharu,2005,31.1,2612.4,171.0
 Kelantan,Kuala Krai,2005,32.5,2717.6,178.0
@@ -241,7 +240,6 @@ Terengganu,Kuala Terengganu,2009,30.9,3593.6,178.0
 Labuan,Labuan,2009,31.2,2927.4,190.0
 Johor,Senai,2010,32.0,2576.2,207.0
 Johor,Kluang,2010,32.0,1852.7,198.0
-Kedah,Alor Setar,2010,33.5,-,-
 Kedah,Pulau Langkawi,2010,32.2,2398.2,180.0
 Kelantan,Kota Bharu,2010,31.2,2854.4,181.0
 Kelantan,Kuala Krai,2010,32.8,2356.6,166.0
@@ -367,7 +365,6 @@ Kedah,Alor Setar,2015,33.2,2153.4,176.0
 Kedah,Pulau Langkawi,2015,32.2,2464.8,172.0
 Kelantan,Kota Bharu,2015,31.6,2065.3,154.0
 Kelantan,Kuala Krai,2015,33.0,2212.1,160.0
-Kelantan,Gong Kedak,2015,-,-,-
 Melaka,Melaka,2015,32.4,2324.3,150.0
 Pahang,Kuantan,2015,32.4,1947.4,152.0
 Pahang,Cameron Highlands,2015,22.7,2688.6,213.0
@@ -384,20 +381,15 @@ Sabah,Kota Kinabalu,2015,32.8,2031.4,151.0
 Sabah,Kudat,2015,31.3,1973.6,152.0
 Sabah,Sandakan,2015,32.1,2176.1,146.0
 Sabah,Tawau,2015,32.0,1378.6,134.0
-Sabah,Ranau,2015,-,-,-
 Sarawak,Kuching,2015,32.0,4545.5,223.0
 Sarawak,Miri ,2015,31.6,2634.8,194.0
 Sarawak,Bintulu,2015,31.8,3459.0,214.0
 Sarawak,Sibu,2015,32.3,3704.7,218.0
 Sarawak,Sri Aman,2015,32.7,2793.9,203.0
-Sarawak,Mulu,2015,-,-,-
-Sarawak,Limbang,2015,-,-,-
-Sarawak,Kapit,2015,-,-,-
 Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2015,32.4,2021.8,164.0
 Selangor,Subang,2015,33.3,3355.3,218.0
 Selangor,Petaling Jaya,2015,33.3,3757.4,218.0
 Terengganu,Kuala Terengganu,2015,31.6,1860.4,141.0
-Terengganu,Kerteh,2015,-,-,-
 Labuan,Labuan,2015,31.5,2840.4,177.0
 Johor,Senai,2016,32.9,1926.6,194.0
 Johor,Kluang,2016,32.7,1633.8,173.0
@@ -407,7 +399,6 @@ Kedah,Alor Setar,2016,33.3,1904.4,149.0
 Kedah,Pulau Langkawi,2016,32.5,1832.2,150.0
 Kelantan,Kota Bharu,2016,31.9,2652.8,151.0
 Kelantan,Kuala Krai,2016,33.5,2288.4,170.0
-Kelantan,Gong Kedak,2016,-,-,-
 Melaka,Melaka,2016,32.7,2207.2,171.0
 Pahang,Kuantan,2016,32.6,2211.8,186.0
 Pahang,Cameron Highlands,2016,23.1,2266.9,224.0
@@ -424,20 +415,15 @@ Sabah,Kota Kinabalu,2016,33.2,2087.0,157.0
 Sabah,Kudat,2016,31.6,2107.4,145.0
 Sabah,Sandakan,2016,32.2,2875.1,178.0
 Sabah,Tawau,2016,31.8,1868.1,174.0
-Sabah,Ranau,2016,-,-,-
 Sarawak,Kuching,2016,32.5,5423.0,265.0
 Sarawak,Miri ,2016,31.7,2073.0,169.0
 Sarawak,Bintulu,2016,31.9,3214.6,221.0
 Sarawak,Sibu,2016,32.6,5014.8,240.0
 Sarawak,Sri Aman,2016,32.9,3112.8,240.0
-Sarawak,Mulu,2016,-,-,-
-Sarawak,Limbang,2016,-,-,-
-Sarawak,Kapit,2016,-,-,-
 Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2016,32.5,1731.6,164.0
 Selangor,Subang,2016,33.7,2635.8,189.0
 Selangor,Petaling Jaya,2016,33.6,3420.4,190.0
 Terengganu,Kuala Terengganu,2016,31.9,2946.4,171.0
-Terengganu,Kerteh,2016,-,-,-
 Labuan,Labuan,2016,31.9,3117.5,174.0
 Johor,Senai,2017,32.1,2926.7,221.0
 Johor,Kluang,2017,31.8,2277.6,198.0
@@ -447,7 +433,6 @@ Kedah,Alor Setar,2017,32.2,2763.2,188.0
 Kedah,Pulau Langkawi,2017,31.4,2884.8,190.0
 Kelantan,Kota Bharu,2017,30.9,3380.0,173.0
 Kelantan,Kuala Krai,2017,32.5,3457.4,207.0
-Kelantan,Gong Kedak,2017,-,-,-
 Melaka,Melaka,2017,31.7,2336.9,203.0
 Pahang,Kuantan,2017,31.9,2957.4,202.0
 Pahang,Cameron Highlands,2017,22.6,3023.4,278.0
@@ -464,20 +449,15 @@ Sabah,Kota Kinabalu,2017,32.1,3144.7,205.0
 Sabah,Kudat,2017,30.7,3467.2,204.0
 Sabah,Sandakan,2017,30.7,4177.6,221.0
 Sabah,Tawau,2017,31.5,2187.6,198.0
-Sabah,Ranau,2017,-,-,-
 Sarawak,Kuching,2017,32.3,3823.2,252.0
 Sarawak,Miri ,2017,31.3,3139.6,199.0
 Sarawak,Bintulu,2017,31.7,3810.6,235.0
 Sarawak,Sibu,2017,32.3,4751.0,247.0
 Sarawak,Sri Aman,2017,32.7,3660.6,247.0
-Sarawak,Mulu,2017,-,-,-
-Sarawak,Limbang,2017,-,-,-
-Sarawak,Kapit,2017,-,-,-
 Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2017,32.0,2269.6,201.0
 Selangor,Subang,2017,32.7,2632.8,206.0
 Selangor,Petaling Jaya,2017,32.8,2536.6,208.0
 Terengganu,Kuala Terengganu,2017,31.4,3074.4,176.0
-Terengganu,Kerteh,2017,-,-,-
 Labuan,Labuan,2017,31.0,4938.9,211.0
 Johor,Senai,2018,32.1,2034.2,192.0
 Johor,Kluang,2018,31.9,2090.5,178.0
@@ -487,7 +467,6 @@ Kedah,Alor Setar,2018,32.9,2080.8,176.0
 Kedah,Pulau Langkawi,2018,32.0,2323.6,168.0
 Kelantan,Kota Bharu,2018,31.2,2887.0,157.0
 Kelantan,Kuala Krai,2018,33.0,2297.2,171.0
-Kelantan,Gong Kedak,2018,-,-,-
 Melaka,Melaka,2018,31.8,2249.4,186.0
 Pahang,Kuantan,2018,32.1,2743.9,173.0
 Pahang,Cameron Highlands,2018,22.6,2613.5,255.0
@@ -504,20 +483,15 @@ Sabah,Kota Kinabalu,2018,32.9,2326.8,189.0
 Sabah,Kudat,2018,31.2,2328.3,170.0
 Sabah,Sandakan,2018,31.8,3114.4,203.0
 Sabah,Tawau,2018,31.8,2279.4,189.0
-Sabah,Ranau,2018,-,-,-
 Sarawak,Kuching,2018,32.3,3864.6,249.0
 Sarawak,Miri ,2018,31.4,3382.6,194.0
 Sarawak,Bintulu,2018,31.7,4581.8,235.0
 Sarawak,Sibu,2018,32.4,3648.8,229.0
 Sarawak,Sri Aman,2018,32.7,4114.8,219.0
-Sarawak,Mulu,2018,-,-,-
-Sarawak,Limbang,2018,-,-,-
-Sarawak,Kapit,2018,-,-,-
 Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2018,32.4,2564.6,199.0
 Selangor,Subang,2018,32.8,3535.4,221.0
 Selangor,Petaling Jaya,2018,33.0,3851.5,223.0
 Terengganu,Kuala Terengganu,2018,31.5,2646.0,171.0
-Terengganu,Kerteh,2018,-,-,-
 Labuan,Labuan,2018,31.1,3033.2,207.0
 Johor,Senai,2019,32.7,2333.0,161.0
 Johor,Kluang,2019,32.3,2130.2,167.0
@@ -606,12 +580,10 @@ Johor,Kluang,2021,31.7,2682.1,185.0
 Johor,Batu Pahat,2021,32.1,2668.4,193.0
 Johor,Mersing,2021,31.4,2317.7,172.0
 Kedah,Alor Setar,2021,32.5,2272.0,168.0
-Kedah,Pulau Langkawi,2021,32.0,2.819.6,178.0
+Kedah,Pulau Langkawi,2021,32.0,2819.6,178.0
 Kelantan,Kota Bharu,2021,31.2,2527.6,168.0
-Kelantan,Kuala Krai,2021,32.4,Def.,Def.
 Kelantan,Gong Kedak,2021,31.3,3065.8,203.0
 Melaka,Melaka,2021,31.7,2506.0,175.0
-Pahang,Kuantan,2021,31.9,Def.,Def.
 Pahang,Cameron Highlands,2021,22.3,3263.6,243.0
 Pahang,"Batu Embun, Jerantut",2021,32.6,2669.4,173.0
 Pahang,Muadzam Shah,2021,32.2,2466.6,175.0
@@ -638,7 +610,6 @@ Sarawak,Limbang,2021,32.5,4118.6,230.0
 Sarawak,Kapit,2021,32.8,4346.2,252.0
 Selangor,"Kuala Lumpur International Airport (KLIA), Sepang",2021,32.3,2059.4,165.0
 Selangor,Subang,2021,33.1,3564.8,188.0
-Selangor,Petaling Jaya,2021,33.1,Def.,Def.
 Terengganu,Kuala Terengganu,2021,31.3,2285.2,172.0
 Terengganu,Kerteh,2021,31.0,2751.6,197.0
 Labuan,Labuan,2021,30.9,4127.5,225.0

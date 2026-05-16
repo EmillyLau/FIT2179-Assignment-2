@@ -17,19 +17,19 @@
 
     <div id="choropleth_map"></div>
     <div id="symbol_map"></div>
-    <div id="gantt_chart"></div>
+    <div id="dual_line_chart"></div>
   </div>
 
   <script type="text/javascript">
     var vis1 = "json/choropleth.json";
     var vis2 = "json/symbol.json";
-    var vis3 = "json/gantt.json";
+    var vis3 = "json/dual_line.json";
 
     vegaEmbed("#choropleth_map", vis1).then(function(result) {
     }).catch(console.error);
     vegaEmbed("#symbol_map", vis2).then(function(result) {
     }).catch(console.error);
-    vegaEmbed("#gantt_chart", vis3).then(function(result) {
+    vegaEmbed("#dual_line_chart", vis3).then(function(result) {
     }).catch(console.error);
 
   </script>

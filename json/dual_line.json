@@ -1,0 +1,275 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Rainfall Variability and Rising Heat in Malaysia (2000–2021)",
+    "subtitle": "Annual averages across all weather stations nationally. Hover to inspect details.",
+    "subtitleFontSize": 11,
+    "anchor": "middle"
+  },
+  "data": {"url": "../data/rainfall.csv"},
+  "transform": [
+    {
+      "aggregate": [
+        {"op": "mean", "field": "rainfall_mm", "as": "avg_rainfall"},
+        {"op": "mean", "field": "max_temperature_celcius", "as": "avg_temp"},
+        {"op": "mean", "field": "rainy_days", "as": "avg_rainy_days"}
+      ],
+      "groupby": ["year"]
+    },
+    {"calculate": "toNumber(datum.year)", "as": "year_num"},
+    {"calculate": "toNumber(datum.avg_rainfall)", "as": "avg_rainfall_num"},
+    {"calculate": "toNumber(datum.avg_temp)", "as": "avg_temp_num"}
+  ],
+  "resolve": {"scale": {"x": "shared"}},
+  "vconcat": [
+    {
+      "width": 800,
+      "height": 200,
+      "title": "Average Annual Rainfall",
+      "layer": [
+        {
+          "mark": {
+          "type": "line",
+          "color": "#2b6cb0",
+          "strokeWidth": 2.5,
+          "point": {
+            "filled": true,
+            "color": "#2b6cb0",
+            "size": 50
+          }
+        },
+          "encoding": {
+            "x": {
+              "field": "year_num",
+              "type": "quantitative",
+              "axis": {
+                "format": "d",
+                "tickMinStep": 1,
+                "title": null,
+                "labels": false,
+                "ticks": false
+              }
+            },
+            "y": {
+              "field": "avg_rainfall_num",
+              "type": "quantitative",
+              "title": "Average Rainfall (mm)",
+              "scale": {"zero": false},
+              "axis": {"titleColor": "#4a90d9", "labelColor": "#4a90d9"}
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "line",
+            "color": "#1a5fa8",
+            "strokeDash": [6, 3],
+            "strokeWidth": 1.2
+          },
+          "transform": [{"regression": "avg_rainfall_num", "on": "year_num"}],
+          "encoding": {
+            "x": {"field": "year_num", "type": "quantitative"},
+            "y": {"field": "avg_rainfall_num", "type": "quantitative"}
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "color": "#888",
+            "strokeDash": [4, 4],
+            "strokeWidth": 1
+          },
+          "transform": [
+            {"filter": "datum.year_num == 2014 || datum.year_num == 2021"}
+          ],
+          "encoding": {"x": {"field": "year_num", "type": "quantitative"}}
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "dx": -5,
+            "y": 10,
+            "fontSize": 10,
+            "color": "#555",
+            "fontWeight": "bold"
+          },
+          "transform": [
+            {"filter": "datum.year_num == 2014 || datum.year_num == 2021"}
+          ],
+          "encoding": {
+            "x": {"field": "year_num", "type": "quantitative"},
+            "text": {
+              "condition": {
+                "test": "datum.year_num == 2014",
+                "value": "2014 floods"
+              },
+              "value": "2021 floods"
+            }
+          }
+        },
+        {
+          "mark": {"type": "rule", "color": "#f59e0b", "strokeWidth": 0.8},
+          "params": [
+            {
+              "name": "hover_sync",
+              "select": {
+                "type": "point",
+                "fields": ["year_num"],
+                "nearest": true,
+                "on": "mouseover",
+                "clear": "mouseout"
+              }
+            }
+          ],
+          "encoding": {
+            "x": {"field": "year_num", "type": "quantitative"},
+            "opacity": {
+              "condition": {"param": "hover_sync", "empty": false, "value": 0.8},
+              "value": 0
+            },
+            "tooltip": [
+              {
+                "field": "year_num",
+                "type": "quantitative",
+                "title": "Year",
+                "format": "d"
+              },
+              {
+                "field": "avg_rainfall_num",
+                "type": "quantitative",
+                "title": "Avg Rainfall (mm)",
+                "format": ".1f"
+              },
+              {
+                "field": "avg_rainy_days",
+                "type": "quantitative",
+                "title": "Avg Rainy Days",
+                "format": ".1f"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "width": 800,
+      "height": 200,
+      "title": "Average Maximum Temperature",
+      "layer": [
+        {
+          "mark": {
+            "type": "line",
+            "color": "#d95f02",
+            "strokeWidth": 2.5,
+            "point": {"filled": true, "size": 50, "color": "#d95f02"}
+          },
+          "encoding": {
+            "x": {
+              "field": "year_num",
+              "type": "quantitative",
+              "title": "Year",
+              "axis": {"format": "d", "tickMinStep": 1}
+            },
+            "y": {
+              "field": "avg_temp_num",
+              "type": "quantitative",
+              "title": "Avg Max Temperature (°C)",
+              "scale": {"zero": false},
+              "axis": {"titleColor": "#d95f02", "labelColor": "#d95f02"}
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "line",
+            "color": "#a83000",
+            "strokeDash": [6, 3],
+            "strokeWidth": 1.2
+          },
+          "transform": [{"regression": "avg_temp_num", "on": "year_num"}],
+          "encoding": {
+            "x": {"field": "year_num", "type": "quantitative"},
+            "y": {"field": "avg_temp_num", "type": "quantitative"}
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "color": "#888",
+            "strokeDash": [4, 4],
+            "strokeWidth": 1
+          },
+          "transform": [
+            {"filter": "datum.year_num == 2014 || datum.year_num == 2021"}
+          ],
+          "encoding": {"x": {"field": "year_num", "type": "quantitative"}}
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "dx": -5,
+            "y": 10,
+            "fontSize": 10,
+            "color": "#555",
+            "fontWeight": "bold"
+          },
+          "transform": [
+            {"filter": "datum.year_num == 2014 || datum.year_num == 2021"}
+          ],
+          "encoding": {
+            "x": {"field": "year_num", "type": "quantitative"},
+            "text": {
+              "condition": {
+                "test": "datum.year_num == 2014",
+                "value": "2014 floods"
+              },
+              "value": "2021 floods"
+            }
+          }
+        },
+        {
+          "mark": {"type": "rule", "color": "#f59e0b", "strokeWidth": 0.8},
+          "params": [
+            {
+              "name": "hover_sync",
+              "select": {
+                "type": "point",
+                "fields": ["year_num"],
+                "nearest": true,
+                "on": "mouseover",
+                "clear": "mouseout"
+              }
+            }
+          ],
+          "encoding": {
+            "x": {"field": "year_num", "type": "quantitative"},
+            "opacity": {
+              "condition": {"param": "hover_sync", "empty": false, "value": 0.8},
+              "value": 0
+            },
+            "tooltip": [
+              {
+                "field": "year_num",
+                "type": "quantitative",
+                "title": "Year",
+                "format": "d"
+              },
+              {
+                "field": "avg_temp_num",
+                "type": "quantitative",
+                "title": "Avg Max Temp (°C)",
+                "format": ".2f"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "vconcat": {"spacing": 15}
+  }
+}
