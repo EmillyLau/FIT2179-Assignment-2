@@ -16,12 +16,16 @@
     <p>This map shows the total estimated flood losses across Malaysian states in 2024 and 2025.</p>
 
     <div id="choropleth_map"></div>
+    <div id="symbol_map"></div>
   </div>
 
   <script type="text/javascript">
     var vis1 = "json/choropleth.json";
+    var vis2 = "json/symbol.json";
 
     vegaEmbed("#choropleth_map", vis1).then(function(result) {
+    }).catch(console.error);
+    vegaEmbed("#symbol_map", vis2).then(function(result) {
     }).catch(console.error);
   </script>
 </body>

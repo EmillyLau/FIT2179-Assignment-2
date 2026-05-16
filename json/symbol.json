@@ -1,0 +1,172 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 450,
+  "title": {
+    "text": "Number of Flood Events and Affected Population by State and Year",
+    "subtitle": "Drag the slider to explore state-level flood events by year",
+    "subtitleFontSize": 11
+  },
+  "projection": {
+  "type": "mercator"
+  },
+  "params": [
+    {
+      "name": "YearFilter",
+      "value": 2025,
+      "bind": {
+        "input": "range",
+        "min": 2011,
+        "max": 2025,
+        "step": 1,
+        "name": "Select year: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "../data/malaysia_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eeeeee",
+        "stroke": "white"
+      }
+    },
+    {
+      "data": {
+        "url": "../data/flood_emdat_state.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.start_year == YearFilter"
+        },
+        {
+            "lookup": "disaster_no",
+            "from": {
+            "data": {
+                "url": "../data/flood_emdat.csv"
+            },
+            "key": "disaster_no",
+            "fields": [
+                "total_deaths",
+                "flood_duration"
+            ]
+        }
+        },
+        {
+            "calculate": "toNumber(datum.flood_duration)",
+            "as": "duration_num"
+        },
+        {
+            "calculate": "toNumber(datum.total_deaths)",
+            "as": "deaths_num"
+        },
+        {
+            "aggregate": [
+              {
+                "op": "sum",
+                "field": "affected_by_state",
+                "as": "total_affected"
+              },
+              {
+                "op": "distinct",
+                "field": "disaster_no",
+                "as": "flood_events_count"
+              },
+              {
+                "op": "mean",
+                "field": "duration_num",
+                "as": "average_flood_duration"
+                },
+              {
+                "op": "mean",
+                "field": "deaths_num",
+                "as": "average_deaths_per_event"
+              }
+            ],
+            "groupby": ["state", "start_year", "latitude", "longitude"]
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "opacity": 0.7,
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "total_affected",
+          "type": "quantitative",
+          "title": "Total Affected Population",
+          "scale": {"domain": [100, 50000], "range": [80, 2000]}
+          
+        },
+        "color": {
+        "field": "flood_events_count",
+        "type": "quantitative",
+        "title": "Number of Flood Events",
+        "scale": {
+            "type": "threshold",
+            "domain": [2, 3, 4, 5],
+           "range": [
+  "#bcdff5",
+  "#8ecae6",
+  "#4ea3d8",
+  "#2171b5",
+  "#084594"
+]
+        },
+        "legend": {
+            "values": [1, 2, 3, 4, 5],
+            "format": "d"
+        }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "total_affected",
+            "type": "quantitative",
+            "title": "Total Affected Population",
+            "format": ",.0f"
+          },
+          {
+            "field": "flood_events_count",
+            "type": "quantitative",
+            "title": "Number of flood events",
+            "format": "d"
+          },
+          {
+            "field": "average_deaths_per_event",
+            "type": "quantitative",
+            "title": "Average deaths per event",
+            "format": ".1f"
+          },
+          {
+            "field": "average_flood_duration",
+            "type": "quantitative",
+            "title": "Average flood duration (days)",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ]
+}
