@@ -1,19 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 450,
-  "title": {
-    "text": "Number of Flood Events and Affected Population by State and Year",
-    "subtitle": "Drag the slider to explore state-level flood events by year",
-    "subtitleFontSize": 11
-  },
-  "projection": {
-  "type": "mercator"
-  },
   "params": [
     {
       "name": "YearFilter",
-      "value": 2025,
+      "value": 2021,
       "bind": {
         "input": "range",
         "min": 2011,
@@ -23,6 +13,18 @@
       }
     }
   ],
+  "vconcat":[
+    {"width": 800,
+  "height": 450,
+  "title": {
+    "text": "Number of Flood Events and Affected Population by State and Year",
+    "subtitle": "Bubble size shows affected population; colour shows number of flood events",
+    "subtitleFontSize": 11
+  },
+  "projection": {
+  "type": "mercator"
+  },
+  
   "layer": [
     {
       "data": {
@@ -123,12 +125,12 @@
             "type": "threshold",
             "domain": [2, 3, 4, 5],
            "range": [
-  "#bcdff5",
-  "#8ecae6",
-  "#4ea3d8",
-  "#2171b5",
-  "#084594"
-]
+            "#bcdff5",
+            "#8ecae6",
+            "#4ea3d8",
+            "#2171b5",
+            "#084594"
+            ]
         },
         "legend": {
             "values": [1, 2, 3, 4, 5],
@@ -169,4 +171,102 @@
       }
     }
   ]
+},
+    {
+      "width": 800,
+      "height": {"step": 35},
+      "title": {
+        "text": "Flood Event Duration in Selected Year",
+        "subtitle": "Bars update based on the same year selected above"
+        },
+      "data": {
+        "url": "../data/flood_emdat.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.start_year == YearFilter"
+        },
+        {
+          "calculate": "toNumber(datum.flood_duration)",
+          "as": "duration_days"
+        },
+        {
+            "calculate":
+            "timeFormat(datetime(datum.start_year, datum.start_month - 1, 1), '%b %Y') + ' Flood'",
+            "as": "flood_label"
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 4
+      },
+      "encoding": {
+        "x": {
+          "field": "duration_days",
+          "type": "quantitative",
+          "title": "Flood Duration (days)"
+        },
+        "y": {
+        "field": "flood_label",
+        "type": "nominal",
+        "title": "Flood Event",
+        "sort": "-x",
+        "axis": {
+            "labelFontSize": 9,
+            "labelLimit": 120
+        }
+        },
+        "color": {
+          "field": "disaster_subtype",
+          "type": "nominal",
+          "title": "Flood Type",
+          "scale": {
+            "domain": ["Flood (General)", "Flash flood", "Riverine flood"],
+            "range": ["#ec4899", "#7c3aed", "#e0a800"]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "disaster_no",
+            "type": "nominal",
+            "title": "Event ID"
+          },
+          {
+            "field": "disaster_subtype",
+            "type": "nominal",
+            "title": "Flood Type"
+          },
+          {
+            "field": "location",
+            "type": "nominal",
+            "title": "Location"
+          },
+          {
+            "field": "duration_days",
+            "type": "quantitative",
+            "title": "Duration (days)",
+            "format": "d"
+          },
+          {
+            "field": "total_affected",
+            "type": "quantitative",
+            "title": "Total Affected",
+            "format": ","
+          },
+          {
+            "field": "total_deaths",
+            "type": "quantitative",
+            "title": "Deaths",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
 }
