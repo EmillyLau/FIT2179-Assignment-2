@@ -5,7 +5,7 @@
 3 Intro 📅 Gantt/strip — flood event durations EM-DAT
 4 Climate 📈 Line/area — rainfall trend + flood year annotations Rainfall CSV
 5 Climate 🔥 Heatmap — Month × State flood frequency EM-DAT
-6 Climate 🗂️ Small multiples — monthly rainfall per state Rainfall CSV
+6 Climate diverging bar chart — rainfall anomalies Rainfall
 7 Impact 🍭 Lollipop — ranked flood losses by state DOSM
 8 Impact 🔵 Scatter — rainfall vs flood losses ⭐ combined source DOSM + Rainfall
 9 Impact 🫧 Bubble — deaths vs affected vs damage EM-DAT

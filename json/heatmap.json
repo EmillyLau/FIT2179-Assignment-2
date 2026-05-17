@@ -21,72 +21,264 @@
       "as": "month_name"
     }
   ],
-  "params": [
+  "resolve": {
+    "scale": {
+      "x": "shared",
+      "y": "shared"
+    }
+  },
+  "layer": [
     {
-      "name": "highlight",
-      "select": {"type": "point", "fields": ["flood_count"]},
-      "bind": "legend"
+      "mark": {"type": "rect", "stroke": "white", "strokeWidth": 0.8},
+      "encoding": {
+        "x": {
+          "field": "month_name",
+          "type": "ordinal",
+          "title": "Month",
+          "scale": {
+            "domain": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+          },
+          "axis": {"labelAngle": 0, "grid": false}
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "title": "State",
+          "scale": {
+            "domain": [
+              "Kelantan",
+              "Terengganu",
+              "Pahang",
+              "Johor",
+              "Negeri Sembilan",
+              "Melaka",
+              "Selangor",
+              "Kuala Lumpur",
+              "Perak",
+              "Penang",
+              "Kedah",
+              "Perlis",
+              "Sabah",
+              "Sarawak"
+            ]
+          },
+          "axis": {"grid": false}
+        },
+        "color": {
+          "field": "flood_count",
+          "type": "ordinal",
+          "title": "No. of Flood Events",
+          "scale": {"scheme": "blues"},
+          "legend": {"format": "d", "direction": "vertical"}
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "month_name", "type": "nominal", "title": "Month"},
+          {"field": "flood_count", "type": "quantitative", "title": "Flood Events"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_start": "Sep",
+            "month_end": "Nov",
+            "state": "Terengganu"
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#08306b",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {
+          "field": "month_start",
+          "type": "ordinal",
+          "scale": {
+            "domain": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+          }
+        },
+        "x2": {"field": "month_end"},
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Kelantan",
+              "Terengganu",
+              "Pahang",
+              "Johor",
+              "Negeri Sembilan",
+              "Melaka",
+              "Selangor",
+              "Kuala Lumpur",
+              "Perak",
+              "Penang",
+              "Kedah",
+              "Perlis",
+              "Sabah",
+              "Sarawak"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_start": "Sep",
+            "month_end": "Oct",
+            "state": "Selangor"
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#7c2d12",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {
+          "field": "month_start",
+          "type": "ordinal",
+          "scale": {
+            "domain": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+          }
+        },
+        "x2": {"field": "month_end"},
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Kelantan",
+              "Terengganu",
+              "Pahang",
+              "Johor",
+              "Negeri Sembilan",
+              "Melaka",
+              "Selangor",
+              "Kuala Lumpur",
+              "Perak",
+              "Penang",
+              "Kedah",
+              "Perlis",
+              "Sabah",
+              "Sarawak"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "May",
+            "state": "Terengganu",
+            "label": "Northeast Monsoon\nPeak Danger Zone"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "#08306b",
+        "background": "#eff6ff"
+      },
+      "encoding": {
+        "x": {
+          "field": "month_name",
+          "type": "ordinal",
+          "scale": {
+            "domain": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+          }
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Kelantan",
+              "Terengganu",
+              "Pahang",
+              "Johor",
+              "Negeri Sembilan",
+              "Melaka",
+              "Selangor",
+              "Kuala Lumpur",
+              "Perak",
+              "Penang",
+              "Kedah",
+              "Perlis",
+              "Sabah",
+              "Sarawak"
+            ]
+          }
+        },
+        "text": {"field": "label"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month_name": "May",
+            "state": "Selangor",
+            "label": "Inter-Monsoon\nConvective Storms"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "#7c2d12",
+        "background": "#fff7ed"
+      },
+      "encoding": {
+        "x": {
+          "field": "month_name",
+          "type": "ordinal",
+          "scale": {
+            "domain": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+          }
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Kelantan",
+              "Terengganu",
+              "Pahang",
+              "Johor",
+              "Negeri Sembilan",
+              "Melaka",
+              "Selangor",
+              "Kuala Lumpur",
+              "Perak",
+              "Penang",
+              "Kedah",
+              "Perlis",
+              "Sabah",
+              "Sarawak"
+            ]
+          }
+        },
+        "text": {"field": "label"}
+      }
     }
   ],
-  "mark": {"type": "rect", "stroke": "white", "strokeWidth": 0.8},
-  "encoding": {
-    "x": {
-      "field": "month_name",
-      "type": "ordinal",
-      "title": "Month",
-      "sort": [
-        "Jan","Feb","Mar","Apr","May","Jun",
-        "Jul","Aug","Sep","Oct","Nov","Dec"
-      ],
-      "axis": {
-        "labelAngle": 0,
-        "grid": false
-      }
-    },
-    "y": {
-      "field": "state",
-      "type": "nominal",
-      "title": "State",
-      "sort": [
-        "Kelantan",
-        "Terengganu",
-        "Pahang",
-        "Johor",
-        "Negeri Sembilan",
-        "Melaka",
-        "Selangor",
-        "Kuala Lumpur",
-        "Perak",
-        "Penang",
-        "Kedah",
-        "Perlis",
-        "Sabah",
-        "Sarawak"
-      ],
-      "axis": {"grid": false}
-    },
-    "color": {
-      "field": "flood_count",
-      "type": "ordinal",
-      "title": "No. of Flood Events",
-      "scale": {
-        "scheme": "blues"
-      },
-      "legend": {
-        "format": "d",
-        "direction": "vertical"
-      }
-    },
-    "opacity": {
-      "condition": {"param": "highlight", "value": 1},
-      "value": 0.2
-    },
-    "tooltip": [
-      {"field": "state", "type": "nominal", "title": "State"},
-      {"field": "month_name", "type": "nominal", "title": "Month"},
-      {"field": "flood_count", "type": "quantitative", "title": "Flood Events"}
-    ]
-  },
   "config": {
     "view": {"stroke": null}
   }
