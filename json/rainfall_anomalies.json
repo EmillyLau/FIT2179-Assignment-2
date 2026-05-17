@@ -1,0 +1,220 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 420,
+  "title": {
+    "text": "Rainfall Anomaly in Malaysia (2000–2021)",
+    "subtitle": "Bars show how far each year’s rainfall deviated from the long-term average"
+  },
+  "data": {
+    "url": "../data/rainfall.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [
+        {"op": "mean", "field": "rainfall_mm", "as": "avg_rainfall"}
+      ],
+      "groupby": ["year"]
+    },
+    {
+      "joinaggregate": [
+        {"op": "mean", "field": "avg_rainfall", "as": "long_term_avg_rainfall"}
+      ]
+    },
+    {"calculate": "toNumber(datum.year)", "as": "year_num"},
+    {
+      "calculate": "datum.avg_rainfall - datum.long_term_avg_rainfall",
+      "as": "rainfall_anomaly"
+    },
+    {
+      "calculate": "datum.rainfall_anomaly >= 300 ? 'Extreme wet anomaly' : datum.rainfall_anomaly >= 100 ? 'Moderately wet' : datum.rainfall_anomaly <= -300 ? 'Extreme dry anomaly' : datum.rainfall_anomaly <= -100 ? 'Moderately dry' : 'Near normal'",
+      "as": "anomaly_group"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "year_num",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {"labelAngle": -45}
+        },
+        "y": {
+          "field": "rainfall_anomaly",
+          "type": "quantitative",
+          "title": "Rainfall Anomaly (mm)",
+          "axis": {"grid": true}
+        },
+        "color": {
+          "field": "anomaly_group",
+          "type": "nominal",
+          "title": "Rainfall condition",
+          "scale": {
+            "domain": [
+              "Extreme wet anomaly",
+              "Moderately wet",
+              "Near normal",
+              "Moderately dry",
+              "Extreme dry anomaly"
+            ],
+            "range": [
+              "#1d4ed8",
+              "#93c5fd",
+              "#e5e7eb",
+              "#fdba74",
+              "#b45309"
+            ]
+          }
+        },
+        "tooltip": [
+          {"field": "year_num", "type": "ordinal", "title": "Year"},
+          {"field": "avg_rainfall", "type": "quantitative", "title": "Average rainfall (mm)", "format": ".1f"},
+          {"field": "long_term_avg_rainfall", "type": "quantitative", "title": "Long-term average (mm)", "format": ".1f"},
+          {"field": "rainfall_anomaly", "type": "quantitative", "title": "Rainfall anomaly (mm)", "format": "+.1f"},
+          {"field": "anomaly_group", "type": "nominal", "title": "Condition"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#555",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "y": {"datum": 0}
+      }
+    },
+
+    {
+      "transform": [{"filter": "datum.year_num == 2002"}],
+      "mark": {
+        "type": "rule",
+        "color": "#7c2d12",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {"field": "year_num", "type": "ordinal"},
+        "y": {"field": "rainfall_anomaly", "type": "quantitative"},
+        "y2": {"datum": -520}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.year_num == 2002"}],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "top",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "#7c2d12",
+        "background": "#fff7ed"
+      },
+      "encoding": {
+        "x": {"field": "year_num", "type": "ordinal"},
+        "y": {"datum": -540},
+        "text": {"value": "2002 El Niño drought"}
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {"year": 2008, "y1": 330, "y2": 430},
+          {"year": 2011, "y1": 330, "y2": 430}
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#1d4ed8",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "y1", "type": "quantitative"},
+        "y2": {"field": "y2"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": 2010,
+            "y": 455,
+            "text": "2008 & 2011 Back-to-Back La Niña Cycles"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "#1d4ed8",
+        "background": "#eff6ff"
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"field": "text", "type": "nominal"}
+      }
+    },
+
+   {
+    "data": {
+      "values": [
+        {
+          "year_start": 2018,
+          "year_end": 2019,
+          "y": -550
+        }
+      ]
+    },
+    "mark": {
+      "type": "rule",
+      "color": "#7c2d12",
+      "strokeWidth": 1.2
+    },
+    "encoding": {
+      "x": {"field": "year_start", "type": "ordinal"},
+      "x2": {"field": "year_end"},
+      "y": {"field": "y", "type": "quantitative"}
+    }
+  },
+  {
+    "data": {
+      "values": [
+        {
+          "year": 2018,
+          "y": -550,
+          "text": "2019 Record Positive Indian Ocean Dipole (IOD)"
+        }
+      ]
+    },
+    "mark": {
+      "type": "text",
+      "align": "right",
+      "baseline": "middle",
+      "dx": -8,
+      "fontSize": 10,
+      "fontWeight": "bold",
+      "color": "#7c2d12",
+      "background": "#fff7ed"
+    },
+    "encoding": {
+      "x": {"field": "year", "type": "ordinal"},
+      "y": {"field": "y", "type": "quantitative"},
+      "text": {"field": "text", "type": "nominal"}
+    }
+  }
+  ],
+  "config": {
+    "view": {"stroke": null}
+  }
+}
