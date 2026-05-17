@@ -18,12 +18,14 @@
     <div id="choropleth_map"></div>
     <div id="symbol_map"></div>
     <div id="dual_line_chart"></div>
+    <div id="heatmap"></div>
   </div>
 
   <script type="text/javascript">
     var vis1 = "json/choropleth.json";
     var vis2 = "json/symbol.json";
     var vis3 = "json/dual_line.json";
+    var vis4 = "json/heatmap.json";
 
     vegaEmbed("#choropleth_map", vis1).then(function(result) {
     }).catch(console.error);
@@ -31,7 +33,8 @@
     }).catch(console.error);
     vegaEmbed("#dual_line_chart", vis3).then(function(result) {
     }).catch(console.error);
-
+    vegaEmbed("#heatmap", vis4).then(function(result) {
+    }).catch(console.error);
   </script>
 </body>
 </html>

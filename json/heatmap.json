@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "When Do Floods Strike? Monthly Flood Frequency by State (2011–2025)",
+    "subtitle": "Darker cells indicate more recorded flood events. States grouped geographically to reveal monsoon patterns.",
+    "subtitleFontSize": 11,
+    "anchor": "middle"
+  },
+  "width": 600,
+  "height": 380,
+  "data": {"url": "../data/flood_emdat_state.csv"},
+  "transform": [
+    {
+      "aggregate": [
+        {"op": "count", "field": "disaster_no", "as": "flood_count"}
+      ],
+      "groupby": ["state", "start_month"]
+    },
+    {
+      "calculate": "{'1':'Jan','2':'Feb','3':'Mar','4':'Apr','5':'May','6':'Jun','7':'Jul','8':'Aug','9':'Sep','10':'Oct','11':'Nov','12':'Dec'}[toString(datum.start_month)]",
+      "as": "month_name"
+    }
+  ],
+  "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "fields": ["flood_count"]},
+      "bind": "legend"
+    }
+  ],
+  "mark": {"type": "rect", "stroke": "white", "strokeWidth": 0.8},
+  "encoding": {
+    "x": {
+      "field": "month_name",
+      "type": "ordinal",
+      "title": "Month",
+      "sort": [
+        "Jan","Feb","Mar","Apr","May","Jun",
+        "Jul","Aug","Sep","Oct","Nov","Dec"
+      ],
+      "axis": {
+        "labelAngle": 0,
+        "grid": false
+      }
+    },
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "title": "State",
+      "sort": [
+        "Kelantan",
+        "Terengganu",
+        "Pahang",
+        "Johor",
+        "Negeri Sembilan",
+        "Melaka",
+        "Selangor",
+        "Kuala Lumpur",
+        "Perak",
+        "Penang",
+        "Kedah",
+        "Perlis",
+        "Sabah",
+        "Sarawak"
+      ],
+      "axis": {"grid": false}
+    },
+    "color": {
+      "field": "flood_count",
+      "type": "ordinal",
+      "title": "No. of Flood Events",
+      "scale": {
+        "scheme": "blues"
+      },
+      "legend": {
+        "format": "d",
+        "direction": "vertical"
+      }
+    },
+    "opacity": {
+      "condition": {"param": "highlight", "value": 1},
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "state", "type": "nominal", "title": "State"},
+      {"field": "month_name", "type": "nominal", "title": "Month"},
+      {"field": "flood_count", "type": "quantitative", "title": "Flood Events"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null}
+  }
+}
