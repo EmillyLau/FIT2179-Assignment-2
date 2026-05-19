@@ -1,0 +1,193 @@
+state,category,year,amount_losses
+Johor,Living Quarters,2024,21280000
+Johor,Living Quarters,2025,26189000
+Johor,Vehicles,2024,2072000
+Johor,Vehicles,2025,874000
+Johor,Business,2024,3434000
+Johor,Business,2025,2143000
+Johor,Manufacturing,2024,0
+Johor,Manufacturing,2025,0
+Johor,Agriculture,2024,2433000
+Johor,Agriculture,2025,13010000
+Johor,Infrastructure,2024,29748000
+Johor,Infrastructure,2025,29843000
+Kedah,Living Quarters,2024,54013000
+Kedah,Living Quarters,2025,9774000
+Kedah,Vehicles,2024,2095000
+Kedah,Vehicles,2025,417000
+Kedah,Business,2024,4291000
+Kedah,Business,2025,1322000
+Kedah,Manufacturing,2024,0
+Kedah,Manufacturing,2025,0
+Kedah,Agriculture,2024,118210000
+Kedah,Agriculture,2025,5040000
+Kedah,Infrastructure,2024,15053000
+Kedah,Infrastructure,2025,20113000
+Kelantan,Living Quarters,2024,139015000
+Kelantan,Living Quarters,2025,15618000
+Kelantan,Vehicles,2024,3984000
+Kelantan,Vehicles,2025,498000
+Kelantan,Business,2024,27066000
+Kelantan,Business,2025,899000
+Kelantan,Manufacturing,2024,1091000
+Kelantan,Manufacturing,2025,0
+Kelantan,Agriculture,2024,43788000
+Kelantan,Agriculture,2025,4384000
+Kelantan,Infrastructure,2024,48089000
+Kelantan,Infrastructure,2025,67140000
+Melaka,Living Quarters,2024,1048000
+Melaka,Living Quarters,2025,729000
+Melaka,Vehicles,2024,82000
+Melaka,Vehicles,2025,44000
+Melaka,Business,2024,63000
+Melaka,Business,2025,22000
+Melaka,Manufacturing,2024,0
+Melaka,Manufacturing,2025,0
+Melaka,Agriculture,2024,472000
+Melaka,Agriculture,2025,512000
+Melaka,Infrastructure,2024,7249000
+Melaka,Infrastructure,2025,12901000
+Negeri Sembilan,Living Quarters,2024,2922000
+Negeri Sembilan,Living Quarters,2025,840000
+Negeri Sembilan,Vehicles,2024,77000
+Negeri Sembilan,Vehicles,2025,40000
+Negeri Sembilan,Business,2024,62000
+Negeri Sembilan,Business,2025,30000
+Negeri Sembilan,Manufacturing,2024,0
+Negeri Sembilan,Manufacturing,2025,0
+Negeri Sembilan,Agriculture,2024,1210000
+Negeri Sembilan,Agriculture,2025,2623000
+Negeri Sembilan,Infrastructure,2024,16181000
+Negeri Sembilan,Infrastructure,2025,12902000
+Pahang,Living Quarters,2024,10961000
+Pahang,Living Quarters,2025,18776000
+Pahang,Vehicles,2024,892000
+Pahang,Vehicles,2025,702000
+Pahang,Business,2024,393000
+Pahang,Business,2025,1307000
+Pahang,Manufacturing,2024,0
+Pahang,Manufacturing,2025,0
+Pahang,Agriculture,2024,8807000
+Pahang,Agriculture,2025,4289000
+Pahang,Infrastructure,2024,16220000
+Pahang,Infrastructure,2025,19046000
+Penang,Living Quarters,2024,887000
+Penang,Living Quarters,2025,849000
+Penang,Vehicles,2024,73000
+Penang,Vehicles,2025,61000
+Penang,Business,2024,34000
+Penang,Business,2025,10000
+Penang,Manufacturing,2024,0
+Penang,Manufacturing,2025,0
+Penang,Agriculture,2024,63000
+Penang,Agriculture,2025,2593000
+Penang,Infrastructure,2024,7661000
+Penang,Infrastructure,2025,8742000
+Perak,Living Quarters,2024,12172000
+Perak,Living Quarters,2025,15337000
+Perak,Vehicles,2024,720000
+Perak,Vehicles,2025,615000
+Perak,Business,2024,637000
+Perak,Business,2025,844000
+Perak,Manufacturing,2024,0
+Perak,Manufacturing,2025,0
+Perak,Agriculture,2024,312000
+Perak,Agriculture,2025,4479000
+Perak,Infrastructure,2024,43398000
+Perak,Infrastructure,2025,15378000
+Perlis,Living Quarters,2024,530000
+Perlis,Living Quarters,2025,5207000
+Perlis,Vehicles,2024,203000
+Perlis,Vehicles,2025,211000
+Perlis,Business,2024,248000
+Perlis,Business,2025,366000
+Perlis,Manufacturing,2024,0
+Perlis,Manufacturing,2025,0
+Perlis,Agriculture,2024,176000
+Perlis,Agriculture,2025,1222000
+Perlis,Infrastructure,2024,3988000
+Perlis,Infrastructure,2025,22995000
+Selangor,Living Quarters,2024,6629000
+Selangor,Living Quarters,2025,15288000
+Selangor,Vehicles,2024,271000
+Selangor,Vehicles,2025,271000
+Selangor,Business,2024,0
+Selangor,Business,2025,1049000
+Selangor,Manufacturing,2024,0
+Selangor,Manufacturing,2025,0
+Selangor,Agriculture,2024,1887000
+Selangor,Agriculture,2025,9582000
+Selangor,Infrastructure,2024,13778000
+Selangor,Infrastructure,2025,26585000
+Terengganu,Living Quarters,2024,103128000
+Terengganu,Living Quarters,2025,14947000
+Terengganu,Vehicles,2024,5814000
+Terengganu,Vehicles,2025,430000
+Terengganu,Business,2024,16427000
+Terengganu,Business,2025,858000
+Terengganu,Manufacturing,2024,72000
+Terengganu,Manufacturing,2025,76000
+Terengganu,Agriculture,2024,6661000
+Terengganu,Agriculture,2025,1012000
+Terengganu,Infrastructure,2024,49855000
+Terengganu,Infrastructure,2025,71849000
+Sabah,Living Quarters,2024,17318000
+Sabah,Living Quarters,2025,27709000
+Sabah,Vehicles,2024,688000
+Sabah,Vehicles,2025,1254000
+Sabah,Business,2024,1237000
+Sabah,Business,2025,1823000
+Sabah,Manufacturing,2024,0
+Sabah,Manufacturing,2025,0
+Sabah,Agriculture,2024,684000
+Sabah,Agriculture,2025,3649000
+Sabah,Infrastructure,2024,16914000
+Sabah,Infrastructure,2025,23982000
+Sarawak,Living Quarters,2024,2199000
+Sarawak,Living Quarters,2025,32554000
+Sarawak,Vehicles,2024,192000
+Sarawak,Vehicles,2025,806000
+Sarawak,Business,2024,168000
+Sarawak,Business,2025,2686000
+Sarawak,Manufacturing,2024,0
+Sarawak,Manufacturing,2025,0
+Sarawak,Agriculture,2024,518000
+Sarawak,Agriculture,2025,164000
+Sarawak,Infrastructure,2024,24280000
+Sarawak,Infrastructure,2025,25025000
+Kuala Lumpur,Living Quarters,2024,61000
+Kuala Lumpur,Living Quarters,2025,0
+Kuala Lumpur,Vehicles,2024,125000
+Kuala Lumpur,Vehicles,2025,522000
+Kuala Lumpur,Business,2024,0
+Kuala Lumpur,Business,2025,90000
+Kuala Lumpur,Manufacturing,2024,0
+Kuala Lumpur,Manufacturing,2025,0
+Kuala Lumpur,Agriculture,2024,0
+Kuala Lumpur,Agriculture,2025,0
+Kuala Lumpur,Infrastructure,2024,7960000
+Kuala Lumpur,Infrastructure,2025,20148000
+Labuan,Living Quarters,2024,69000
+Labuan,Living Quarters,2025,0
+Labuan,Vehicles,2024,0
+Labuan,Vehicles,2025,0
+Labuan,Business,2024,0
+Labuan,Business,2025,0
+Labuan,Manufacturing,2024,0
+Labuan,Manufacturing,2025,0
+Labuan,Agriculture,2024,0
+Labuan,Agriculture,2025,0
+Labuan,Infrastructure,2024,2300000
+Labuan,Infrastructure,2025,2254000
+Putrajaya,Living Quarters,2024,0
+Putrajaya,Living Quarters,2025,0
+Putrajaya,Vehicles,2024,10000
+Putrajaya,Vehicles,2025,0
+Putrajaya,Business,2024,0
+Putrajaya,Business,2025,0
+Putrajaya,Manufacturing,2024,0
+Putrajaya,Manufacturing,2025,0
+Putrajaya,Agriculture,2024,0
+Putrajaya,Agriculture,2025,0
+Putrajaya,Infrastructure,2024,697000
+Putrajaya,Infrastructure,2025,1279000

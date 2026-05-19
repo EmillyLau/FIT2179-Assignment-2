@@ -1,0 +1,154 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Flood Economic Losses by State (2024–2025)",
+    "subtitle": "Click a state on the lollipop to see its loss breakdown by category.",
+    "subtitleFontSize": 11,
+    "anchor": "middle"
+  },
+  "data": {"url": "../data/flood_impacts.csv"},
+  "transform": [
+    {
+      "calculate": "datum.total_loss_combined / 1000000",
+      "as": "loss_millions"
+    }
+  ],
+  "hconcat": [
+    {
+      "title": "Total Flood Losses by State",
+      "width": 350,
+      "height": 400,
+      "layer": [
+        {
+          "mark": {"type": "rule", "strokeWidth": 2},
+          "encoding": {
+            "y": {
+              "field": "state",
+              "type": "nominal",
+              "sort": {"field": "loss_millions", "order": "descending"},
+              "title": "State",
+              "axis": {"labelFontSize": 11}
+            },
+            "x": {
+              "field": "loss_millions",
+              "type": "quantitative",
+              "title": "Total Loss (RM Million)",
+              "axis": {"format": ".0f"}
+            },
+            "x2": {"value": 0},
+            "color": {
+              "condition": {"param": "state_select", "value": "#e8512a"},
+              "value": "#cccccc"
+            }
+          }
+        },
+        {
+          "mark": {"type": "circle", "size": 100},
+          "params": [
+            {
+              "name": "state_select",
+              "select": {"type": "point", "fields": ["state"]}
+            }
+          ],
+          "encoding": {
+            "y": {
+              "field": "state",
+              "type": "nominal",
+              "sort": {"field": "loss_millions", "order": "descending"},
+              "title": null
+            },
+            "x": {
+              "field": "loss_millions",
+              "type": "quantitative"
+            },
+            "color": {
+              "condition": {"param": "state_select", "value": "#e8512a"},
+              "value": "#cccccc"
+            },
+            "opacity": {
+              "condition": {"param": "state_select", "value": 1},
+              "value": 0.4
+            },
+            "tooltip": [
+              {"field": "state", "type": "nominal", "title": "State"},
+              {
+                "field": "loss_millions",
+                "type": "quantitative",
+                "title": "Total Loss (RM Million)",
+                "format": ".1f"
+              },
+              {
+                "field": "total_loss_2024",
+                "type": "quantitative",
+                "title": "2024 Loss (RM)",
+                "format": ","
+              },
+              {
+                "field": "total_loss_2025",
+                "type": "quantitative",
+                "title": "2025 Loss (RM)",
+                "format": ","
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Loss Breakdown by Category",
+        "subtitle": "Click a state on the left to filter"
+      },
+      "width": 300,
+      "height": 400,
+      "data": {"url": "../data/flood_impacts_long.csv"},
+      "transform": [
+        {"filter": {"param": "state_select"}},
+        {
+          "calculate": "datum.amount_losses / 1000000",
+          "as": "amount_millions"
+        },
+        {
+          "calculate": "toString(datum.year)",
+          "as": "year_str"
+        }
+      ],
+      "mark": {"type": "bar", "cornerRadiusEnd": 3},
+      "encoding": {
+        "x": {
+          "field": "amount_millions",
+          "type": "quantitative",
+          "title": "Loss (RM Million)",
+          "axis": {"format": ".1f"}
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal",
+          "title": "Category",
+          "sort": "-x"
+        },
+        "color": {
+          "field": "year_str",
+          "type": "nominal",
+          "title": "Year",
+          "scale": {
+            "domain": ["2024", "2025"],
+            "range": ["#e8512a", "#f5a623"]
+          }
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "category", "type": "nominal", "title": "Category"},
+          {"field": "year_str", "type": "nominal", "title": "Year"},
+          {
+            "field": "amount_millions",
+            "type": "quantitative",
+            "title": "Loss (RM Million)",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}}
+}

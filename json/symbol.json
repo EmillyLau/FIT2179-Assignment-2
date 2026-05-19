@@ -14,7 +14,7 @@
     }
   ],
   "vconcat":[
-    {"width": 800,
+    {"width": 750,
   "height": 450,
   "title": {
     "text": "Number of Flood Events and Affected Population by State and Year",
