@@ -6,7 +6,7 @@
     "subtitleFontSize": 11,
     "anchor": "middle"
   },
-  "data": {"url": "../data/rainfall.csv"},
+  "data": {"url": "data/rainfall.csv"},
   "transform": [
     {
       "aggregate": [

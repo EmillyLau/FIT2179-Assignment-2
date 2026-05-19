@@ -6,7 +6,7 @@
     "subtitleFontSize": 11,
     "anchor": "middle"
   },
-  "data": {"url": "../data/flood_impacts.csv"},
+  "data": {"url": "data/flood_impacts.csv"},
   "transform": [
     {
       "calculate": "datum.total_loss_combined / 1000000",
@@ -101,7 +101,7 @@
       },
       "width": 300,
       "height": 400,
-      "data": {"url": "../data/flood_impacts_long.csv"},
+      "data": {"url": "data/flood_impacts_long.csv"},
       "transform": [
         {"filter": {"param": "state_select"}},
         {

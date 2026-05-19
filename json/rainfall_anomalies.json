@@ -7,7 +7,7 @@
     "subtitle": "Bars show how far each year’s rainfall deviated from the long-term average"
   },
   "data": {
-    "url": "../data/rainfall.csv"
+    "url": "data/rainfall.csv"
   },
   "transform": [
     {
