@@ -2,110 +2,117 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Flood Economic Losses by State (2024–2025)",
-    "subtitle": "Click a state on the lollipop to see its loss breakdown by category.",
+    "subtitle": "Click a state on the lollipop chart to inspect its multi-year sector damage profile.",
     "subtitleFontSize": 11,
     "anchor": "middle"
   },
-  "data": {"url": "data/flood_impacts.csv"},
-  "transform": [
-    {
-      "calculate": "datum.total_loss_combined / 1000000",
-      "as": "loss_millions"
-    }
-  ],
   "hconcat": [
     {
       "title": "Total Flood Losses by State",
-      "width": 350,
-      "height": 400,
+      "data": {"url": "../data/flood_impacts.csv"},
+      "width": 380,
+      "height": 430,
+      "transform": [
+        {
+          "calculate": "toNumber(datum.total_loss_combined) / 1000000",
+          "as": "loss_millions"
+        }
+      ],
       "layer": [
         {
-          "mark": {"type": "rule", "strokeWidth": 2},
+          "mark": {
+            "type": "rule",
+            "strokeWidth": 2
+          },
           "encoding": {
             "y": {
               "field": "state",
               "type": "nominal",
-              "sort": {"field": "loss_millions", "order": "descending"},
               "title": "State",
-              "axis": {"labelFontSize": 11}
+              "sort": {"field": "loss_millions", "order": "descending"}
             },
             "x": {
               "field": "loss_millions",
               "type": "quantitative",
-              "title": "Total Loss (RM Million)",
-              "axis": {"format": ".0f"}
+              "title": "Total Flood Losses (RM million)"
             },
-            "x2": {"value": 0},
+            "x2": {"datum": 0},
             "color": {
-              "condition": {"param": "state_select", "value": "#e8512a"},
-              "value": "#cccccc"
+              "field": "loss_millions",
+              "type": "quantitative",
+              "scale": {
+                "domain": [0, 350],
+                "range": ["#fdba74", "#f97316", "#991b1b"]
+              },
+              "legend": null
+            },
+                        "opacity": {
+              "condition": {"param": "state_select", "value": 1},
+              "value": 0.25
             }
           }
         },
         {
-          "mark": {"type": "circle", "size": 100},
           "params": [
             {
               "name": "state_select",
-              "select": {"type": "point", "fields": ["state"]}
+              "select": {
+                "type": "point",
+                "fields": ["state"],
+                "toggle": false
+              }
             }
           ],
+          "mark": {
+            "type": "circle",
+            "size": 140,
+            "stroke": "white",
+            "strokeWidth": 1.5
+          },
           "encoding": {
             "y": {
               "field": "state",
               "type": "nominal",
-              "sort": {"field": "loss_millions", "order": "descending"},
-              "title": null
+              "sort": {"field": "loss_millions", "order": "descending"}
             },
             "x": {
               "field": "loss_millions",
-              "type": "quantitative"
+              "type": "quantitative",
+              "axis": {"format": ".0f"}
             },
             "color": {
-              "condition": {"param": "state_select", "value": "#e8512a"},
-              "value": "#cccccc"
+              "field": "loss_millions",
+              "type": "quantitative",
+              "scale": {
+                "domain": [0, 350],
+                "range": ["#fdba74", "#f97316", "#991b1b"]
+              }
             },
-            "opacity": {
+              "opacity": {
               "condition": {"param": "state_select", "value": 1},
-              "value": 0.4
+              "value": 0.25
             },
             "tooltip": [
               {"field": "state", "type": "nominal", "title": "State"},
-              {
-                "field": "loss_millions",
-                "type": "quantitative",
-                "title": "Total Loss (RM Million)",
-                "format": ".1f"
-              },
-              {
-                "field": "total_loss_2024",
-                "type": "quantitative",
-                "title": "2024 Loss (RM)",
-                "format": ","
-              },
-              {
-                "field": "total_loss_2025",
-                "type": "quantitative",
-                "title": "2025 Loss (RM)",
-                "format": ","
-              }
+              {"field": "loss_millions", "type": "quantitative", "title": "Total Loss (RM million)", "format": ".1f"},
+              {"field": "total_loss_2024", "type": "quantitative", "title": "2024 Loss (RM)", "format": ","},
+              {"field": "total_loss_2025", "type": "quantitative", "title": "2025 Loss (RM)", "format": ","}
             ]
           }
         }
       ]
     },
     {
-      "title": {
-        "text": "Loss Breakdown by Category",
-        "subtitle": "Click a state on the left to filter"
-      },
-      "width": 300,
-      "height": 400,
-      "data": {"url": "data/flood_impacts_long.csv"},
+      "title": "Sector Loss Breakdown Comparison",
+      "data": {"url": "../data/flood_impacts_long.csv"},
+      "width": 380,
+      "height": 430,
       "transform": [
-        {"filter": {"param": "state_select"}},
         {
-          "calculate": "datum.amount_losses / 1000000",
+          "filter": {"param": "state_select"}
+        },
+        {
+          "calculate": "toNumber(datum.amount_losses) / 1000000",
           "as": "amount_millions"
         },
         {
@@ -113,42 +120,70 @@
           "as": "year_str"
         }
       ],
-      "mark": {"type": "bar", "cornerRadiusEnd": 3},
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3
+      },
       "encoding": {
-        "x": {
-          "field": "amount_millions",
-          "type": "quantitative",
-          "title": "Loss (RM Million)",
-          "axis": {"format": ".1f"}
-        },
         "y": {
           "field": "category",
           "type": "nominal",
-          "title": "Category",
+          "title": "Sector Category",
           "sort": "-x"
         },
-        "color": {
-          "field": "year_str",
-          "type": "nominal",
-          "title": "Year",
-          "scale": {
-            "domain": ["2024", "2025"],
-            "range": ["#e8512a", "#f5a623"]
-          }
+        "yOffset": {
+          "field": "year_str"
         },
+        "x": {
+          "field": "amount_millions",
+          "type": "quantitative",
+          "title": "Loss (RM million)",
+          "axis": {"format": ".0f"}
+        },
+        "color": {
+        "field": "year_str",
+        "type": "nominal",
+        "title": "Year",
+        "legend": {
+          "orient": "top"
+        },
+        "scale": {
+          "domain": ["2024", "2025"],
+          "range": ["#1d4ed8", "#60a5fa"]
+        }
+      },
         "tooltip": [
           {"field": "state", "type": "nominal", "title": "State"},
-          {"field": "category", "type": "nominal", "title": "Category"},
+          {"field": "category", "type": "nominal", "title": "Sector"},
           {"field": "year_str", "type": "nominal", "title": "Year"},
-          {
-            "field": "amount_millions",
-            "type": "quantitative",
-            "title": "Loss (RM Million)",
-            "format": ".2f"
-          }
+          {"field": "amount_millions", "type": "quantitative", "title": "Loss (RM M)", "format": ".2f"}
         ]
       }
     }
   ],
-  "config": {"view": {"stroke": null}}
+  "resolve": {
+    "scale": {
+      "color": "independent"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+
+    "axisX": {
+      "grid": true,
+      "gridColor": "#e2e8f0",
+      "gridOpacity": 0.7,
+      "domain": true,
+      "domainColor": "#cbd5e1",
+      "tickColor": "#cbd5e1"
+    },
+
+    "axisY": {
+      "grid": false,
+      "domain": false,
+      "ticks": false
+    }
+  }
 }

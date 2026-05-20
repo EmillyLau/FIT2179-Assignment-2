@@ -5,25 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flood Risk & Climate Vulnerability in Malaysia</title>
 
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #eef4f8;
+      --bg: #f4f8fb;
       --bg-card: #ffffff;
-      --border: #ddd8ce;
+      --border: #d6dee6;
+
       --text: #1a1a1a;
-      --text-muted: #333333f;
+      --text-muted: #3f3f3f;
+
       --red: #c0392b;
       --orange: #e8512a;
       --blue: #2171b5;
       --purple: #7b2d8b;
       --teal: #1a7a6e;
-      --gold: #b8860b;
     }
 
     * {
@@ -646,7 +647,7 @@
     { id: "#dual_line_chart", src: "json/dual_line.json" },
     { id: "#heatmap", src: "json/heatmap.json" },
     { id: "#rainfall_anomalies", src: "json/rainfall_anomalies.json" },
-    { id: "#lollipop_chart", src: "json/lollipop.json" },
+    { id: "#lollipop_chart", src: "json/lollipop_loss_breakdown.json" },
     { id: "#scatter_chart", src: "json/scatter.json" },
     { id: "#bubble_chart", src: "json/bubble.json" },
     { id: "#radial_chart", src: "json/radial.json" }
