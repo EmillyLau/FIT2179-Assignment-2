@@ -5,7 +5,7 @@
   "height": 450,
 
   "data": {
-    "url": "data/malaysia_states.topojson",
+    "url": "../data/malaysia_states.topojson",
     "format": {
       "type": "topojson",
       "feature": "states"
@@ -42,7 +42,7 @@
           "lookup": "properties.Name",
           "from": {
             "data": {
-              "url": "data/flood_impacts.csv"
+              "url": "../data/flood_impacts.csv"
             },
             "key": "state",
             "fields": [

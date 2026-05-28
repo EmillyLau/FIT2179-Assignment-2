@@ -1,0 +1,261 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Rainfall Alone Does Not Predict Flood Losses",
+    "subtitle": "Average annual rainfall compared with total recorded flood losses across Malaysian states.",
+    "subtitleFontSize": 11,
+    "anchor": "middle"
+  },
+  "width": 600,
+  "height": 400,
+  "data": {"url": "../data/flood_impacts.csv"},
+  "transform": [
+    {
+      "lookup": "state",
+      "from": {
+        "data": {"url": "../data/rainfall_state_avg.csv"},
+        "key": "state",
+        "fields": ["avg_rainfall_mm", "avg_temp", "avg_rainy_days"]
+      }
+    },
+    {
+      "calculate": "datum.total_loss_combined / 1000000",
+      "as": "loss_millions"
+    },
+    {
+      "calculate": "toNumber(datum.avg_rainfall_mm)",
+      "as": "rainfall_num"
+    },
+    {
+      "filter": "datum.rainfall_num > 0 && datum.loss_millions > 0"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "color": "#aaa",
+        "strokeDash": [5, 3],
+        "strokeWidth": 1.5
+      },
+      "transform": [
+        {"regression": "loss_millions", "on": "rainfall_num"}
+      ],
+      "encoding": {
+        "x": {"field": "rainfall_num", "type": "quantitative"},
+        "y": {"field": "loss_millions", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 130,
+        "opacity": 0.85,
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "rainfall_num",
+          "type": "quantitative",
+          "title": "Average Annual Rainfall (mm)",
+          "scale": {"zero": false},
+          "axis": {"grid": false, "tickCount": 6}
+        },
+        "y": {
+          "field": "loss_millions",
+          "type": "quantitative",
+          "title": "Total Flood Losses (RM Million)",
+          "scale": {"zero": false},
+          "axis": {"grid": false, "tickCount": 5}
+        },
+        "color": {
+          "field": "loss_millions",
+          "type": "quantitative",
+          "scale": {
+            "range": ["#fed7aa", "#fb923c", "#ea580c", "#c2410c", "#7f1d1d"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "rainfall_num", "type": "quantitative", "title": "Avg Rainfall (mm)", "format": ".0f"},
+          {"field": "avg_temp", "type": "quantitative", "title": "Avg Max Temp (°C)", "format": ".1f"},
+          {"field": "avg_rainy_days", "type": "quantitative", "title": "Avg Rainy Days/Year", "format": ".0f"},
+          {"field": "loss_millions", "type": "quantitative", "title": "Total Losses (RM Million)", "format": ".1f"},
+          {"field": "total_loss_2024", "type": "quantitative", "title": "2024 Losses (RM)", "format": ","},
+          {"field": "total_loss_2025", "type": "quantitative", "title": "2025 Losses (RM)", "format": ","}
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.state == 'Kelantan' || datum.state == 'Terengganu' || datum.state == 'Kedah' || datum.state == 'Perlis'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "dy": -12,
+        "color": "#333"
+      },
+      "encoding": {
+        "x": {"field": "rainfall_num", "type": "quantitative"},
+        "y": {"field": "loss_millions", "type": "quantitative"},
+        "text": {"field": "state", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.state == 'Sabah'"}],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "dy": -12,
+        "dx": -8,
+        "color": "#333"
+      },
+      "encoding": {
+        "x": {"field": "rainfall_num", "type": "quantitative"},
+        "y": {"field": "loss_millions", "type": "quantitative"},
+        "text": {"field": "state", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.state == 'Selangor'"}],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "dy": 16,
+        "dx": -10,
+        "color": "#333"
+      },
+      "encoding": {
+        "x": {"field": "rainfall_num", "type": "quantitative"},
+        "y": {"field": "loss_millions", "type": "quantitative"},
+        "text": {"field": "state", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.state == 'Sarawak'"}],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "dy": -8,
+        "dx": -10,
+        "align": "right",
+        "color": "#333"
+      },
+      "encoding": {
+        "x": {"field": "rainfall_num", "type": "quantitative"},
+        "y": {"field": "loss_millions", "type": "quantitative"},
+        "text": {"field": "state", "type": "nominal"}
+      }
+    },
+
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "x": 360,
+        "y": 170,
+        "align": "left",
+        "fontSize": 10.5,
+        "fontStyle": "italic",
+        "color": "#c0392b",
+        "fontWeight": "bold",
+        "text": "↑ Above trend: higher losses than"
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "x": 360,
+        "y": 185,
+        "align": "left",
+        "fontSize": 10.5,
+        "fontStyle": "italic",
+        "color": "#c0392b",
+        "fontWeight": "bold",
+        "text": "rainfall alone would predict"
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "x": 360,
+        "y": 355,
+        "align": "left",
+        "fontSize": 10.5,
+        "fontStyle": "italic",
+        "color": "#2171b5",
+        "fontWeight": "bold",
+        "text": "↓ Below trend: lower losses"
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "x": 360,
+        "y": 370,
+        "align": "left",
+        "fontSize": 10.5,
+        "fontStyle": "italic",
+        "color": "#2171b5",
+        "fontWeight": "bold",
+        "text": "despite high rainfall"
+      }
+    },
+
+    {
+      "data": {"values": [{"x": 2688, "y": 351.6}]},
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -100,
+        "dy": 5,
+        "fontSize": 9.5,
+        "fontStyle": "italic",
+        "color": "#c0392b",
+        "lineBreak": "\n"
+      },
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"value": "East Coast exposure\namplifies losses"}
+      }
+    },
+    {
+      "data": {"values": [{"x": 3591, "y": 88.6}]},
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -80,
+        "dy": 8,
+        "fontSize": 9.5,
+        "fontStyle": "italic",
+        "color": "#2171b5",
+        "lineBreak": "\n"
+      },
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"value": "High rainfall,\nlower recorded losses"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false},
+    "padding": {"top": 20, "bottom": 20, "left": 20, "right": 20}
+  }
+}

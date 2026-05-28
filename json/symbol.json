@@ -28,7 +28,7 @@
   "layer": [
     {
       "data": {
-        "url": "data/malaysia_states.topojson",
+        "url": "../data/malaysia_states.topojson",
         "format": {
           "type": "topojson",
           "feature": "states"
@@ -42,7 +42,7 @@
     },
     {
       "data": {
-        "url": "data/flood_emdat_state.csv"
+        "url": "../data/flood_emdat_state.csv"
       },
       "transform": [
         {
@@ -52,7 +52,7 @@
             "lookup": "disaster_no",
             "from": {
             "data": {
-                "url": "data/flood_emdat.csv"
+                "url": "../data/flood_emdat.csv"
             },
             "key": "disaster_no",
             "fields": [
@@ -180,7 +180,7 @@
         "subtitle": "Bars update based on the same year selected above"
         },
       "data": {
-        "url": "  data/flood_emdat.csv"
+        "url": "../data/flood_emdat.csv"
       },
       "transform": [
         {

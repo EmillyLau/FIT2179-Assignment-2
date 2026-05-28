@@ -6,7 +6,7 @@
     "subtitleFontSize": 11,
     "anchor": "middle"
   },
-  "data": {"url": "data/rainfall.csv"},
+  "data": {"url": "../data/rainfall.csv"},
   "transform": [
     {
       "aggregate": [
@@ -56,11 +56,8 @@
               "type": "quantitative",
               "title": "Average Rainfall (mm)",
               "scale": {"zero": false},
-              "axis": {
-                "titleColor": "#4a90d9",
-                "labelColor": "#4a90d9",
-                "grid": false
-              }
+              "axis": {"titleColor": "#4a90d9", "labelColor": "#4a90d9"},
+              "grid": false
             }
           }
         },
@@ -174,18 +171,16 @@
               "field": "year_num",
               "type": "quantitative",
               "title": "Year",
-              "axis": {"format": "d", "tickMinStep": 1, "grid": false}
+              "axis": {"format": "d", "tickMinStep": 1},
+              "grid": false
             },
             "y": {
               "field": "avg_temp_num",
               "type": "quantitative",
               "title": "Avg Max Temperature (°C)",
               "scale": {"zero": false},
-              "axis": {
-                "titleColor": "#d95f02",
-                "labelColor": "#d95f02",
-                "grid": false
-              }
+              "axis": {"titleColor": "#d95f02", "labelColor": "#d95f02"},
+              "grid": false
             }
           }
         },
@@ -277,26 +272,42 @@
       ]
     }
   ],
-  "config": {
-    "view": {"stroke": null},
-    "padding": {"top": 20, "bottom": 20, "left": 20, "right": 20},
-    "vconcat": {"spacing": 15},
-    "title": {
-      "offset": 15,
-      "fontSize": 14,
-      "subtitleFontSize": 11,
-      "anchor": "start"
-    },
-    "axis": {
-      "grid": false
-    },
-    "axisX": {
-      "grid": false,
-      "domain": true
-    },
-    "axisY": {
-      "grid": false,
-      "domain": true
-    }
+
+
+
+"config": {
+  "view": {
+    "stroke": null
+  },
+
+  "padding": {
+    "top": 20,
+    "bottom": 20,
+    "left": 20,
+    "right": 20
+  },
+
+  "title": {
+    "offset": 15,
+    "fontSize": 14,
+    "subtitleFontSize": 11,
+    "anchor": "start"
+  },
+
+  "axis": {
+    "grid": false,
+    "domainColor": "#cbd5e1",
+    "tickColor": "#cbd5e1",
+    "labelColor": "#334155",
+    "titleColor": "#334155"
+  },
+
+  "axisX": {
+    "grid": false
+  },
+
+  "axisY": {
+    "grid": false
   }
+}
 }
