@@ -184,6 +184,13 @@
       "grid": false,
       "domain": false,
       "ticks": false
+    },
+  "padding": {"top": 20, "bottom": 20, "left": 20, "right": 20},
+    "title": {
+      "offset": 15,
+      "fontSize": 14,
+      "subtitleFontSize": 11,
+      "anchor": "start"
     }
   }
 }
