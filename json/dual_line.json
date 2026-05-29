@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Rainfall Variability and Rising Heat in Malaysia (2000–2021)",
-    "subtitle": "Annual averages across all weather stations nationally. Hover to inspect details.",
+    "subtitle": "Annual averages across all weather stations nationally. Drag the overview chart to filter years.",
     "subtitleFontSize": 11,
     "anchor": "middle"
   },
@@ -20,24 +20,26 @@
     {"calculate": "toNumber(datum.avg_rainfall)", "as": "avg_rainfall_num"},
     {"calculate": "toNumber(datum.avg_temp)", "as": "avg_temp_num"}
   ],
-  "resolve": {"scale": {"x": "shared"}},
   "vconcat": [
     {
       "width": 800,
       "height": 200,
       "title": "Average Annual Rainfall",
+      "transform": [
+        {"filter": {"param": "time_brush"}}
+      ],
       "layer": [
         {
           "mark": {
-          "type": "line",
-          "color": "#2b6cb0",
-          "strokeWidth": 2.5,
-          "point": {
-            "filled": true,
+            "type": "line",
             "color": "#2b6cb0",
-            "size": 50
-          }
-        },
+            "strokeWidth": 2.5,
+            "point": {
+              "filled": true,
+              "color": "#2b6cb0",
+              "size": 50
+            }
+          },
           "encoding": {
             "x": {
               "field": "year_num",
@@ -56,9 +58,17 @@
               "type": "quantitative",
               "title": "Average Rainfall (mm)",
               "scale": {"zero": false},
-              "axis": {"titleColor": "#4a90d9", "labelColor": "#4a90d9"},
-              "grid": false
-            }
+              "axis": {
+                "titleColor": "#4a90d9",
+                "labelColor": "#4a90d9",
+                "grid": false
+              }
+            },
+            "tooltip": [
+              {"field": "year_num", "type": "quantitative", "title": "Year", "format": "d"},
+              {"field": "avg_rainfall_num", "type": "quantitative", "title": "Avg Rainfall (mm)", "format": ".1f"},
+              {"field": "avg_rainy_days", "type": "quantitative", "title": "Avg Rainy Days", "format": ".1f"}
+            ]
           }
         },
         {
@@ -68,7 +78,9 @@
             "strokeDash": [6, 3],
             "strokeWidth": 1.2
           },
-          "transform": [{"regression": "avg_rainfall_num", "on": "year_num"}],
+          "transform": [
+            {"regression": "avg_rainfall_num", "on": "year_num"}
+          ],
           "encoding": {
             "x": {"field": "year_num", "type": "quantitative"},
             "y": {"field": "avg_rainfall_num", "type": "quantitative"}
@@ -84,7 +96,9 @@
           "transform": [
             {"filter": "datum.year_num == 2014 || datum.year_num == 2021"}
           ],
-          "encoding": {"x": {"field": "year_num", "type": "quantitative"}}
+          "encoding": {
+            "x": {"field": "year_num", "type": "quantitative"}
+          }
         },
         {
           "mark": {
@@ -109,48 +123,6 @@
               "value": "2021 floods"
             }
           }
-        },
-        {
-          "mark": {"type": "rule", "color": "#f59e0b", "strokeWidth": 0.8},
-          "params": [
-            {
-              "name": "hover_sync",
-              "select": {
-                "type": "point",
-                "fields": ["year_num"],
-                "nearest": true,
-                "on": "mouseover",
-                "clear": "mouseout"
-              }
-            }
-          ],
-          "encoding": {
-            "x": {"field": "year_num", "type": "quantitative"},
-            "opacity": {
-              "condition": {"param": "hover_sync", "empty": false, "value": 0.8},
-              "value": 0
-            },
-            "tooltip": [
-              {
-                "field": "year_num",
-                "type": "quantitative",
-                "title": "Year",
-                "format": "d"
-              },
-              {
-                "field": "avg_rainfall_num",
-                "type": "quantitative",
-                "title": "Avg Rainfall (mm)",
-                "format": ".1f"
-              },
-              {
-                "field": "avg_rainy_days",
-                "type": "quantitative",
-                "title": "Avg Rainy Days",
-                "format": ".1f"
-              }
-            ]
-          }
         }
       ]
     },
@@ -158,30 +130,47 @@
       "width": 800,
       "height": 200,
       "title": "Average Maximum Temperature",
+      "transform": [
+        {"filter": {"param": "time_brush"}}
+      ],
       "layer": [
         {
           "mark": {
             "type": "line",
             "color": "#d95f02",
             "strokeWidth": 2.5,
-            "point": {"filled": true, "size": 50, "color": "#d95f02"}
+            "point": {
+              "filled": true,
+              "size": 50,
+              "color": "#d95f02"
+            }
           },
           "encoding": {
             "x": {
               "field": "year_num",
               "type": "quantitative",
               "title": "Year",
-              "axis": {"format": "d", "tickMinStep": 1},
-              "grid": false
+              "axis": {
+                "format": "d",
+                "tickMinStep": 1,
+                "grid": false
+              }
             },
             "y": {
               "field": "avg_temp_num",
               "type": "quantitative",
               "title": "Avg Max Temperature (°C)",
               "scale": {"zero": false},
-              "axis": {"titleColor": "#d95f02", "labelColor": "#d95f02"},
-              "grid": false
-            }
+              "axis": {
+                "titleColor": "#d95f02",
+                "labelColor": "#d95f02",
+                "grid": false
+              }
+            },
+            "tooltip": [
+              {"field": "year_num", "type": "quantitative", "title": "Year", "format": "d"},
+              {"field": "avg_temp_num", "type": "quantitative", "title": "Avg Max Temp (°C)", "format": ".2f"}
+            ]
           }
         },
         {
@@ -191,7 +180,9 @@
             "strokeDash": [6, 3],
             "strokeWidth": 1.2
           },
-          "transform": [{"regression": "avg_temp_num", "on": "year_num"}],
+          "transform": [
+            {"regression": "avg_temp_num", "on": "year_num"}
+          ],
           "encoding": {
             "x": {"field": "year_num", "type": "quantitative"},
             "y": {"field": "avg_temp_num", "type": "quantitative"}
@@ -207,7 +198,9 @@
           "transform": [
             {"filter": "datum.year_num == 2014 || datum.year_num == 2021"}
           ],
-          "encoding": {"x": {"field": "year_num", "type": "quantitative"}}
+          "encoding": {
+            "x": {"field": "year_num", "type": "quantitative"}
+          }
         },
         {
           "mark": {
@@ -232,82 +225,76 @@
               "value": "2021 floods"
             }
           }
-        },
-        {
-          "mark": {"type": "rule", "color": "#f59e0b", "strokeWidth": 0.8},
-          "params": [
-            {
-              "name": "hover_sync",
-              "select": {
-                "type": "point",
-                "fields": ["year_num"],
-                "nearest": true,
-                "on": "mouseover",
-                "clear": "mouseout"
-              }
-            }
-          ],
-          "encoding": {
-            "x": {"field": "year_num", "type": "quantitative"},
-            "opacity": {
-              "condition": {"param": "hover_sync", "empty": false, "value": 0.8},
-              "value": 0
-            },
-            "tooltip": [
-              {
-                "field": "year_num",
-                "type": "quantitative",
-                "title": "Year",
-                "format": "d"
-              },
-              {
-                "field": "avg_temp_num",
-                "type": "quantitative",
-                "title": "Avg Max Temp (°C)",
-                "format": ".2f"
-              }
-            ]
-          }
         }
       ]
+    },
+    {
+      "width": 800,
+      "height": 60,
+      "title": {
+      "text": "Brush uses rainfall as the overview; selected years filter both charts",
+      "fontSize": 11,
+      "anchor": "middle"
+    },
+      "params": [
+        {
+          "name": "time_brush",
+          "select": {
+            "type": "interval",
+            "encodings": ["x"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "color": "#94a3b8",
+        "opacity": 0.65
+      },
+      "encoding": {
+        "x": {
+          "field": "year_num",
+          "type": "quantitative",
+          "axis": {
+            "format": "d",
+            "tickMinStep": 1,
+            "title": null,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "avg_rainfall_num",
+          "type": "quantitative",
+          "title": null,
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "grid": false
+          }
+        }
+      }
     }
   ],
-
-
-
-"config": {
-  "view": {
-    "stroke": null
-  },
-
-  "padding": {
-    "top": 20,
-    "bottom": 20,
-    "left": 20,
-    "right": 20
-  },
-
-  "title": {
-    "offset": 15,
-    "fontSize": 14,
-    "subtitleFontSize": 11,
-    "anchor": "start"
-  },
-
-  "axis": {
-    "grid": false,
-    "domainColor": "#cbd5e1",
-    "tickColor": "#cbd5e1",
-    "labelColor": "#334155",
-    "titleColor": "#334155"
-  },
-
-  "axisX": {
-    "grid": false
-  },
-
-  "axisY": {
-    "grid": false
+  "config": {
+    "view": {"stroke": null},
+    "padding": {
+      "top": 20,
+      "bottom": 20,
+      "left": 20,
+      "right": 20
+    },
+    "title": {
+      "offset": 15,
+      "fontSize": 14,
+      "subtitleFontSize": 11,
+      "anchor": "start"
+    },
+    "axis": {
+      "grid": false,
+      "domainColor": "#cbd5e1",
+      "tickColor": "#cbd5e1",
+      "labelColor": "#334155",
+      "titleColor": "#334155"
+    }
   }
-}
 }

@@ -193,7 +193,7 @@
           {
             "theta": 2.45,
             "radius": 22,
-            "label": "East Coast states\nshow the highest\noverall vulnerability.\n\nKelantan: 0.674\nTerengganu: 0.669\nJohor: 0.642"
+            "label": "Top composite states\nshow vulnerability\nacross several signals.\n\nKelantan: 0.674\nTerengganu: 0.669\nJohor: 0.642"
           }
         ]
       },

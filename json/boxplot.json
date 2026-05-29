@@ -23,7 +23,10 @@
     "type": "boxplot",
     "extent": 1.5,
     "size": 50,
-    "ticks": true,
+    "ticks": {
+      "size": 24,
+      "strokeWidth": 1.5
+    },
     "box": {
       "fillOpacity": 1
     },

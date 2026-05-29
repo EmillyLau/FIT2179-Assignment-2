@@ -722,20 +722,20 @@
 
     <div class="chart-text-row flipped">
       <div class="text-block">
-        <h3><span class="purple">Flash floods</span> kill more than general floods</h3>
+        <h3>Flood duration changes the kind of response needed</h3>
         <p>
-          <span class="purple">Flash floods</span>
-          cluster high on deaths despite affecting fewer people overall.
-          Speed of onset increases fatality risk.
+          Some flood types are short, sharp disruptions,
+          while others last long enough to strain evacuation centres,
+          transport links, and household recovery.
         </p>
         <ul class="annotation-list">
-          <li>Shorter, faster-onset flood events can still carry severe fatality risk.</li>
-          <li>The human cost is therefore tied to warning time and response capacity, not only the number of people affected.</li>
+          <li>Longer flood durations increase the pressure on relief logistics and public services.</li>
+          <li>Variation within each flood type shows why preparedness plans need to account for both typical events and outliers.</li>
         </ul>
       </div>
 
       <div class="chart-card">
-        <div id="bubble_chart"></div>
+        <div id="boxplot_chart"></div>
       </div>
     </div>
   </section>
@@ -750,8 +750,8 @@
 
     <div class="story-note">
       <p>
-        The final view will bring the earlier evidence together. It should not read as a prediction model;
-        it should act as a transparent summary of the observed signals that repeatedly appeared throughout the dashboard.
+        The final view brings the earlier evidence together. It should not be read as a prediction model;
+        it is a transparent summary of the observed signals that repeatedly appeared throughout the dashboard.
       </p>
     </div>
 
@@ -759,7 +759,7 @@
       <p>
         No single number captures
         <span class="bold">flood vulnerability</span>.
-        The final synthesis can combine <span class="blue">rainfall</span>,
+        The final synthesis combines <span class="blue">rainfall</span>,
         flood frequency, losses per household,
         and affected population.
       </p>
@@ -767,17 +767,38 @@
       <p>
         <span class="red">Kelantan</span> and
         <span class="red">Terengganu</span>
-        consistently rank as Malaysia's most urgent
-        <span class="red">flood vulnerability</span> priorities.
+        remain the clearest east coast priorities, while
+        <span class="red">Johor</span>
+        rises in the composite ranking because many people are affected there.
       </p>
+    </div>
+
+    <div class="chart-text-row">
+      <div class="chart-card">
+        <div id="radial_chart"></div>
+      </div>
+
+      <div class="text-block">
+        <h3>A composite view shows three priority states</h3>
+        <p>
+          The radial chart brings the dashboard's main signals into one final comparison.
+          <span class="red">Kelantan</span> and
+          <span class="red">Terengganu</span> remain prominent through losses and rainfall,
+          while <span class="red">Johor</span> stands out through affected population and event frequency.
+        </p>
+        <ul class="annotation-list">
+          <li>States with high losses and high affected populations require both infrastructure protection and social support planning.</li>
+          <li>The synthesis helps separate broad climate exposure from places where people and assets are most at risk.</li>
+        </ul>
+      </div>
     </div>
 
     <div class="story-bridge">
       <p>
-        The conclusion so far is consistent across the dashboard:
-        <span class="red">Terengganu</span> and <span class="red">Kelantan</span>
-        carry high household-level losses, repeated events, heavy rainfall, and substantial affected populations.
-        Flood resilience planning should therefore prioritise both physical exposure and social disruption.
+        The conclusion is consistent across the dashboard:
+        flood vulnerability is highest where physical exposure and social disruption overlap.
+        Flood resilience planning should therefore prioritise east coast household losses while also recognising high-displacement states such as
+        <span class="red">Johor</span>.
       </p>
     </div>
   </section>
@@ -856,7 +877,8 @@
     { id: "#rainfall_anomalies", src: "json/rainfall_anomalies.json" },
     { id: "#lollipop_chart", src: "json/lollipop_loss_breakdown.json" },
     { id: "#scatter_chart", src: "json/scatterplot.json" },
-    { id: "#bubble_chart", src: "json/bubble.json" }
+    { id: "#boxplot_chart", src: "json/boxplot.json" },
+    { id: "#radial_chart", src: "json/radial.json" }
   ];
 
   charts.forEach(({ id, src }) => {
