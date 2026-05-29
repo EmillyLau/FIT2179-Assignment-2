@@ -245,12 +245,12 @@
                   "Infrastructure"
                 ],
                 "range": [
-                  "#c0392b",
-                  "#e8512a",
-                  "#2171b5",
-                  "#7b2d8b",
-                  "#1a7a6e",
-                  "#f59e0b"
+                  "#F4A261",
+                  "#D77A61",
+                  "#E9C46A",
+                  "#457B9D",
+                  "#59A14F",
+                  "#A8A8A8"
                 ]
               }
             },
@@ -284,7 +284,7 @@
             "radius": 118,
             "align": "center",
             "baseline": "middle",
-            "fontSize": 10,
+            "fontSize": 14,
             "fontWeight": "bold",
             "color": "white"
           },
