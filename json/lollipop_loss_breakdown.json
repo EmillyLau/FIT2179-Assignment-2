@@ -6,6 +6,17 @@
     "subtitleFontSize": 11,
     "anchor": "middle"
   },
+  "params": [
+    {
+      "name": "breakdown_year_filter",
+      "value": "Both",
+      "bind": {
+        "input": "select",
+        "options": ["Both", "2024", "2025"],
+        "name": "Breakdown year: "
+      }
+    }
+  ],
   "hconcat": [
     {
       "title": "Total Flood Losses by State",
@@ -34,7 +45,8 @@
             "x": {
               "field": "loss_millions",
               "type": "quantitative",
-              "title": "Total Flood Losses (RM million)"
+              "title": "Total Flood Losses (RM million)",
+              "scale": {"domain": [0, 390]}
             },
             "x2": {"datum": 0},
             "color": {
@@ -46,8 +58,8 @@
               },
               "legend": null
             },
-                        "opacity": {
-              "condition": {"param": "state_select", "value": 1},
+            "opacity": {
+              "condition": {"param": "donut_state_pick_v3", "value": 1},
               "value": 0.25
             }
           }
@@ -55,7 +67,7 @@
         {
           "params": [
             {
-              "name": "state_select",
+              "name": "donut_state_pick_v3",
               "select": {
                 "type": "point",
                 "fields": ["state"],
@@ -67,7 +79,7 @@
             "type": "circle",
             "size": 140,
             "stroke": "white",
-            "strokeWidth": 1.5
+            "strokeWidth": 0.8
           },
           "encoding": {
             "y": {
@@ -78,6 +90,7 @@
             "x": {
               "field": "loss_millions",
               "type": "quantitative",
+              "scale": {"domain": [0, 390]},
               "axis": {"format": ".0f"}
             },
             "color": {
@@ -88,8 +101,8 @@
                 "range": ["#fdba74", "#f97316", "#991b1b"]
               }
             },
-              "opacity": {
-              "condition": {"param": "state_select", "value": 1},
+            "opacity": {
+              "condition": {"param": "donut_state_pick_v3", "value": 1},
               "value": 0.25
             },
             "tooltip": [
@@ -99,17 +112,54 @@
               {"field": "total_loss_2025", "type": "quantitative", "title": "2025 Loss (RM)", "format": ","}
             ]
           }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.state == 'Kelantan' || datum.state == 'Terengganu' || datum.state == 'Kedah'"
+            },
+            {
+              "calculate": "datum.state == 'Kelantan' ? '352M' : datum.state == 'Terengganu' ? '271M' : '230M'",
+              "as": "top_label"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "dx": 9,
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#7f1d1d"
+          },
+          "encoding": {
+            "y": {
+              "field": "state",
+              "type": "nominal",
+              "sort": {"field": "loss_millions", "order": "descending"}
+            },
+            "x": {
+              "field": "loss_millions",
+              "type": "quantitative",
+              "scale": {"domain": [0, 390]}
+            },
+            "text": {"field": "top_label", "type": "nominal"},
+            "opacity": {
+              "condition": {"param": "donut_state_pick_v3", "value": 1},
+              "value": 0.45
+            }
+          }
         }
       ]
     },
     {
-      "title": "Sector Loss Breakdown Comparison",
+      "title": "Sector Loss Breakdown",
       "data": {"url": "../data/flood_impacts_long.csv"},
       "width": 380,
       "height": 430,
       "transform": [
         {
-          "filter": {"param": "state_select"}
+          "filter": {"param": "donut_state_pick_v3"}
         },
         {
           "calculate": "toNumber(datum.amount_losses) / 1000000",
@@ -118,47 +168,172 @@
         {
           "calculate": "toString(datum.year)",
           "as": "year_str"
+        },
+        {
+          "filter": "breakdown_year_filter == 'Both' || datum.year_str == breakdown_year_filter"
+        },
+        {
+          "calculate": "length(data('donut_state_pick_v3_store')) == 0 ? 'Malaysia' : datum.state",
+          "as": "display_area"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "amount_millions",
+              "as": "sector_loss_millions"
+            }
+          ],
+          "groupby": ["display_area", "category"]
+        },
+        {
+          "joinaggregate": [
+            {
+              "op": "sum",
+              "field": "sector_loss_millions",
+              "as": "total_loss_millions"
+            }
+          ],
+          "groupby": ["display_area"]
+        },
+        {
+          "calculate": "datum.sector_loss_millions / datum.total_loss_millions",
+          "as": "sector_percent"
+        },
+        {
+          "calculate": "datum.category == 'Living Quarters' ? 1 : datum.category == 'Vehicles' ? 2 : datum.category == 'Business' ? 3 : datum.category == 'Manufacturing' ? 4 : datum.category == 'Agriculture' ? 5 : 6",
+          "as": "category_order"
+        },
+        {
+          "filter": "datum.sector_loss_millions > 0"
         }
       ],
-      "mark": {
-        "type": "bar",
-        "cornerRadiusEnd": 3
-      },
-      "encoding": {
-        "y": {
-          "field": "category",
-          "type": "nominal",
-          "title": "Sector Category",
-          "sort": "-x"
+      "layer": [
+        {
+          "mark": {
+            "type": "arc",
+            "innerRadius": 72,
+            "outerRadius": 150,
+            "stroke": "white",
+            "strokeWidth": 0.8
+          },
+          "encoding": {
+            "theta": {
+              "field": "sector_loss_millions",
+              "type": "quantitative",
+              "stack": true
+            },
+            "order": {
+              "field": "category_order",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "category",
+              "type": "nominal",
+              "title": "Sector",
+              "legend": {
+                "orient": "right",
+                "labelLimit": 130
+              },
+              "scale": {
+                "domain": [
+                  "Living Quarters",
+                  "Vehicles",
+                  "Business",
+                  "Manufacturing",
+                  "Agriculture",
+                  "Infrastructure"
+                ],
+                "range": [
+                  "#c0392b",
+                  "#e8512a",
+                  "#2171b5",
+                  "#7b2d8b",
+                  "#1a7a6e",
+                  "#f59e0b"
+                ]
+              }
+            },
+            "tooltip": [
+              {"field": "display_area", "type": "nominal", "title": "Area"},
+              {"field": "category", "type": "nominal", "title": "Sector"},
+              {
+                "field": "sector_loss_millions",
+                "type": "quantitative",
+                "title": "Loss (RM M)",
+                "format": ".2f"
+              },
+              {
+                "field": "sector_percent",
+                "type": "quantitative",
+                "title": "Share of Total Loss",
+                "format": ".0%"
+              }
+            ]
+          }
         },
-        "yOffset": {
-          "field": "year_str"
+        {
+          "transform": [
+            {
+              "calculate": "datum.sector_percent >= 0.06 ? format(datum.sector_percent, '.0%') : ''",
+              "as": "slice_percent_label"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "radius": 118,
+            "align": "center",
+            "baseline": "middle",
+            "fontSize": 10,
+            "fontWeight": "bold",
+            "color": "white"
+          },
+          "encoding": {
+            "theta": {
+              "field": "sector_loss_millions",
+              "type": "quantitative",
+              "stack": true
+            },
+            "order": {
+              "field": "category_order",
+              "type": "quantitative"
+            },
+            "text": {"field": "slice_percent_label", "type": "nominal"},
+            "detail": {"field": "category", "type": "nominal"}
+          }
         },
-        "x": {
-          "field": "amount_millions",
-          "type": "quantitative",
-          "title": "Loss (RM million)",
-          "axis": {"format": ".0f"}
-        },
-        "color": {
-        "field": "year_str",
-        "type": "nominal",
-        "title": "Year",
-        "legend": {
-          "orient": "top"
-        },
-        "scale": {
-          "domain": ["2024", "2025"],
-          "range": ["#1d4ed8", "#60a5fa"]
+        {
+          "transform": [
+            {
+              "aggregate": [
+                {
+                  "op": "sum",
+                  "field": "sector_loss_millions",
+                  "as": "label_total_millions"
+                }
+              ],
+              "groupby": ["display_area"]
+            },
+            {
+              "calculate": "datum.display_area + '\\nRM ' + format(datum.label_total_millions, '.0f') + '\\nmillion'",
+              "as": "center_label"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "dy": -10,
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "#374151",
+            "lineBreak": "\n"
+          },
+          "encoding": {
+            "text": {"field": "center_label", "type": "nominal"}
+          }
         }
-      },
-        "tooltip": [
-          {"field": "state", "type": "nominal", "title": "State"},
-          {"field": "category", "type": "nominal", "title": "Sector"},
-          {"field": "year_str", "type": "nominal", "title": "Year"},
-          {"field": "amount_millions", "type": "quantitative", "title": "Loss (RM M)", "format": ".2f"}
-        ]
-      }
+      ]
     }
   ],
   "resolve": {

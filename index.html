@@ -316,6 +316,26 @@
       min-width: 0;
     }
 
+    .breakdown-year-control {
+      width: min(380px, 46%);
+      margin: -0.75rem 3rem 1rem auto;
+      display: flex;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .breakdown-year-control select {
+      margin-left: 0.45rem;
+      font: inherit;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.2rem 0.45rem;
+      background: #fff;
+      color: var(--text);
+    }
+
     .vega-embed {
       width: 100% !important;
       max-width: 100%;
@@ -691,6 +711,7 @@
       </p>
       <div class="chart-card">
         <div id="lollipop_chart"></div>
+        <div id="breakdown-year-control" class="breakdown-year-control"></div>
       </div>
     </div>
 
@@ -875,7 +896,7 @@
     { id: "#dual_line_chart", src: "json/dual_line.json" },
     { id: "#heatmap", src: "json/heatmap.json" },
     { id: "#rainfall_anomalies", src: "json/rainfall_anomalies.json" },
-    { id: "#lollipop_chart", src: "json/lollipop_loss_breakdown.json" },
+    { id: "#lollipop_chart", src: "json/lollipop_loss_breakdown.json?v=13" },
     { id: "#scatter_chart", src: "json/scatterplot.json" },
     { id: "#boxplot_chart", src: "json/boxplot.json" },
     { id: "#radial_chart", src: "json/radial.json" }
