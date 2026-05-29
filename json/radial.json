@@ -53,6 +53,17 @@
   ],
   "layer": [
     {
+      "params": [
+        {
+          "name": "state_hover",
+          "select": {
+            "type": "point",
+            "fields": ["state"],
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ],
       "mark": {
         "type": "arc",
         "stroke": "white",
@@ -77,6 +88,20 @@
         },
         "radius2": {
           "field": "inner_radius"
+        },
+        "opacity": {
+          "condition": {
+            "test": "length(data('state_hover_store')) == 0 || vlSelectionTest('state_hover_store', datum)",
+            "value": 1
+          },
+          "value": 0.22
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "length(data('state_hover_store')) > 0 && vlSelectionTest('state_hover_store', datum)",
+            "value": 2.5
+          },
+          "value": 1
         },
         "color": {
           "field": "dimension",
@@ -184,6 +209,13 @@
         },
         "text": {
           "field": "state"
+        },
+        "opacity": {
+          "condition": {
+            "test": "length(data('state_hover_store')) == 0 || vlSelectionTest('state_hover_store', datum)",
+            "value": 1
+          },
+          "value": 0.35
         }
       }
     },

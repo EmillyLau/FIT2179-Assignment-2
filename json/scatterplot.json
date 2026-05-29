@@ -8,6 +8,17 @@
   },
   "width": 600,
   "height": 400,
+  "params": [
+    {
+      "name": "region_highlight",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "West Coast", "East Coast", "East Malaysia"],
+        "name": "Highlight region: "
+      }
+    }
+  ],
   "data": {"url": "../data/flood_impacts.csv"},
   "transform": [
     {
@@ -25,6 +36,10 @@
     {
       "calculate": "toNumber(datum.avg_rainfall_mm)",
       "as": "rainfall_num"
+    },
+    {
+      "calculate": "datum.state == 'Kelantan' || datum.state == 'Terengganu' || datum.state == 'Pahang' ? 'East Coast' : datum.state == 'Sabah' || datum.state == 'Sarawak' || datum.state == 'Labuan' ? 'East Malaysia' : 'West Coast'",
+      "as": "region"
     },
     {
       "filter": "datum.rainfall_num > 0 && datum.loss_millions > 0"
@@ -71,15 +86,32 @@
           "axis": {"grid": false, "tickCount": 5}
         },
         "color": {
-          "field": "loss_millions",
-          "type": "quantitative",
+          "field": "region",
+          "type": "nominal",
+          "title": "Region",
           "scale": {
-            "range": ["#fed7aa", "#fb923c", "#ea580c", "#c2410c", "#7f1d1d"]
+            "domain": ["West Coast", "East Coast", "East Malaysia"],
+            "range": ["#d8b365", "#c0392b", "#2171b5"]
           },
-          "legend": null
+          "legend": {"orient": "top"}
+        },
+        "opacity": {
+          "condition": {
+            "test": "region_highlight == 'All' || datum.region == region_highlight",
+            "value": 0.9
+          },
+          "value": 0.1
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "region_highlight != 'All' && datum.region == region_highlight",
+            "value": 2
+          },
+          "value": 1
         },
         "tooltip": [
           {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "region", "type": "nominal", "title": "Region"},
           {"field": "rainfall_num", "type": "quantitative", "title": "Avg Rainfall (mm)", "format": ".0f"},
           {"field": "avg_temp", "type": "quantitative", "title": "Avg Max Temp (°C)", "format": ".1f"},
           {"field": "avg_rainy_days", "type": "quantitative", "title": "Avg Rainy Days/Year", "format": ".0f"},
@@ -93,7 +125,7 @@
     {
       "transform": [
         {
-          "filter": "datum.state == 'Kelantan' || datum.state == 'Terengganu' || datum.state == 'Kedah' || datum.state == 'Perlis'"
+          "filter": "datum.state == 'Kelantan' || datum.state == 'Terengganu'"
         }
       ],
       "mark": {
@@ -101,38 +133,6 @@
         "fontSize": 11,
         "fontWeight": "bold",
         "dy": -12,
-        "color": "#333"
-      },
-      "encoding": {
-        "x": {"field": "rainfall_num", "type": "quantitative"},
-        "y": {"field": "loss_millions", "type": "quantitative"},
-        "text": {"field": "state", "type": "nominal"}
-      }
-    },
-    {
-      "transform": [{"filter": "datum.state == 'Sabah'"}],
-      "mark": {
-        "type": "text",
-        "fontSize": 11,
-        "fontWeight": "bold",
-        "dy": -12,
-        "dx": -8,
-        "color": "#333"
-      },
-      "encoding": {
-        "x": {"field": "rainfall_num", "type": "quantitative"},
-        "y": {"field": "loss_millions", "type": "quantitative"},
-        "text": {"field": "state", "type": "nominal"}
-      }
-    },
-    {
-      "transform": [{"filter": "datum.state == 'Selangor'"}],
-      "mark": {
-        "type": "text",
-        "fontSize": 11,
-        "fontWeight": "bold",
-        "dy": 16,
-        "dx": -10,
         "color": "#333"
       },
       "encoding": {

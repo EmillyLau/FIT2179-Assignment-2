@@ -1,0 +1,115 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Flood Events and Affected Population by State and Year (2011–2025)",
+    "subtitle": "Each circle represents a state-year combination. Size shows affected population and colour shows flood frequency. Click a state to highlight.",
+    "subtitleFontSize": 11,
+    "anchor": "start",
+    "offset": 12
+  },
+  "width": 750,
+  "height": 380,
+  "data": {"url": "../data/flood_emdat_state.csv"},
+  "transform": [
+    {
+      "aggregate": [
+        {"op": "sum",      "field": "affected_by_state", "as": "total_affected"},
+        {"op": "distinct", "field": "disaster_no",       "as": "flood_events_count"}
+      ],
+      "groupby": ["state", "start_year"]
+    },
+    {
+      "calculate": "datum.total_affected / 1000",
+      "as": "affected_thousands"
+    }
+  ],
+  "params": [
+    {
+      "name": "state_select",
+      "select": {"type": "point", "fields": ["state"]}
+    }
+  ],
+  "mark": {
+    "type": "circle",
+    "opacity": 0.85,
+    "stroke": "white",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "start_year",
+      "type": "ordinal",
+      "title": "Year",
+      "axis": {
+        "labelAngle": -45,
+        "grid": false,
+        "labelFontSize": 11
+      }
+    },
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Kelantan","Terengganu","Pahang","Johor",
+        "Negeri Sembilan","Melaka","Selangor","Kuala Lumpur",
+        "Perak","Penang","Kedah","Perlis",
+        "Sabah","Sarawak"
+      ],
+      "axis": {
+        "labelFontSize": 11,
+        "grid": true,
+        "gridColor": "#eee",
+        "gridWidth": 0.5,
+        "ticks": false,
+        "domainWidth": 0
+      }
+    },
+    "size": {
+      "field": "affected_thousands",
+      "type": "quantitative",
+      "title": "People Affected (thousands)",
+      "scale": {
+    "domain": [0, 30], 
+    "range": [30, 1400]
+  },
+  "legend": {
+    "orient": "bottom",
+    "direction": "horizontal",
+    "values": [1, 5, 10, 20, 30],
+    "labelExpr": "datum.value + 'K'",
+    "title": "People Affected"
+  }
+},
+    "color": {
+      "field": "flood_events_count",
+      "type": "ordinal",
+      "title": "No. of Flood Events",
+      "scale": {
+        "domain": [1, 2, 3, 4, 5],
+        "range": ["#bcdff5", "#8ecae6", "#4ea3d8", "#2171b5", "#084594"]
+      },
+      "legend": {
+        "orient": "bottom",
+        "direction": "horizontal",
+        "labelFontSize": 11,
+        "title": "No. of Flood Events"
+      }
+    },
+    "opacity": {
+      "condition": {"param": "state_select", "value": 0.9},
+      "value": 0.15
+    },
+    "tooltip": [
+      {"field": "state",              "type": "nominal",      "title": "State"},
+      {"field": "start_year",         "type": "ordinal",      "title": "Year"},
+      {"field": "total_affected",     "type": "quantitative", "title": "People Affected",    "format": ","},
+      {"field": "flood_events_count", "type": "quantitative", "title": "No. of Flood Events"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false},
+    "padding": {"top": 20, "bottom": 20, "left": 20, "right": 20}
+  }
+}
