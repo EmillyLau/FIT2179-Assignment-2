@@ -18,7 +18,7 @@
   "height": 450,
   "title": {
     "text": "Number of Flood Events and Affected Population by State and Year",
-    "subtitle": "Bubble size shows affected population; colour shows number of flood events",
+    "subtitle": "Displacement concentrates in states where flood events recur across the record.",
     "subtitleFontSize": 11
   },
   "projection": {

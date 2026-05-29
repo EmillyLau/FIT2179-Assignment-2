@@ -1,0 +1,242 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stacked radial bar chart of flood vulnerability dimensions by state.",
+  "width": 560,
+  "height": 560,
+  "title": {
+    "text": "Flood Vulnerability by State",
+    "subtitle": "Composite vulnerability index (0–1); colours show contributing dimensions.",
+    "anchor": "middle",
+    "fontSize": 16,
+    "subtitleFontSize": 11
+  },
+  "data": {
+    "url": "../data/vulnerability_long.csv"
+  },
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "mean",
+          "field": "composite",
+          "as": "state_composite"
+        }
+      ],
+      "groupby": ["state"]
+    },
+    {
+      "window": [
+        {
+          "op": "dense_rank",
+          "as": "state_rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "state_composite",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "calculate": "285 - (datum.state_rank - 1) * 17",
+      "as": "outer_radius"
+    },
+    {
+      "calculate": "270 - (datum.state_rank - 1) * 17",
+      "as": "inner_radius"
+    },
+    {
+      "calculate": "datum.dimension == 'Flood Losses' ? 1 : datum.dimension == 'People Affected' ? 2 : datum.dimension == 'Flood Frequency' ? 3 : 4",
+      "as": "dimension_order"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "theta": {
+          "field": "score",
+          "type": "quantitative",
+          "stack": true,
+          "scale": {
+            "domain": [0, 4]
+          }
+        },
+        "radius": {
+          "field": "outer_radius",
+          "type": "quantitative",
+          "scale": {
+            "domain": [40, 290],
+            "range": [40, 290]
+          }
+        },
+        "radius2": {
+          "field": "inner_radius"
+        },
+        "color": {
+          "field": "dimension",
+          "type": "nominal",
+          "title": "Vulnerability Dimension",
+          "scale": {
+            "domain": [
+              "Flood Losses",
+              "People Affected",
+              "Flood Frequency",
+              "Rainfall"
+            ],
+            "range": [
+              "#c0392b",
+              "#f97316",
+              "#7b2d8b",
+              "#2171b5"
+            ]
+          },
+          "legend": {
+            "orient": "top-left",
+            "direction": "vertical",
+            "titleFontSize": 11,
+            "labelFontSize": 10,
+            "offset": 8
+          }
+        },
+        "order": {
+          "field": "dimension_order",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "dimension",
+            "type": "nominal",
+            "title": "Dimension"
+          },
+          {
+            "field": "score",
+            "type": "quantitative",
+            "title": "Dimension Score",
+            "format": ".3f"
+          },
+          {
+            "field": "composite",
+            "type": "quantitative",
+            "title": "Composite Score",
+            "format": ".4f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "score",
+              "as": "total_score"
+            },
+            {
+              "op": "mean",
+              "field": "state_composite",
+              "as": "state_composite"
+            },
+            {
+              "op": "min",
+              "field": "outer_radius",
+              "as": "outer_radius"
+            }
+          ],
+          "groupby": ["state"]
+        },
+        {
+          "filter": "datum.state == 'Kelantan' || datum.state == 'Terengganu' || datum.state == 'Johor' || datum.state == 'Pahang' || datum.state == 'Sarawak' || datum.state == 'Sabah'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -6,
+        "dy": 9,
+        "fontSize": 8,
+        "fontWeight": "bold",
+        "color": "#374151"
+      },
+      "encoding": {
+        "theta": {
+          "value": 0
+        },
+        "radius": {
+          "field": "outer_radius",
+          "type": "quantitative",
+          "scale": {
+            "domain": [40, 290],
+            "range": [40, 290]
+          }
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "theta": 2.45,
+            "radius": 22,
+            "label": "East Coast states\nshow the highest\noverall vulnerability.\n\nKelantan: 0.674\nTerengganu: 0.669\nJohor: 0.642"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#374151",
+        "lineBreak": "\n"
+      },
+      "encoding": {
+        "theta": {
+          "field": "theta",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 4]
+          }
+        },
+        "radius": {
+          "field": "radius",
+          "type": "quantitative",
+          "scale": {
+            "domain": [40, 290],
+            "range": [40, 290]
+          }
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "grid": false,
+      "domain": false,
+      "ticks": false,
+      "labels": false
+    }
+  }
+}

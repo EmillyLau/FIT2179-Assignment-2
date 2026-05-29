@@ -1,0 +1,103 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 550,
+  "height": 380,
+  "title": {
+    "text": "How Long Do Different Flood Types Last?",
+    "subtitle": "Boxes show IQR; whiskers extend to 1.5× IQR; circles are outliers.",
+    "anchor": "middle"
+  },
+  "data": {
+    "url": "../data/flood_emdat.csv"
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.flood_duration)",
+      "as": "duration_num"
+    },
+    {
+      "filter": "isValid(datum.duration_num) && datum.duration_num > 0"
+    }
+  ],
+  "mark": {
+    "type": "boxplot",
+    "extent": 1.5,
+    "size": 50,
+    "ticks": true,
+    "box": {
+      "fillOpacity": 1
+    },
+    "median": {
+      "color": "white",
+      "strokeWidth": 2
+    },
+    "rule": {
+      "strokeWidth": 1.5
+    },
+    "outliers": {
+      "size": 55,
+      "filled": false,
+      "strokeWidth": 2
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "disaster_subtype",
+      "type": "nominal",
+      "title": "Flood Type",
+      "sort": [
+        "Flash flood",
+        "Flood (General)",
+        "Riverine flood"
+      ],
+      "axis": {
+        "labelAngle": 0,
+        "domainColor": "#cbd5e1",
+        "grid": false
+      }
+    },
+    "y": {
+      "field": "duration_num",
+      "type": "quantitative",
+      "title": "Flood Duration (Days)",
+      "axis": {
+        "domainColor": "#cbd5e1",
+        "grid": true,
+        "gridColor": "#e2e8f0",
+        "gridOpacity": 0.7
+      }
+    },
+    "color": {
+      "field": "disaster_subtype",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "domain": [
+          "Flash flood",
+          "Flood (General)",
+          "Riverine flood"
+        ],
+        "range": [
+          "#7b2d8b",
+          "#2171b5",
+          "#1a7a6e"
+        ]
+      }
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axisX": {
+      "grid": false
+    },
+    "axisY": {
+      "grid": true,
+      "gridColor": "#e2e8f0",
+      "gridOpacity": 0.7,
+      "domain": true,
+      "domainColor": "#cbd5e1"
+    }
+  }
+}

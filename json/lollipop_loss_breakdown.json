@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Flood Economic Losses by State (2024–2025)",
-    "subtitle": "Click a state on the lollipop chart to inspect its multi-year sector damage profile.",
+    "subtitle": "Economic losses reveal how flood damage spreads across homes, infrastructure, agriculture, and business activity.",
     "subtitleFontSize": 11,
     "anchor": "middle"
   },

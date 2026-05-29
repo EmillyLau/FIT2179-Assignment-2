@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "When Do Floods Strike? Monthly Flood Frequency by State (2011–2025)",
-    "subtitle": "Darker cells indicate more recorded flood events. States grouped geographically to reveal monsoon patterns.",
+    "subtitle": "Recorded flood events cluster around the monsoon months, especially along the peninsula's east coast.",
     "subtitleFontSize": 11,
     "anchor": "middle"
   },

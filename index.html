@@ -9,7 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -25,6 +25,9 @@
       --blue: #2171b5;
       --purple: #7b2d8b;
       --teal: #1a7a6e;
+
+      --font-display: "Newsreader", Georgia, serif;
+      --font-body: "Source Sans 3", Arial, sans-serif;
     }
 
     * {
@@ -36,15 +39,19 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: "Inter", sans-serif;
-      font-size: 16px;
-      line-height: 1.8;
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.7;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
     }
 
     .page {
-      max-width: 1660px;
+      max-width: 1580px;
       margin: 0 auto;
-      padding: 0 4rem 6rem;
+      padding: 0 clamp(1.25rem, 4vw, 4rem) 6rem;
     }
 
     .content-width {
@@ -61,13 +68,16 @@
     .bold { font-weight: 600; }
 
     h1, h2, h3, h4 {
-      font-family: "Lora", serif;
+      font-family: var(--font-display);
       color: #111;
-      line-height: 1.25;
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 700;
     }
 
     p {
       color: var(--text-muted);
+      max-width: 66ch;
     }
 
     .hero {
@@ -78,19 +88,20 @@
     }
 
     .hero-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--orange);
       margin-bottom: 1rem;
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-size: clamp(2.7rem, 5vw, 5.2rem);
       font-weight: 700;
-      margin-bottom: 1.6rem;
-      max-width: 820px;
+      line-height: 0.98;
+      margin-bottom: 1.8rem;
+      max-width: 980px;
     }
 
     .hero-cols {
@@ -101,9 +112,9 @@
     }
 
     .hero-cols p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      max-width: 52ch;
+      font-size: 1.04rem;
+      line-height: 1.75;
+      max-width: 56ch;
     }
 
     .stat-row {
@@ -127,23 +138,79 @@
     }
 
     .stat-value {
-      font-family: "Lora", serif;
-      font-size: 1.9rem;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.7rem);
       font-weight: 700;
       color: var(--orange);
-      line-height: 1;
-      margin-bottom: 0.45rem;
+      line-height: 0.95;
+      margin-bottom: 0.55rem;
     }
 
     .stat-label {
-      font-size: 0.82rem;
-      line-height: 1.5;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      font-weight: 500;
       color: var(--text-muted);
+    }
+
+    .story-note {
+      max-width: 1180px;
+      margin: 0 0 2.4rem;
+      padding: 1.15rem 1.35rem;
+      background: #fff7ed;
+      border-left: 4px solid var(--orange);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .story-note p,
+    .story-bridge p {
+      font-size: 1rem;
+      line-height: 1.62;
+      font-weight: 500;
+      color: #2f2f2f;
+    }
+
+    .story-note strong {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .story-bridge {
+      max-width: 1180px;
+      margin: 3rem 0 3.5rem;
+      padding-top: 1.3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .annotation-list {
+      list-style: none;
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .annotation-list li {
+      position: relative;
+      padding-left: 1.15rem;
+      font-size: 0.94rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
+    .annotation-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.67em;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: var(--orange);
     }
 
     .section {
       max-width: 1500px;
-      margin: 6rem;
+      margin: 6rem auto;
       margin-bottom: 6rem;
     }
 
@@ -154,16 +221,16 @@
     }
 
     .section-tag {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
       color: var(--orange);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.45rem;
     }
 
     .section h2 {
-      font-size: 1.7rem;
+      font-size: clamp(2rem, 3vw, 3rem);
       font-weight: 700;
     }
 
@@ -171,74 +238,77 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3.2rem;
-      max-width: 1120px;
+      max-width: 1180px;
       margin-bottom: 2.8rem;
     }
 
     .text-cols p {
-      max-width: 48ch;
-      font-size: 0.95rem;
-      line-height: 1.8;
+      max-width: 54ch;
+      font-size: 1rem;
+      line-height: 1.72;
     }
 
     .chart-text-row {
       display: grid;
-      grid-template-columns: minmax(0, 1080px) 330px;
-      gap: 4rem;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
+      gap: clamp(2rem, 3vw, 3rem);
       align-items: start;
       margin-bottom: 4rem;
     }
 
     .chart-text-row.flipped {
-      grid-template-columns: 330px minmax(0, 1080px);
+      grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
     }
 
     .text-block {
-      max-width: 330px;
+      max-width: 340px;
       padding-left: 1.4rem;
       border-left: 3px solid var(--border);
     }
 
     .text-block h3 {
-      font-size: 1.18rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      margin-bottom: 0.9rem;
+      line-height: 1.15;
+      margin-bottom: 0.85rem;
     }
 
     .text-block p {
-      font-size: 0.92rem;
-      line-height: 1.85;
-      max-width: 32ch;
+      font-size: 0.96rem;
+      line-height: 1.68;
+      max-width: 35ch;
     }
 
     .chart-block {
       max-width: 1500px;
-      margin: 3rem;
+      margin: 3rem 0;
     }
 
     .chart-block h3 {
-      font-size: 1.15rem;
+      font-size: 1.45rem;
       font-weight: 700;
-      margin-bottom: 0.55rem;
+      line-height: 1.18;
+      margin-bottom: 0.6rem;
       max-width: 900px;
     }
 
     .chart-sub {
-      font-size: 0.9rem;
-      line-height: 1.65;
-      max-width: 86ch;
-      margin-bottom: 1.1rem;
+      font-size: 0.96rem;
+      line-height: 1.6;
+      max-width: 76ch;
+      margin-bottom: 1.25rem;
+      font-weight: 500;
     }
 
     .chart-card {
       width: 100%;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2rem;
+      border-radius: 8px;
+      padding: clamp(1rem, 2vw, 1.5rem);
       margin-bottom: 2.5rem;
       box-shadow: 0 8px 24px rgba(70, 55, 35, 0.05);
-      overflow-x: auto;
+      overflow-x: hidden;
       overflow-y: hidden;
     }
 
@@ -247,8 +317,16 @@
     }
 
     .vega-embed {
-      width: max-content !important;
+      width: 100% !important;
       max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .vega-embed > svg {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
       margin: 0 auto;
     }
 
@@ -278,19 +356,32 @@
     }
 
     .footer h4 {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
+      line-height: 1.2;
       margin-bottom: 0.7rem;
     }
 
     .footer p,
     .footer li {
-      font-size: 0.83rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     .footer ul {
       list-style: none;
+    }
+
+    .metadata-list li {
+      display: grid;
+      grid-template-columns: 6.5rem 1fr;
+      gap: 0.75rem;
+      align-items: start;
+    }
+
+    .metadata-list strong {
+      color: #222;
+      font-weight: 700;
     }
 
     .footer li {
@@ -305,7 +396,7 @@
     .footer-bottom {
       border-top: 1px solid var(--border);
       padding-top: 1rem;
-      font-size: 0.78rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
       display: flex;
       justify-content: space-between;
@@ -314,6 +405,10 @@
     }
 
     @media (max-width: 1100px) {
+      .section {
+        margin: 4.5rem auto;
+      }
+
       .chart-text-row,
       .chart-text-row.flipped,
       .text-cols,
@@ -325,10 +420,38 @@
 
       .text-block {
         max-width: 760px;
+        padding-left: 1rem;
       }
 
       .text-block p {
         max-width: 70ch;
+      }
+    }
+
+    @media (max-width: 700px) {
+      body {
+        font-size: 15px;
+      }
+
+      .hero {
+        padding-top: 3rem;
+        margin-bottom: 2.8rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.35rem, 13vw, 3.4rem);
+      }
+
+      .stat-card {
+        padding: 1.1rem;
+      }
+
+      .chart-card {
+        padding: 0.75rem;
+      }
+
+      hr.divider {
+        margin: 3rem auto;
       }
     }
   </style>
@@ -339,26 +462,20 @@
 
   <header class="hero">
     <p class="hero-eyebrow">Climate &amp; Disaster · Malaysia · 2011–2025</p>
-    <h1>When the Rain Won't Stop:<br>
-      Flood Risk &amp; Climate Vulnerability<br>
-      in Malaysia</h1>
+    <h1>When the Rain Won't Stop: Flood Risk & Climate Vulnerability in Malaysia</h1>
 
     <div class="hero-cols">
       <p>
-        Malaysia is one of Southeast Asia's most
-        <span class="bold">flood-prone nations.</span>
-        Every year, the <span class="blue">Northeast Monsoon</span>
-        batters the east coast, while
-        <span class="purple">flash floods</span>
-        strike urban centres with little warning.
+        This dashboard follows one central question:
+        <span class="bold">when floods arrive, which Malaysian communities carry the heaviest burden?</span>
+        The answer is not found in rainfall alone.
       </p>
 
       <p>
-        This visualisation traces the
-        <span class="red">economic losses</span>,
-        the <span class="blue">rainfall patterns</span>,
-        and the <span class="bold">human cost</span>
-        of flooding across Malaysian states.
+        Read from left to right and top to bottom:
+        the story moves from <span class="blue">where floods happen</span>,
+        to <span class="blue">why the climate signal matters</span>,
+        to <span class="red">who suffers the greatest losses</span>.
       </p>
     </div>
   </header>
@@ -382,6 +499,13 @@
     <div class="section-header">
       <p class="section-tag">Section 1 · Geographic Overview</p>
       <h2>Where Do Floods Strike Hardest?</h2>
+    </div>
+
+    <div class="story-note">
+      <p>
+        Start with place. The first pattern is spatial:
+        <strong>the east coast repeatedly stands out</strong>, especially when losses are adjusted for households rather than shown only as raw totals.
+      </p>
     </div>
 
     <div class="text-cols">
@@ -420,15 +544,23 @@
           Labuan and Putrajaya have no household count data
           and are shown in grey.
         </p>
+        <ul class="annotation-list">
+          <li>The east coast pattern suggests household exposure is concentrated in states repeatedly hit by monsoon flooding.</li>
+          <li>Loss per household makes smaller states' vulnerability visible instead of letting population size dominate the story.</li>
+        </ul>
       </div>
+    </div>
+
+    <div class="story-bridge">
+      <p>
+        The household map shows vulnerability, but it does not show disruption. The next map adds a human lens by asking how many people had to move when flood events were recorded.
+      </p>
     </div>
 
     <div class="chart-block">
       <h3>Where did floods hit — and how many people were displaced?</h3>
       <p class="chart-sub">
-        Each circle marks a state affected by flooding in the selected year.
-        <span class="bold">Bigger circles</span> = more people displaced.
-        <span class="blue">Darker circles</span> = more events hit that state.
+        Displacement is not evenly distributed. Repeatedly affected states show how flood risk becomes a recurring disruption rather than a one-off emergency.
       </p>
       <div class="chart-card">
         <div id="symbol_map"></div>
@@ -442,6 +574,13 @@
     <div class="section-header">
       <p class="section-tag">Section 2 · Climate &amp; Seasonality</p>
       <h2>A Wetter, Hotter Malaysia</h2>
+    </div>
+
+    <div class="story-note">
+      <p>
+        Flood risk is not only about one extreme storm. The climate charts show the background conditions:
+        <strong>rainfall is variable, heat is rising, and flood months follow a clear monsoon rhythm.</strong>
+      </p>
     </div>
 
     <div class="text-cols">
@@ -471,6 +610,10 @@
           while <span class="red">maximum temperatures</span>
           show a clearer upward trend.
         </p>
+        <ul class="annotation-list">
+          <li>The 2014 and 2021 flood years sit within a climate record marked by rainfall swings and steadily rising heat.</li>
+          <li>Temperature rises more consistently than rainfall, adding background stress even when annual rainfall fluctuates.</li>
+        </ul>
       </div>
 
       <div class="chart-card">
@@ -496,7 +639,17 @@
           <span class="teal">Sarawak</span>
           show floods spread more evenly across the year.
         </p>
+        <ul class="annotation-list">
+          <li>Seasonality is strongest on the peninsula's east coast.</li>
+          <li>Borneo's less concentrated pattern suggests broader year-round exposure rather than a single dominant flood season.</li>
+        </ul>
       </div>
+    </div>
+
+    <div class="story-bridge">
+      <p>
+        The seasonal pattern explains when floods are likely, but anomaly years explain why some seasons become disasters. The bars below separate ordinary wet years from unusually wet years.
+      </p>
     </div>
 
     <div class="chart-block">
@@ -519,6 +672,13 @@
       <h2>The Toll: Lives, Livelihoods, and Losses</h2>
     </div>
 
+    <div class="story-note">
+      <p>
+        The story now shifts from hazard to consequence. Floods become a social and economic crisis when
+        <strong>homes, farms, roads, businesses, and lives</strong> are placed in the path of water.
+      </p>
+    </div>
+
     <div class="chart-block">
       <h3>
         <span class="red">Kelantan</span> and
@@ -527,11 +687,17 @@
       </h3>
       <p class="chart-sub">
         States ranked by total <span class="red">flood losses (RM)</span>, 2024–2025.
-        Click a state to see its damage category breakdown.
+        The sector breakdown shows whether damage is concentrated in homes, infrastructure, agriculture, or business activity.
       </p>
       <div class="chart-card">
         <div id="lollipop_chart"></div>
       </div>
+    </div>
+
+    <div class="story-bridge">
+      <p>
+        Large losses are not simply a rainfall ranking. The scatterplot tests that assumption directly by comparing average rainfall with recorded economic damage.
+      </p>
     </div>
 
     <div class="chart-text-row">
@@ -547,6 +713,10 @@
           relative to rainfall.
           Urban exposure can amplify damage.
         </p>
+        <ul class="annotation-list">
+          <li>Some states lose more than their rainfall levels would suggest, pointing to the role of exposure, settlement patterns, and assets.</li>
+          <li>The labelled outliers show that vulnerability is shaped by what sits in the floodplain, not only by how much rain falls.</li>
+        </ul>
       </div>
     </div>
 
@@ -558,6 +728,10 @@
           cluster high on deaths despite affecting fewer people overall.
           Speed of onset increases fatality risk.
         </p>
+        <ul class="annotation-list">
+          <li>Shorter, faster-onset flood events can still carry severe fatality risk.</li>
+          <li>The human cost is therefore tied to warning time and response capacity, not only the number of people affected.</li>
+        </ul>
       </div>
 
       <div class="chart-card">
@@ -574,12 +748,20 @@
       <h2>Which States Are Most at Risk?</h2>
     </div>
 
+    <div class="story-note">
+      <p>
+        The final view will bring the earlier evidence together. It should not read as a prediction model;
+        it should act as a transparent summary of the observed signals that repeatedly appeared throughout the dashboard.
+      </p>
+    </div>
+
     <div class="text-cols">
       <p>
         No single number captures
         <span class="bold">flood vulnerability</span>.
-        This final chart combines rainfall, flood frequency,
-        losses, and affected population.
+        The final synthesis can combine <span class="blue">rainfall</span>,
+        flood frequency, losses per household,
+        and affected population.
       </p>
 
       <p>
@@ -590,15 +772,13 @@
       </p>
     </div>
 
-    <div class="chart-block">
-      <h3>Composite flood vulnerability score by state</h3>
-      <p class="chart-sub">
-        Each state scored across four normalised dimensions.
-        Combined into a composite index from 0 to 1.
+    <div class="story-bridge">
+      <p>
+        The conclusion so far is consistent across the dashboard:
+        <span class="red">Terengganu</span> and <span class="red">Kelantan</span>
+        carry high household-level losses, repeated events, heavy rainfall, and substantial affected populations.
+        Flood resilience planning should therefore prioritise both physical exposure and social disruption.
       </p>
-      <div class="chart-card">
-        <div id="radial_chart"></div>
-      </div>
     </div>
   </section>
 
@@ -607,27 +787,30 @@
       <div>
         <h4>About This Visualisation</h4>
         <p>
-          Created for FIT2179 Data Visualisation at Monash University Malaysia.
-          This work examines flood risk across Malaysian states.
+          This dashboard examines Malaysian flood vulnerability through geography,
+          climate patterns, economic loss, and human impact. It was created for
+          FIT2179 Data Visualisation at Monash University Malaysia.
         </p>
       </div>
 
       <div>
         <h4>Data Sources</h4>
         <ul>
-          <li>DOSM — Flood Impact Reports</li>
-          <li>EM-DAT Disaster Database</li>
-          <li>data.gov.my rainfall records</li>
+          <li>Department of Statistics Malaysia flood impact reports</li>
+          <li>EM-DAT international disaster records</li>
+          <li>data.gov.my rainfall and weather station records</li>
+          <li>Malaysia state boundary TopoJSON</li>
         </ul>
       </div>
 
       <div>
-        <h4>Authorship</h4>
-        <ul>
-          <li><strong>Author:</strong> Emilly Lau</li>
-          <li><strong>Student ID:</strong> 35678658</li>
-          <li>FIT2179 Data Visualisation</li>
-          <li>May 2026</li>
+        <h4>Metadata</h4>
+        <ul class="metadata-list">
+          <li><strong>Author</strong><span>Emilly Lau</span></li>
+          <li><strong>Student ID</strong><span>35678658</span></li>
+          <li><strong>Unit</strong><span>FIT2179 Data Visualisation</span></li>
+          <li><strong>Date</strong><span>May 2026</span></li>
+          <li><strong>Scope</strong><span>Malaysia, 2011–2025</span></li>
         </ul>
       </div>
     </div>
@@ -641,7 +824,29 @@
 </div>
 
 <script>
-  const opts = { actions: false, renderer: "svg" };
+  const opts = {
+    actions: false,
+    renderer: "svg",
+    config: {
+      font: "Source Sans 3",
+      title: {
+        font: "Newsreader",
+        subtitleFont: "Source Sans 3"
+      },
+      axis: {
+        labelFont: "Source Sans 3",
+        titleFont: "Source Sans 3"
+      },
+      legend: {
+        labelFont: "Source Sans 3",
+        titleFont: "Source Sans 3"
+      },
+      header: {
+        labelFont: "Source Sans 3",
+        titleFont: "Newsreader"
+      }
+    }
+  };
 
   const charts = [
     { id: "#choropleth_map", src: "json/choropleth.json" },
@@ -651,8 +856,7 @@
     { id: "#rainfall_anomalies", src: "json/rainfall_anomalies.json" },
     { id: "#lollipop_chart", src: "json/lollipop_loss_breakdown.json" },
     { id: "#scatter_chart", src: "json/scatterplot.json" },
-    { id: "#bubble_chart", src: "json/bubble.json" },
-    { id: "#radial_chart", src: "json/radial.json" }
+    { id: "#bubble_chart", src: "json/bubble.json" }
   ];
 
   charts.forEach(({ id, src }) => {
