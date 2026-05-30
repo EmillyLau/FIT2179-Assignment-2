@@ -10,7 +10,7 @@
     "subtitleFontSize": 11
   },
   "data": {
-    "url": "data/flood_emdat.csv"
+    "url": "../data/flood_emdat.csv"
   },
   "transform": [
     {

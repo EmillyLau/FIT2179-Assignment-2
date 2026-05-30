@@ -11,7 +11,7 @@
     "subtitleFontSize": 11
   },
   "data": {
-    "url": "data/vulnerability_long.csv"
+    "url": "../data/vulnerability_long.csv"
   },
   "transform": [
     {

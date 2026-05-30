@@ -20,12 +20,12 @@
       }
     }
   ],
-  "data": {"url": "data/flood_impacts.csv"},
+  "data": {"url": "../data/flood_impacts.csv"},
   "transform": [
     {
       "lookup": "state",
       "from": {
-        "data": {"url": "data/rainfall_state_avg.csv"},
+        "data": {"url": "../data/rainfall_state_avg.csv"},
         "key": "state",
         "fields": ["avg_rainfall_mm", "avg_temp", "avg_rainy_days"]
       }

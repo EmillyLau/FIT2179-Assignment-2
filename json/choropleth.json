@@ -42,7 +42,7 @@
           "lookup": "properties.Name",
           "from": {
             "data": {
-              "url": "data/flood_impacts.csv"
+              "url": "../data/flood_impacts.csv"
             },
             "key": "state",
             "fields": [
