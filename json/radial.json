@@ -11,7 +11,7 @@
     "subtitleFontSize": 11
   },
   "data": {
-    "url": "../data/vulnerability_long.csv"
+    "url": "/FIT2179-Assignment-2/data/vulnerability_long.csv"
   },
   "transform": [
     {

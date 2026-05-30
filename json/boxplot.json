@@ -10,7 +10,7 @@
     "subtitleFontSize": 11
   },
   "data": {
-    "url": "../data/flood_emdat.csv"
+    "url": "/FIT2179-Assignment-2/data/flood_emdat.csv"
   },
   "transform": [
     {

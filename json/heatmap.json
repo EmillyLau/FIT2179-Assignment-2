@@ -17,7 +17,7 @@
       "bind": "legend"
     }
   ],
-  "data": {"url": "../data/flood_emdat_state.csv"},
+  "data": {"url": "/FIT2179-Assignment-2/data/flood_emdat_state.csv"},
   "transform": [
     {
       "aggregate": [

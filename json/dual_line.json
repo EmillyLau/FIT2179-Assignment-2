@@ -7,7 +7,7 @@
     "subtitleFontSize": 12,
     "anchor": "middle"
   },
-  "data": {"url": "../data/rainfall.csv"},
+  "data": {"url": "/FIT2179-Assignment-2/data/rainfall.csv"},
   "transform": [
     {
       "aggregate": [

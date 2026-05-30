@@ -10,7 +10,7 @@
     "anchor": "middle"
   },
   "data": {
-    "url": "../data/rainfall.csv"
+    "url": "/FIT2179-Assignment-2/data/rainfall.csv"
   },
   "transform": [
     {
