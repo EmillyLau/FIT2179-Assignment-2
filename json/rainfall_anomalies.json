@@ -10,7 +10,7 @@
     "anchor": "middle"
   },
   "data": {
-    "url": "../data/rainfall.csv"
+    "url": "data/rainfall.csv"
   },
   "transform": [
     {

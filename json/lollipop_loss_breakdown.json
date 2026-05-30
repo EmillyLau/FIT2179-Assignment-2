@@ -21,7 +21,7 @@
   "hconcat": [
     {
       "title": "Total Flood Losses by State",
-      "data": {"url": "../data/flood_impacts.csv"},
+      "data": {"url": "data/flood_impacts.csv"},
       "width": 420,
       "height": 430,
       "transform": [
@@ -155,7 +155,7 @@
     },
     {
       "title": "Sector Loss Breakdown",
-      "data": {"url": "../data/flood_impacts_long.csv"},
+      "data": {"url": "data/flood_impacts_long.csv"},
       "width": 340,
       "height": 430,
       "transform": [

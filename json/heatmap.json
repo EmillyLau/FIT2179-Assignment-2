@@ -17,7 +17,7 @@
       "bind": "legend"
     }
   ],
-  "data": {"url": "../data/flood_emdat_state.csv"},
+  "data": {"url": "data/flood_emdat_state.csv"},
   "transform": [
     {
       "aggregate": [
