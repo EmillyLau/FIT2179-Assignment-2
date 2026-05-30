@@ -1,13 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Stacked radial bar chart of flood vulnerability dimensions by state.",
-  "width": 560,
-  "height": 560,
+  "width": 430,
+  "height": 430,
   "title": {
     "text": "Flood Vulnerability by State",
     "subtitle": "Composite vulnerability index (0–1); colours show contributing dimensions.",
     "anchor": "middle",
-    "fontSize": 16,
+    "fontSize": 15,
     "subtitleFontSize": 11
   },
   "data": {
@@ -39,11 +39,11 @@
       ]
     },
     {
-      "calculate": "285 - (datum.state_rank - 1) * 17",
+      "calculate": "210 - (datum.state_rank - 1) * 13",
       "as": "outer_radius"
     },
     {
-      "calculate": "270 - (datum.state_rank - 1) * 17",
+      "calculate": "199 - (datum.state_rank - 1) * 13",
       "as": "inner_radius"
     },
     {
@@ -82,8 +82,8 @@
           "field": "outer_radius",
           "type": "quantitative",
           "scale": {
-            "domain": [40, 290],
-            "range": [40, 290]
+            "domain": [40, 215],
+            "range": [40, 215]
           }
         },
         "radius2": {
@@ -106,7 +106,7 @@
         "color": {
           "field": "dimension",
           "type": "nominal",
-          "title": "Vulnerability Dimension",
+          "title": "Dimension",
           "scale": {
             "domain": [
               "Flood Losses",
@@ -116,16 +116,18 @@
             ],
             "range": [
               "#c0392b",
-              "#f97316",
-              "#7b2d8b",
+              "#c88719",
+              "#0891b2",
               "#2171b5"
             ]
           },
           "legend": {
             "orient": "top-left",
             "direction": "vertical",
-            "titleFontSize": 11,
-            "labelFontSize": 10,
+            "titleLimit": 180,
+            "labelLimit": 150,
+            "titleFontSize": 12,
+            "labelFontSize": 11,
             "offset": 8
           }
         },
@@ -190,8 +192,8 @@
         "align": "right",
         "baseline": "middle",
         "dx": -6,
-        "dy": 9,
-        "fontSize": 8,
+        "dy": 5,
+        "fontSize": 10,
         "fontWeight": "bold",
         "color": "#374151"
       },
@@ -203,8 +205,8 @@
           "field": "outer_radius",
           "type": "quantitative",
           "scale": {
-            "domain": [40, 290],
-            "range": [40, 290]
+            "domain": [40, 215],
+            "range": [40, 215]
           }
         },
         "text": {
@@ -233,7 +235,7 @@
         "type": "text",
         "align": "center",
         "baseline": "middle",
-        "fontSize": 13,
+        "fontSize": 11,
         "fontWeight": "bold",
         "color": "#374151",
         "lineBreak": "\n"
@@ -250,8 +252,8 @@
           "field": "radius",
           "type": "quantitative",
           "scale": {
-            "domain": [40, 290],
-            "range": [40, 290]
+            "domain": [40, 215],
+            "range": [40, 215]
           }
         },
         "text": {
@@ -263,6 +265,12 @@
   "config": {
     "view": {
       "stroke": null
+    },
+    "legend": {
+      "titleLimit": 180,
+      "labelLimit": 150,
+      "labelFontSize": 11,
+      "titleFontSize": 12
     },
     "axis": {
       "grid": false,

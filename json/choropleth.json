@@ -70,7 +70,7 @@
         "color": {
           "field": "loss_per_living_quarter",
           "type": "quantitative",
-          "title": "Loss per Living Quarter (RM)",
+          "title": ["Loss per", "Living Quarter", "(RM)"],
          "scale": {
           "type": "threshold",
           "domain": [50, 200, 400, 800],
@@ -81,6 +81,12 @@
             "#de2d26",
             "#a50f15"
           ]
+        }
+        ,
+        "legend": {
+          "titleLimit": 260,
+          "labelLimit": 220,
+          "symbolLimit": 220
         }
         },
 
@@ -113,5 +119,14 @@
     }
   ],
 
-  "config": {}
+  "config": {
+    "title": {
+      "fontSize": 17,
+      "anchor": "middle"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
 }

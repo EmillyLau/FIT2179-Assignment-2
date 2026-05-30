@@ -4,7 +4,10 @@
   "height": 420,
   "title": {
     "text": "Rainfall Anomaly in Malaysia (2000–2021)",
-    "subtitle": "Bars show how far each year’s rainfall deviated from the long-term average"
+    "subtitle": "Bars show how far each year’s rainfall deviated from the long-term average",
+    "fontSize": 20,
+    "subtitleFontSize": 14,
+    "anchor": "middle"
   },
   "data": {
     "url": "../data/rainfall.csv"
@@ -53,8 +56,13 @@
         "color": {
           "field": "anomaly_group",
           "type": "nominal",
-          "title": "Rainfall condition",
-          "scale": {
+                "title": "Rainfall condition",
+                "legend": {
+                  "labelLimit": 240,
+                  "titleLimit": 240,
+                  "symbolLimit": 240
+                },
+                "scale": {
             "domain": [
               "Extreme wet anomaly",
               "Moderately wet",
@@ -110,7 +118,7 @@
         "type": "text",
         "align": "center",
         "baseline": "top",
-        "fontSize": 10,
+        "fontSize": 13,
         "fontWeight": "bold",
         "color": "#7c2d12",
         "background": "#fff7ed"
@@ -154,7 +162,7 @@
         "type": "text",
         "align": "center",
         "baseline": "bottom",
-        "fontSize": 10,
+        "fontSize": 13,
         "fontWeight": "bold",
         "color": "#1d4ed8",
         "background": "#eff6ff"
@@ -202,7 +210,7 @@
       "align": "right",
       "baseline": "middle",
       "dx": -8,
-      "fontSize": 10,
+      "fontSize": 13,
       "fontWeight": "bold",
       "color": "#7c2d12",
       "background": "#fff7ed"
@@ -216,12 +224,22 @@
   ],
   "config": {
   "view": {"stroke": null},
-  "padding": {"top": 20, "bottom": 20, "left": 20, "right": 20},
+  "padding": {"top": 8, "bottom": 8, "left": 8, "right": 8},
   "title": {
     "offset": 15,
-    "fontSize": 14,
-    "subtitleFontSize": 11,
-    "anchor": "start"
-  }
+    "fontSize": 20,
+    "subtitleFontSize": 14,
+    "anchor": "middle"
+  },
+  "axis": {
+    "labelFontSize": 14,
+    "titleFontSize": 15
+  },
+        "legend": {
+            "labelFontSize": 14,
+            "titleFontSize": 15,
+            "labelLimit": 240,
+            "titleLimit": 240
+        }
 }
 }

@@ -1,11 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 550,
-  "height": 380,
+  "width": 500,
+  "height": 330,
   "title": {
     "text": "How Long Do Different Flood Types Last?",
     "subtitle": "Boxes show IQR; whiskers extend to 1.5× IQR; circles are outliers.",
-    "anchor": "middle"
+    "anchor": "middle",
+    "fontSize": 15,
+    "subtitleFontSize": 11
   },
   "data": {
     "url": "../data/flood_emdat.csv"
@@ -22,9 +24,9 @@
   "mark": {
     "type": "boxplot",
     "extent": 1.5,
-    "size": 50,
+    "size": 42,
     "ticks": {
-      "size": 24,
+      "size": 20,
       "strokeWidth": 1.5
     },
     "box": {
@@ -38,7 +40,7 @@
       "strokeWidth": 1.5
     },
     "outliers": {
-      "size": 55,
+      "size": 44,
       "filled": false,
       "strokeWidth": 2
     }
@@ -82,7 +84,7 @@
         ],
         "range": [
           "#7b2d8b",
-          "#2171b5",
+          "#6b7280",
           "#1a7a6e"
         ]
       }
@@ -101,6 +103,10 @@
       "gridOpacity": 0.7,
       "domain": true,
       "domainColor": "#cbd5e1"
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
     }
   }
 }

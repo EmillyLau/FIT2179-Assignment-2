@@ -3,11 +3,12 @@
   "title": {
     "text": "Rainfall Alone Does Not Predict Flood Losses",
     "subtitle": "Average annual rainfall compared with total recorded flood losses across Malaysian states.",
-    "subtitleFontSize": 11,
+    "fontSize": 17,
+    "subtitleFontSize": 12,
     "anchor": "middle"
   },
-  "width": 600,
-  "height": 400,
+  "width": 720,
+  "height": 430,
   "params": [
     {
       "name": "region_highlight",
@@ -91,9 +92,14 @@
           "title": "Region",
           "scale": {
             "domain": ["West Coast", "East Coast", "East Malaysia"],
-            "range": ["#d8b365", "#c0392b", "#2171b5"]
+            "range": ["#c88719", "#c0392b", "#4b5563"]
           },
-          "legend": {"orient": "top"}
+          "legend": {
+            "orient": "top",
+            "columns": 3,
+            "labelLimit": 180,
+            "titleLimit": 180
+          }
         },
         "opacity": {
           "condition": {
@@ -163,10 +169,10 @@
       "data": {"values": [{}]},
       "mark": {
         "type": "text",
-        "x": 360,
+        "x": 430,
         "y": 170,
         "align": "left",
-        "fontSize": 10.5,
+        "fontSize": 11,
         "fontStyle": "italic",
         "color": "#c0392b",
         "fontWeight": "bold",
@@ -177,10 +183,10 @@
       "data": {"values": [{}]},
       "mark": {
         "type": "text",
-        "x": 360,
+        "x": 430,
         "y": 185,
         "align": "left",
-        "fontSize": 10.5,
+        "fontSize": 11,
         "fontStyle": "italic",
         "color": "#c0392b",
         "fontWeight": "bold",
@@ -191,10 +197,10 @@
       "data": {"values": [{}]},
       "mark": {
         "type": "text",
-        "x": 360,
+        "x": 430,
         "y": 355,
         "align": "left",
-        "fontSize": 10.5,
+        "fontSize": 11,
         "fontStyle": "italic",
         "color": "#2171b5",
         "fontWeight": "bold",
@@ -205,10 +211,10 @@
       "data": {"values": [{}]},
       "mark": {
         "type": "text",
-        "x": 360,
+        "x": 430,
         "y": 370,
         "align": "left",
-        "fontSize": 10.5,
+        "fontSize": 11,
         "fontStyle": "italic",
         "color": "#2171b5",
         "fontWeight": "bold",
@@ -223,7 +229,7 @@
         "align": "left",
         "dx": -100,
         "dy": 5,
-        "fontSize": 9.5,
+        "fontSize": 11,
         "fontStyle": "italic",
         "color": "#c0392b",
         "lineBreak": "\n"
@@ -241,9 +247,9 @@
         "align": "left",
         "dx": -80,
         "dy": 8,
-        "fontSize": 9.5,
+        "fontSize": 11,
         "fontStyle": "italic",
-        "color": "#2171b5",
+        "color": "#4b5563",
         "lineBreak": "\n"
       },
       "encoding": {
@@ -255,7 +261,15 @@
   ],
   "config": {
     "view": {"stroke": null},
-    "axis": {"grid": false},
-    "padding": {"top": 20, "bottom": 20, "left": 20, "right": 20}
+    "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    },
+    "padding": {"top": 8, "bottom": 8, "left": 8, "right": 8}
   }
 }

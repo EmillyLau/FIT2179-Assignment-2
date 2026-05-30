@@ -3,12 +3,13 @@
   "title": {
     "text": "Flood Events and Affected Population by State and Year (2011–2025)",
     "subtitle": "Each circle represents a state-year combination. Size shows affected population and colour shows flood frequency. Click a state to highlight.",
-    "subtitleFontSize": 11,
-    "anchor": "start",
-    "offset": 12
+    "fontSize": 20,
+    "subtitleFontSize": 14,
+    "anchor": "middle",
+    "offset": 6
   },
-  "width": 750,
-  "height": 380,
+  "width": 1250,
+  "height": 760,
   "data": {"url": "../data/flood_emdat_state.csv"},
   "transform": [
     {
@@ -25,7 +26,7 @@
   ],
   "params": [
     {
-      "name": "state_select",
+      "name": "bubble_timeline_state_pick",
       "select": {"type": "point", "fields": ["state"]}
     }
   ],
@@ -43,7 +44,8 @@
       "axis": {
         "labelAngle": -45,
         "grid": false,
-        "labelFontSize": 11
+        "labelFontSize": 15,
+        "titleFontSize": 16
       }
     },
     "y": {
@@ -57,7 +59,9 @@
         "Sabah","Sarawak"
       ],
       "axis": {
-        "labelFontSize": 11,
+        "labelFontSize": 15,
+        "titleFontSize": 16,
+        "labelPadding": 1,
         "grid": true,
         "gridColor": "#eee",
         "gridWidth": 0.5,
@@ -71,14 +75,18 @@
       "title": "People Affected (thousands)",
       "scale": {
     "domain": [0, 30], 
-    "range": [30, 1400]
+    "range": [120, 4300]
   },
   "legend": {
     "orient": "bottom",
     "direction": "horizontal",
+    "padding": 2,
+    "offset": 0,
     "values": [1, 5, 10, 20, 30],
     "labelExpr": "datum.value + 'K'",
-    "title": "People Affected"
+    "title": "People Affected",
+    "labelFontSize": 15,
+    "titleFontSize": 16
   }
 },
     "color": {
@@ -87,17 +95,20 @@
       "title": "No. of Flood Events",
       "scale": {
         "domain": [1, 2, 3, 4, 5],
-        "range": ["#bcdff5", "#8ecae6", "#4ea3d8", "#2171b5", "#084594"]
+        "range": ["#cffafe", "#a5f3fc", "#67e8f9", "#0891b2", "#155e75"]
       },
       "legend": {
         "orient": "bottom",
         "direction": "horizontal",
-        "labelFontSize": 11,
+        "padding": 2,
+        "offset": 0,
+        "labelFontSize": 15,
+        "titleFontSize": 16,
         "title": "No. of Flood Events"
       }
     },
     "opacity": {
-      "condition": {"param": "state_select", "value": 0.9},
+      "condition": {"param": "bubble_timeline_state_pick", "value": 0.9},
       "value": 0.15
     },
     "tooltip": [
@@ -109,7 +120,15 @@
   },
   "config": {
     "view": {"stroke": null},
-    "axis": {"grid": false},
-    "padding": {"top": 20, "bottom": 20, "left": 20, "right": 20}
+    "axis": {
+      "grid": false,
+      "labelFontSize": 15,
+      "titleFontSize": 16
+    },
+    "legend": {
+      "labelFontSize": 15,
+      "titleFontSize": 16
+    },
+    "padding": {"top": 8, "bottom": 8, "left": 8, "right": 8}
   }
 }

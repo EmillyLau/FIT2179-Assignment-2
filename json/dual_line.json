@@ -3,7 +3,8 @@
   "title": {
     "text": "Rainfall Variability and Rising Heat in Malaysia (2000–2021)",
     "subtitle": "Annual averages across all weather stations nationally. Drag the overview chart to filter years.",
-    "subtitleFontSize": 11,
+    "fontSize": 17,
+    "subtitleFontSize": 12,
     "anchor": "middle"
   },
   "data": {"url": "../data/rainfall.csv"},
@@ -106,7 +107,7 @@
             "align": "right",
             "dx": -5,
             "y": 10,
-            "fontSize": 10,
+            "fontSize": 11,
             "color": "#555",
             "fontWeight": "bold"
           },
@@ -208,7 +209,7 @@
             "align": "right",
             "dx": -5,
             "y": 10,
-            "fontSize": 10,
+            "fontSize": 11,
             "color": "#555",
             "fontWeight": "bold"
           },
@@ -233,7 +234,7 @@
       "height": 60,
       "title": {
       "text": "Brush uses rainfall as the overview; selected years filter both charts",
-      "fontSize": 11,
+      "fontSize": 12,
       "anchor": "middle"
     },
       "params": [
@@ -278,21 +279,23 @@
   "config": {
     "view": {"stroke": null},
     "padding": {
-      "top": 20,
-      "bottom": 20,
-      "left": 20,
-      "right": 20
+      "top": 8,
+      "bottom": 8,
+      "left": 8,
+      "right": 8
     },
     "title": {
       "offset": 15,
-      "fontSize": 14,
-      "subtitleFontSize": 11,
-      "anchor": "start"
+      "fontSize": 17,
+      "subtitleFontSize": 12,
+      "anchor": "middle"
     },
     "axis": {
       "grid": false,
       "domainColor": "#cbd5e1",
       "tickColor": "#cbd5e1",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
       "labelColor": "#334155",
       "titleColor": "#334155"
     }
