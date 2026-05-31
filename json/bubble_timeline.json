@@ -10,15 +10,15 @@
   },
   "width": 1250,
   "height": 760,
-  "params": [
-    {
-      "name": "bubble_timeline_state_pick",
-      "select": {"type": "point", "fields": ["state"]}
-    }
-  ],
   "layer": [
     {
       "data": {"url": "/FIT2179-Assignment-2/data/flood_emdat_state.csv"},
+      "params": [
+        {
+          "name": "bubble_timeline_state_pick",
+          "select": {"type": "point", "fields": ["state"]}
+        }
+      ],
       "transform": [
         {
           "aggregate": [
