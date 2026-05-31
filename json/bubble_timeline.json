@@ -259,7 +259,7 @@
         "fontSize": 13,
         "fontWeight": 800,
         "fill": "#c0392b",
-        "stroke": "white",
+        "stroke": "black",
         "strokeWidth": 2,
         "aria": false
       },

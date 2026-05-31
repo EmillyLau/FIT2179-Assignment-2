@@ -116,6 +116,40 @@
           }
         ]
       }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "annotation": "Flood burden is concentrated along\nthe East Coast, where monsoon exposure\ndrives much higher household losses."
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "lineBreak": "\n",
+        "font": "Source Sans 3",
+        "fontSize": 13,
+        "fontWeight": 800,
+        "fill": "#c0392b",
+        "stroke": "white",
+        "strokeWidth": 2,
+        "aria": false
+      },
+      "encoding": {
+        "x": {
+          "value": 405
+        },
+        "y": {
+          "value": 74
+        },
+        "text": {
+          "field": "annotation"
+        }
+      }
     }
   ],
 
