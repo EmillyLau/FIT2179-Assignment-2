@@ -274,84 +274,68 @@
       }
     },
     {
-      "data": {
-        "values": [
-          {
-            "year_str": "2014",
-            "state": "Pahang",
-            "label": "2014\nSevere east coast floods"
-          },
-          {
-            "year_str": "2021",
-            "state": "Selangor",
-            "label": "2021\nMajor nationwide flooding"
-          },
-          {
-            "year_str": "2022",
-            "state": "Terengganu",
-            "label": "2022\nLarge monsoon impacts"
-          }
-        ]
-      },
+  "data": {
+    "values": [
+      {"year_str": "2014", "state": "Kelantan", "line1": "2014:", "line2": "Severe east coast floods"},
+      {"year_str": "2021", "state": "Kelantan", "line1": "2021:", "line2": "Major nationwide flooding"},
+      {"year_str": "2022", "state": "Kelantan", "line1": "2022:", "line2": "Large monsoon impacts"}
+    ]
+  },
+  "layer": [
+    {
       "mark": {
         "type": "text",
         "align": "center",
         "baseline": "bottom",
-        "dy": -30,
-        "lineBreak": "\n",
-        "font": "Source Sans 3",
-        "fontSize": 14,
-        "fontWeight": 800,
-        "fill": "#172235"
+        "dy": -18,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#172235",
+        "stroke": "white",
+        "strokeWidth": 4
       },
       "encoding": {
         "x": {
           "field": "year_str",
           "type": "ordinal",
-          "scale": {
-            "domain": [
-              "2011",
-              "2012",
-              "2013",
-              "2014",
-              "2015",
-              "2016",
-              "2017",
-              "2018",
-              "2019",
-              "2020",
-              "2021",
-              "2022",
-              "2023",
-              "2025"
-            ]
-          }
+          "scale": {"domain": ["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2025"]}
         },
         "y": {
           "field": "state",
           "type": "nominal",
-          "sort": [
-            "Kelantan",
-            "Terengganu",
-            "Pahang",
-            "Johor",
-            "Negeri Sembilan",
-            "Melaka",
-            "Selangor",
-            "Kuala Lumpur",
-            "Perak",
-            "Penang",
-            "Kedah",
-            "Perlis",
-            "Sabah",
-            "Sarawak"
-          ]
+          "sort": ["Kelantan","Terengganu","Pahang","Johor","Negeri Sembilan","Melaka","Selangor","Kuala Lumpur","Perak","Penang","Kedah","Perlis","Sabah","Sarawak"]
         },
-        "text": {
-          "field": "label"
-        }
+        "text": {"field": "line1"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -4,
+        "fontSize": 12,
+        "fontStyle": "italic",
+        "color": "#172235",
+        "stroke": "white",
+        "strokeWidth": 4
+      },
+      "encoding": {
+        "x": {
+          "field": "year_str",
+          "type": "ordinal",
+          "scale": {"domain": ["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2025"]}
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": ["Kelantan","Terengganu","Pahang","Johor","Negeri Sembilan","Melaka","Selangor","Kuala Lumpur","Perak","Penang","Kedah","Perlis","Sabah","Sarawak"]
+        },
+        "text": {"field": "line2"}
       }
     }
+  ]
+}
   ],
   "config": {
     "view": {
