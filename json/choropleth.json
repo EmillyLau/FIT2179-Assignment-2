@@ -140,10 +140,10 @@
       },
       "encoding": {
         "x": {
-          "value": 105
+          "value": 125
         },
         "y": {
-          "value": 85
+          "value": 100
         },
         "text": {
           "field": "annotation"
