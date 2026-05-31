@@ -135,16 +135,16 @@
         "fontSize": 13,
         "fontWeight": 800,
         "fill": "#c0392b",
-        "stroke": "white",
+        "stroke": "#c0392b",
         "strokeWidth": 2,
         "aria": false
       },
       "encoding": {
         "x": {
-          "value": 405
+          "value": 205
         },
         "y": {
-          "value": 74
+          "value": 64
         },
         "text": {
           "field": "annotation"
