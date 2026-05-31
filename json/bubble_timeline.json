@@ -61,6 +61,7 @@
           "type": "ordinal",
           "title": "Year",
           "scale": {
+            "type": "point",
             "domain": [
               "2011",
               "2012",
@@ -196,34 +197,16 @@
       "data": {
         "values": [
           {
-            "year_str": "2014",
-            "state": "Pahang",
-            "label": "2014\nSevere east coast floods"
-          },
-          {
-            "year_str": "2021",
-            "state": "Selangor",
-            "label": "2021\nMajor nationwide flooding"
-          },
-          {
-            "year_str": "2022",
-            "state": "Terengganu",
-            "label": "2022\nLarge monsoon impacts"
+            "year_str": "2021"
           }
         ]
       },
       "mark": {
-        "type": "text",
-        "align": "center",
-        "baseline": "bottom",
-        "dy": -34,
-        "lineBreak": "\n",
-        "font": "Source Sans 3",
-        "fontSize": 13,
-        "fontWeight": 800,
-        "fill": "#172235",
-        "stroke": "white",
-        "strokeWidth": 3,
+        "type": "rule",
+        "stroke": "#c0392b",
+        "strokeWidth": 2,
+        "strokeDash": [6, 4],
+        "opacity": 0.9,
         "aria": false
       },
       "encoding": {
@@ -231,6 +214,61 @@
           "field": "year_str",
           "type": "ordinal",
           "scale": {
+            "type": "point",
+            "domain": [
+              "2011",
+              "2012",
+              "2013",
+              "2014",
+              "2015",
+              "2016",
+              "2017",
+              "2018",
+              "2019",
+              "2020",
+              "2021",
+              "2022",
+              "2023",
+              "2025"
+            ]
+          }
+        },
+        "tooltip": {
+          "value": "2021: Major nationwide flooding"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year_str": "2021",
+            "state": "Kelantan",
+            "label": "2021\nMajor nationwide flooding"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 8,
+        "dy": -56,
+        "lineBreak": "\n",
+        "font": "Source Sans 3",
+        "fontSize": 13,
+        "fontWeight": 800,
+        "fill": "#c0392b",
+        "stroke": "white",
+        "strokeWidth": 2,
+        "aria": false
+      },
+      "encoding": {
+        "x": {
+          "field": "year_str",
+          "type": "ordinal",
+          "scale": {
+            "type": "point",
             "domain": [
               "2011",
               "2012",
