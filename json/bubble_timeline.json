@@ -257,10 +257,7 @@
         "lineBreak": "\n",
         "font": "Source Sans 3",
         "fontSize": 13,
-        "fontWeight": 800,
-        "fill": "#c0392b",
-        "stroke": "black",
-        "strokeWidth": 2,
+        "fontWeight": "bold",
         "aria": false
       },
       "encoding": {

@@ -133,18 +133,17 @@
         "lineBreak": "\n",
         "font": "Source Sans 3",
         "fontSize": 13,
-        "fontWeight": 800,
-        "fill": "#c0392b",
-        "stroke": "#c0392b",
+        "fontWeight": "bold",
+        "color": "#c0392b",
         "strokeWidth": 2,
         "aria": false
       },
       "encoding": {
         "x": {
-          "value": 205
+          "value": 105
         },
         "y": {
-          "value": 64
+          "value": 85
         },
         "text": {
           "field": "annotation"
