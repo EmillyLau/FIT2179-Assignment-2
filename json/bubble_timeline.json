@@ -10,28 +10,45 @@
   },
   "width": 1250,
   "height": 760,
-  "layer": [
+  "data": {
+    "url": "/FIT2179-Assignment-2/data/flood_emdat_state.csv"
+  },
+  "transform": [
     {
-      "data": {"url": "/FIT2179-Assignment-2/data/flood_emdat_state.csv"},
-      "params": [
+      "calculate": "toString(datum.start_year)",
+      "as": "year_str"
+    },
+    {
+      "aggregate": [
         {
-          "name": "bubble_timeline_state_pick",
-          "select": {"type": "point", "fields": ["state"]}
-        }
-      ],
-      "transform": [
-        {
-          "aggregate": [
-            {"op": "sum",      "field": "affected_by_state", "as": "total_affected"},
-            {"op": "distinct", "field": "disaster_no",       "as": "flood_events_count"}
-          ],
-          "groupby": ["state", "start_year"]
+          "op": "sum",
+          "field": "affected_by_state",
+          "as": "total_affected"
         },
         {
-          "calculate": "datum.total_affected / 1000",
-          "as": "affected_thousands"
+          "op": "distinct",
+          "field": "disaster_no",
+          "as": "flood_events_count"
         }
       ],
+      "groupby": ["state", "year_str"]
+    },
+    {
+      "calculate": "datum.total_affected / 1000",
+      "as": "affected_thousands"
+    }
+  ],
+  "params": [
+    {
+      "name": "bubble_timeline_state_pick_v2",
+      "select": {
+        "type": "point",
+        "fields": ["state"]
+      }
+    }
+  ],
+  "layer": [
+    {
       "mark": {
         "type": "circle",
         "opacity": 0.85,
@@ -40,9 +57,27 @@
       },
       "encoding": {
         "x": {
-          "field": "start_year",
+          "field": "year_str",
           "type": "ordinal",
           "title": "Year",
+          "scale": {
+            "domain": [
+              "2011",
+              "2012",
+              "2013",
+              "2014",
+              "2015",
+              "2016",
+              "2017",
+              "2018",
+              "2019",
+              "2020",
+              "2021",
+              "2022",
+              "2023",
+              "2025"
+            ]
+          },
           "axis": {
             "labelAngle": -45,
             "grid": false,
@@ -55,10 +90,20 @@
           "type": "nominal",
           "title": null,
           "sort": [
-            "Kelantan","Terengganu","Pahang","Johor",
-            "Negeri Sembilan","Melaka","Selangor","Kuala Lumpur",
-            "Perak","Penang","Kedah","Perlis",
-            "Sabah","Sarawak"
+            "Kelantan",
+            "Terengganu",
+            "Pahang",
+            "Johor",
+            "Negeri Sembilan",
+            "Melaka",
+            "Selangor",
+            "Kuala Lumpur",
+            "Perak",
+            "Penang",
+            "Kedah",
+            "Perlis",
+            "Sabah",
+            "Sarawak"
           ],
           "axis": {
             "labelFontSize": 15,
@@ -97,7 +142,13 @@
           "title": "No. of Flood Events",
           "scale": {
             "domain": [1, 2, 3, 4, 5],
-            "range": ["#cffafe", "#a5f3fc", "#67e8f9", "#0891b2", "#155e75"]
+            "range": [
+              "#cffafe",
+              "#a5f3fc",
+              "#67e8f9",
+              "#0891b2",
+              "#155e75"
+            ]
           },
           "legend": {
             "orient": "bottom",
@@ -110,23 +161,55 @@
           }
         },
         "opacity": {
-          "condition": {"param": "bubble_timeline_state_pick", "value": 0.9},
+          "condition": {
+            "param": "bubble_timeline_state_pick_v2",
+            "value": 0.9
+          },
           "value": 0.15
         },
         "tooltip": [
-          {"field": "state",              "type": "nominal",      "title": "State"},
-          {"field": "start_year",         "type": "ordinal",      "title": "Year"},
-          {"field": "total_affected",     "type": "quantitative", "title": "People Affected",    "format": ","},
-          {"field": "flood_events_count", "type": "quantitative", "title": "No. of Flood Events"}
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "year_str",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "total_affected",
+            "type": "quantitative",
+            "title": "People Affected",
+            "format": ","
+          },
+          {
+            "field": "flood_events_count",
+            "type": "quantitative",
+            "title": "No. of Flood Events"
+          }
         ]
       }
     },
     {
       "data": {
         "values": [
-          {"start_year": 2014, "state": "Pahang", "label": "2014\nSevere east coast floods"},
-          {"start_year": 2021, "state": "Selangor", "label": "2021\nMajor nationwide flooding"},
-          {"start_year": 2022, "state": "Terengganu", "label": "2022\nLarge monsoon impacts"}
+          {
+            "year_str": "2014",
+            "state": "Pahang",
+            "label": "2014\nSevere east coast floods"
+          },
+          {
+            "year_str": "2021",
+            "state": "Selangor",
+            "label": "2021\nMajor nationwide flooding"
+          },
+          {
+            "year_str": "2022",
+            "state": "Terengganu",
+            "label": "2022\nLarge monsoon impacts"
+          }
         ]
       },
       "mark": {
@@ -138,28 +221,142 @@
         "font": "Source Sans 3",
         "fontSize": 14,
         "fontWeight": 800,
-        "fill": "#172235",
+        "fill": "white",
         "stroke": "white",
-        "strokeWidth": 3
+        "strokeWidth": 5
       },
       "encoding": {
-        "x": {"field": "start_year", "type": "ordinal"},
+        "x": {
+          "field": "year_str",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              "2011",
+              "2012",
+              "2013",
+              "2014",
+              "2015",
+              "2016",
+              "2017",
+              "2018",
+              "2019",
+              "2020",
+              "2021",
+              "2022",
+              "2023",
+              "2025"
+            ]
+          }
+        },
         "y": {
           "field": "state",
           "type": "nominal",
           "sort": [
-            "Kelantan","Terengganu","Pahang","Johor",
-            "Negeri Sembilan","Melaka","Selangor","Kuala Lumpur",
-            "Perak","Penang","Kedah","Perlis",
-            "Sabah","Sarawak"
+            "Kelantan",
+            "Terengganu",
+            "Pahang",
+            "Johor",
+            "Negeri Sembilan",
+            "Melaka",
+            "Selangor",
+            "Kuala Lumpur",
+            "Perak",
+            "Penang",
+            "Kedah",
+            "Perlis",
+            "Sabah",
+            "Sarawak"
           ]
         },
-        "text": {"field": "label"}
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year_str": "2014",
+            "state": "Pahang",
+            "label": "2014\nSevere east coast floods"
+          },
+          {
+            "year_str": "2021",
+            "state": "Selangor",
+            "label": "2021\nMajor nationwide flooding"
+          },
+          {
+            "year_str": "2022",
+            "state": "Terengganu",
+            "label": "2022\nLarge monsoon impacts"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -30,
+        "lineBreak": "\n",
+        "font": "Source Sans 3",
+        "fontSize": 14,
+        "fontWeight": 800,
+        "fill": "#172235"
+      },
+      "encoding": {
+        "x": {
+          "field": "year_str",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              "2011",
+              "2012",
+              "2013",
+              "2014",
+              "2015",
+              "2016",
+              "2017",
+              "2018",
+              "2019",
+              "2020",
+              "2021",
+              "2022",
+              "2023",
+              "2025"
+            ]
+          }
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": [
+            "Kelantan",
+            "Terengganu",
+            "Pahang",
+            "Johor",
+            "Negeri Sembilan",
+            "Melaka",
+            "Selangor",
+            "Kuala Lumpur",
+            "Perak",
+            "Penang",
+            "Kedah",
+            "Perlis",
+            "Sabah",
+            "Sarawak"
+          ]
+        },
+        "text": {
+          "field": "label"
+        }
       }
     }
   ],
   "config": {
-    "view": {"stroke": null},
+    "view": {
+      "stroke": null
+    },
     "axis": {
       "grid": false,
       "labelFontSize": 15,
@@ -169,6 +366,11 @@
       "labelFontSize": 15,
       "titleFontSize": 16
     },
-    "padding": {"top": 8, "bottom": 8, "left": 8, "right": 8}
+    "padding": {
+      "top": 8,
+      "bottom": 8,
+      "left": 8,
+      "right": 8
+    }
   }
 }

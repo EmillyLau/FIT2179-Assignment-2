@@ -23,11 +23,15 @@
       "title": "Total Flood Losses by State",
       "data": {"url": "/FIT2179-Assignment-2/data/flood_impacts.csv"},
       "width": 420,
-      "height": 430,
+      "height": 520,
       "transform": [
         {
           "calculate": "toNumber(datum.total_loss_combined) / 1000000",
           "as": "loss_millions"
+        },
+        {
+          "calculate": "datum.loss_millions >= 100 ? 'High-loss states' : 'Below RM100M benchmark'",
+          "as": "loss_tier"
         }
       ],
       "layer": [
@@ -51,17 +55,21 @@
             },
             "x2": {"datum": 0},
             "color": {
-              "field": "loss_millions",
-              "type": "quantitative",
-              "scale": {
-                "domain": [0, 350],
-                "range": ["#fdba74", "#f97316", "#991b1b"]
+              "condition": {
+                "test": "datum.loss_millions >= 100",
+                "field": "loss_millions",
+                "type": "quantitative",
+                "scale": {
+                  "domain": [100, 350],
+                  "range": ["#fdba74", "#f97316", "#991b1b"]
+                },
+                "legend": null
               },
-              "legend": null
+              "value": "#cbd5e1"
             },
             "opacity": {
               "condition": {"param": "donut_state_pick_v3", "value": 1},
-              "value": 0.25
+              "value": 0.18
             }
           }
         },
@@ -95,19 +103,26 @@
               "axis": {"format": ".0f"}
             },
             "color": {
-              "field": "loss_millions",
-              "type": "quantitative",
-              "scale": {
-                "domain": [0, 350],
-                "range": ["#fdba74", "#f97316", "#991b1b"]
-              }
+              "condition": {
+                "test": "datum.loss_millions >= 100",
+                "field": "loss_millions",
+                "type": "quantitative",
+                "scale": {
+                  "domain": [100, 350],
+                  "range": ["#fdba74", "#f97316", "#991b1b"]
+                },
+                "legend": null
+              },
+              "value": "#94a3b8",
+              "legend": null
             },
             "opacity": {
               "condition": {"param": "donut_state_pick_v3", "value": 1},
-              "value": 0.25
+              "value": 0.2
             },
             "tooltip": [
               {"field": "state", "type": "nominal", "title": "State"},
+              {"field": "loss_tier", "type": "nominal", "title": "Loss Tier"},
               {"field": "loss_millions", "type": "quantitative", "title": "Total Loss (RM million)", "format": ".1f"},
               {"field": "total_loss_2024", "type": "quantitative", "title": "2024 Loss (RM)", "format": ","},
               {"field": "total_loss_2025", "type": "quantitative", "title": "2025 Loss (RM)", "format": ","}
@@ -157,7 +172,7 @@
       "title": "Sector Loss Breakdown",
       "data": {"url": "/FIT2179-Assignment-2/data/flood_impacts_long.csv"},
       "width": 340,
-      "height": 430,
+      "height": 520,
       "transform": [
         {
           "filter": {"param": "donut_state_pick_v3"}
@@ -213,8 +228,8 @@
         {
           "mark": {
             "type": "arc",
-            "innerRadius": 72,
-            "outerRadius": 150,
+            "innerRadius": 84,
+            "outerRadius": 170,
             "stroke": "white",
             "strokeWidth": 0.8
           },
@@ -283,7 +298,7 @@
           ],
           "mark": {
             "type": "text",
-            "radius": 118,
+            "radius": 134,
             "align": "center",
             "baseline": "middle",
             "fontSize": 16,

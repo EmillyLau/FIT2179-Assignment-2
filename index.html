@@ -256,6 +256,16 @@
       grid-auto-rows: 1fr;
     }
 
+    .loss-breakdown-visual {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      align-self: stretch;
+    }
+
+    .loss-breakdown-visual .chart-panel {
+      align-self: stretch;
+    }
+
     .figure-card {
       display: grid;
       grid-template-columns: minmax(330px, 0.36fr) minmax(0, 1fr);
@@ -827,7 +837,7 @@
                 outweighed roads and bridges.
               </div>
             </div>
-            <div>
+            <div class="loss-breakdown-visual">
               <div class="chart-panel" id="lollipop_chart"></div>
               <div id="breakdown-year-control" class="breakdown-year-control"></div>
             </div>
@@ -1024,7 +1034,7 @@
       { id: "#rainfall_anomalies", src: "json/rainfall_anomalies.json?v=105" },
       { id: "#heatmap", src: "json/heatmap.json?v=111" },
       { id: "#boxplot_chart", src: "json/boxplot.json?v=104" },
-      { id: "#lollipop_chart", src: "json/lollipop_loss_breakdown.json?v=119" },
+      { id: "#lollipop_chart", src: "json/lollipop_loss_breakdown.json?v=121" },
       { id: "#scatter_chart", src: "json/scatterplot.json?v=107" },
       { id: "#radial_chart", src: "json/radial.json?v=107" }
     ];
